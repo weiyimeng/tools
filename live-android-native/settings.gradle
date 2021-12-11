@@ -1,1 +1,0 @@
-include ':app', ':videolibrary', ':baselibrary', ':androidlivesdk', ':imlibrary', ':eduhdsdk', ':ClassRoomSdk'

@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">videoLibrary</string>
-    <string name="level_standard">标清</string>
-    <string name="level_high">高清</string>
-    <string name="level_original">原画</string>
-    <string name="load_fail">点击重试</string>
-
-</resources>

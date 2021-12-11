@@ -1,7 +1,0 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.haoke91.baselibrary">
-
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <application></application>
-</manifest>
-
