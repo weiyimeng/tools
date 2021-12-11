@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.haoke91.baselibrary.views.QuestionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fl_question"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginBottom="40dp"
+    android:layout_marginTop="40dp"
+    android:background="@drawable/bg_halftrans_radius_topic"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <RelativeLayout
+            android:id="@+id/topic_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="500dp"
+            android:tag="drag">
+
+            <TextView
+                android:id="@+id/tv_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="请在"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dp_14" />
+
+            <TextView
+                android:id="@+id/tv_count_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tv_count"
+                android:ems="3"
+                android:gravity="center"
+                android:lines="1"
+                android:text="30s"
+                android:textColor="@color/FF4100"
+                android:textSize="@dimen/dp_14" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tv_count_time"
+                android:gravity="center"
+                android:text="内作答"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dp_14" />
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_200"
+                android:layout_marginRight="12dp"
+                android:layout_toRightOf="@+id/tv_time"
+                android:background="@drawable/bg_c4c3c4_radius_12"
+                android:paddingBottom="4dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="4dp"
+                android:text="取消"
+                android:textColor="@color/color_4A4A4A"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tv_commit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tv_cancel"
+                android:background="@drawable/bg_75c82b_radius_22"
+                android:paddingBottom="4dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="4dp"
+                android:text="提交"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_12" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.daquexian.flexiblerichtextview.FlexibleRichTextView
+                            android:id="@+id/tv_question"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="left" />
+                    </RelativeLayout>
+                </HorizontalScrollView>
+
+                <RadioGroup
+                    android:id="@+id/rg_answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:minWidth="@dimen/dp_500"
+                    android:orientation="vertical">
+
+                </RadioGroup>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</com.haoke91.baselibrary.views.QuestionLayout>

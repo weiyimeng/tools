@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/rlContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:layout_toEndOf="@+id/ivStep">
+
+        <RelativeLayout
+            android:id="@+id/llContent"
+            android:layout_width="120dp"
+            android:layout_height="110dp">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="18dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/icon_scene_tab" />
+
+            <RelativeLayout
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/icon_scene_bg">
+
+                <com.gstudentlib.view.RoundCornerImageView
+                    android:id="@+id/ivSence"
+                    android:layout_width="84dp"
+                    android:layout_height="84dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop"
+                    app:borderRadius="18dp"
+                    app:type="round" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="10dp"
+        android:layout_alignStart="@+id/rlContent"
+        android:background="@drawable/icon_scene_round_gray"
+        android:gravity="center"
+        android:text="未练习"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/ivStep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvTitle"
+        android:layout_marginEnd="-10dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/icon_right_step" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/rlContent"
+        android:layout_alignStart="@+id/rlContent"
+        android:layout_below="@+id/rlContent"
+        android:layout_gravity="center"
+        android:layout_marginTop="-5dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        tools:text="认识新朋友认识新朋友"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</RelativeLayout>

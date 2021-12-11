@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#F8FAFD">
+
+    <com.gsbaselib.utils.title.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:divideVisibility="false"
+        app:tvTitle="@string/app_updatename" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tvConfirm"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="确定"
+                android:textColor="#9BA1AC"
+                android:layout_alignParentRight="true"
+                android:textSize="18sp"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+
+    </com.gsbaselib.utils.title.TitleBar>
+
+    <LinearLayout
+        android:background="@drawable/app_bg_white_lt_rt"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/app_bg_edit_name_corner">
+
+            <EditText
+                android:maxLength="50"
+                android:singleLine="true"
+                android:id="@+id/etName"
+                android:paddingLeft="16dp"
+                android:background="@null"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="#1F243D"
+                android:textColorHint="#A3B3C2"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/ivDelete"
+                android:padding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/app_icon_updatename_delete"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tvTips"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*请输入8位以内的汉字/字母/数字组合"
+            android:textSize="12sp"
+            android:textColor="#A3B3C2"
+            />
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:id="@+id/tvChangeNameTimeIntervalContent"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#A3B3C2"
+            />
+
+        <TextView
+            android:id="@+id/tvLastChangeNameTimeContent"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#A3B3C2"
+            />
+    </LinearLayout>
+
+</LinearLayout>

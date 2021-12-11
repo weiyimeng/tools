@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_16">
+
+    <!-- 来源-->
+    <RelativeLayout
+        android:id="@+id/rl_examOrigin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="来自：牛吃草直播"
+            android:textColor="#979797"
+            android:textSize="10dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_toLeftOf="@id/tv_delete"
+            android:clickable="true"
+            android:padding="3dp"
+            android:src="@mipmap/study_errors_icon_collect"
+            android:textSize="10dp" />
+
+        <ImageView
+            android:id="@+id/tv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:padding="3dp"
+            android:src="@mipmap/ic_delete"
+            android:textSize="10dp" />
+    </RelativeLayout>
+    <!--  题干-->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8">
+
+        <com.haoke91.a91edu.widget.exam.FillBlankExamView
+            android:id="@+id/fillBlankExamView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.haoke91.a91edu.widget.exam.FillBlankExamView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/cb_showAnalyzeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:button="@null"
+            android:drawableRight="@drawable/selector_arrow_updown"
+            android:gravity="center"
+            android:text="答案解析"
+            android:textColor="#979797"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/tv_lookOrEditReason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:padding="5dp"
+            android:text="总结错因"
+            android:textColor="@color/color_363636"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/tv_CorrectBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/tv_lookOrEditReason"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="订正习题"
+            android:textColor="@color/color_363636"
+            android:textSize="10dp" />
+    </RelativeLayout>
+    <!-- answer area-->
+    <LinearLayout
+        android:id="@+id/ll_answerArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_10"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="你的答案：A  正确答案：B"
+            android:textColor="@color/color_363636"
+            android:textSize="10dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_analysisTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dp_5"
+                android:paddingTop="@dimen/dp_5"
+                android:text="题目解析："
+                android:textColor="@color/color_363636"
+                android:textSize="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_analysisTitle"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:text="dfef dfajfjdafjaeif dafefjafjw fajdfjajfn jdfneifjfanf dnfajefjafidjf f dajfaiefj djfaiefja aj dfajef j fjdf ajajdf afj a fdfja     djfsjfory df sorry my name is ?can you magic?"
+                android:textColor="@color/color_636363"
+                android:textSize="12dp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/line" />
+    </LinearLayout>
+
+    <!-- 订正记录-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/cb_correctionBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:button="@null"
+            android:drawableRight="@drawable/selector_arrow_updown"
+            android:text="订正记录"
+            android:textColor="@color/color_979797"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/tv_analysisBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/cb_correctionBtn"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/cb_correctionBtn"
+            android:gravity="center"
+            android:padding="@dimen/dp_5"
+            android:text="请求讲评"
+            android:textColor="@color/color_363636"
+            android:textSize="10dp" />
+
+        <!--<View-->
+        <!--android:id="@+id/correctRecordArea"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:layout_below="@id/cb_correctionBtn"-->
+        <!--android:background="@color/color_75C82B"-->
+        <!--android:visibility="gone" />-->
+        <RelativeLayout
+            android:id="@+id/correctRecordArea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/cb_correctionBtn"
+            android:visibility="gone">
+
+            <com.haoke91.baselibrary.recycleview.WrapRecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

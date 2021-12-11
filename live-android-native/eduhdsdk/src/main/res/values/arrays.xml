@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="loading">
+        <item>@drawable/k_loading_00000</item>
+        <!--<item>@drawable/k_loading_00001</item>-->
+        <item>@drawable/k_loading_00002</item>
+        <!--<item>@drawable/k_loading_00003</item>-->
+        <item>@drawable/k_loading_00004</item>
+        <!--<item>@drawable/k_loading_00005</item>-->
+        <item>@drawable/k_loading_00006</item>
+        <!--<item>@drawable/k_loading_00007</item>-->
+        <item>@drawable/k_loading_00008</item>
+        <!--<item>@drawable/k_loading_00009</item>-->
+        <item>@drawable/k_loading_00010</item>
+        <!--<item>@drawable/k_loading_00011</item>-->
+    </array>
+
+</resources>

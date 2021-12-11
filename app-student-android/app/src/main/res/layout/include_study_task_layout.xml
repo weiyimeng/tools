@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rlLessonInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="24dp">
+
+        <ImageView
+            android:id="@+id/ivSubject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            tools:src="@drawable/icon_math_label" />
+
+        <TextView
+            android:id="@+id/tvLessonName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/ivSubject"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:text="第1讲 有理数和无理数"
+            android:textColor="#1F243D"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvClassName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvLessonName"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="#A3B3C2"
+            android:textSize="14sp"
+            tools:text="爱学习在线2020春季爱学习数学三阶思维突破突破" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvTimeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="距离上课"
+            android:textColor="#474D6B"
+            android:textSize="14sp" />
+
+        <gaosi.com.learn.view.CountDownTimeTextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTimeTitle"
+            android:layout_marginTop="2dp"
+            android:textColor="#474D6B"
+            android:textSize="14sp"
+            tools:text="14分30秒" />
+
+        <TextView
+            android:id="@+id/tvLessonStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:textColor="#939CB6"
+            android:textSize="16sp"
+            android:visibility="gone"
+            tools:text="回放生成中" />
+
+        <LinearLayout
+            android:id="@+id/llLiving"
+            android:layout_width="129dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:background="@drawable/green_shape_25"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone">
+            <ImageView
+                android:id="@+id/ivLiveStatus"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="4dp"
+                tools:src="@drawable/app_icon_live_play"/>
+            <TextView
+                android:id="@+id/tvLiveStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="观看回放"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"/>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

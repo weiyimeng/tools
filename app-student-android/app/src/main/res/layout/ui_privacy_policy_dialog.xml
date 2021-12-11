@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingStart="28dp"
+    android:paddingEnd="28dp"
+    android:background="@drawable/bg_white_12dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:text="@string/tips"
+        android:textColor="#051535"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvMainIdea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:lineSpacingExtra="4dp"
+        tools:text="欢迎使用爱学习，请您仔细阅读并同意《用户服务协议》及《隐私政策》"
+        android:textColor="#636B7B"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="特向您说明如下："
+        android:textColor="#051535"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:lineSpacingExtra="4dp"
+        android:text="1、我们会采取高标准且合理可行的措施来保护您的信息安全； \n2、为了向您提供更好的服务，我们会收集、使用必要的信息，您有权拒绝或撤回授权； \n3、未经您的同意，我们不会向第三方共享或获取您的个人信息。"
+        android:textColor="#636B7B"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="24dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvCancel"
+            android:layout_width="0dp"
+            android:layout_height="34dp"
+            android:layout_marginEnd="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_round_cancel_btn"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="@color/main_green_color"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvAgree"
+            android:layout_width="0dp"
+            android:layout_height="34dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_dress_save"
+            android:gravity="center"
+            android:text="@string/agree"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</LinearLayout>

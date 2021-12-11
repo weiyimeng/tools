@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_toolbar" />
+
+    <com.haoke91.baselibrary.smarttab.SmartTabLayout
+        android:id="@+id/tab_order"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:visibility="gone"
+        app:stl_clickable="true"
+        app:stl_defaultTabBackground="@color/transparent"
+        app:stl_defaultTabTextAllCaps="true"
+        app:stl_defaultTabTextHorizontalPadding="50dp"
+        app:stl_defaultTabTextSize="15dp"
+        app:stl_distributeEvenly="false"
+        app:stl_dividerColor="@color/transparent"
+        app:stl_dividerThickness="0dp"
+        app:stl_drawDecorationAfterTab="false"
+        app:stl_indicatorAlwaysInCenter="false"
+        app:stl_indicatorColor="@color/color_75C82B"
+        app:stl_indicatorCornerRadius="1dp"
+        app:stl_indicatorGravity="bottom"
+        app:stl_indicatorInFront="false"
+        app:stl_indicatorInterpolation="linear"
+        app:stl_indicatorThickness="2dp"
+        app:stl_indicatorWidth="100dp"
+        app:stl_indicatorWithoutPadding="true"
+        app:stl_titleOffset="auto_center"
+        app:stl_underlineColor="@color/transparent"
+        app:stl_underlineThickness="0dp" />
+
+    <View style="@style/line" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_8"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="@dimen/dp_20"
+            android:text="当前可用"
+            android:textColor="@color/color_636363"
+            android:textSize="@dimen/dp_12" />
+
+        <TextView
+            android:id="@+id/tv_usableGold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:text="1111"
+            android:textColor="@color/FFBD00"
+            android:textSize="@dimen/dp_12" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="@dimen/dp_8"
+            android:text="已兑换"
+            android:textColor="@color/color_636363"
+            android:textSize="@dimen/dp_12" />
+
+        <TextView
+            android:id="@+id/tv_usedGold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:text="1111"
+            android:textColor="@color/FFBD00"
+            android:textSize="@dimen/dp_12" />
+
+
+    </LinearLayout>
+
+    <View style="@style/line" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_order"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never" />
+</LinearLayout>

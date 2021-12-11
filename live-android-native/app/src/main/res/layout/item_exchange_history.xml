@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/dp_21"
+    android:paddingTop="@dimen/dp_21">
+
+    <ImageView
+        android:id="@+id/iv_gift"
+        android:layout_width="@dimen/dp_93"
+        android:layout_height="@dimen/dp_72"
+        android:layout_marginStart="@dimen/dp_21"
+        android:background="@mipmap/ic_launcher"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_giftName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_13"
+        tools:text="学习笔记"
+        android:textColor="@color/color_363636"
+        android:textSize="@dimen/dp_14"
+        app:layout_constraintStart_toEndOf="@+id/iv_gift" />
+
+    <TextView
+        android:id="@+id/tv_exchange_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tv_giftName"
+        android:layout_marginTop="@dimen/dp_21"
+        android:gravity="center"
+        android:text="时间："
+        android:textColor="@color/color_979797"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintStart_toStartOf="@+id/tv_giftName"
+        app:layout_constraintTop_toBottomOf="@+id/tv_giftName" />
+
+    <TextView
+        android:id="@+id/tv_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_giftName"
+        android:layout_marginTop="@dimen/dp_4"
+        android:gravity="center"
+        android:text="数量2 合计："
+        android:textColor="@color/color_979797"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintStart_toStartOf="@+id/tv_giftName"
+        app:layout_constraintTop_toBottomOf="@+id/tv_exchange_time" />
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/tv_giftName"
+        android:layout_marginEnd="@dimen/dp_13"
+        android:text="发货状态"
+        android:textColor="@color/color_363636"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dp_16"
+    android:paddingBottom="@dimen/dp_10"
+    android:paddingTop="@dimen/dp_16">
+
+    <TextView
+        android:id="@+id/tv_order_holiday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_3"
+        android:layout_marginTop="@dimen/dp_2"
+        android:background="@drawable/bg_94e044_radius_2"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp_2"
+        android:paddingRight="@dimen/dp_2"
+        android:text="暑"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dp_12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_order_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_3"
+        android:layout_marginTop="@dimen/dp_2"
+        android:background="@drawable/bg_f5c942_radius_2"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp_2"
+        android:paddingRight="@dimen/dp_2"
+        android:text="语"
+        android:textColor="@color/color_75C82B"
+        android:textSize="@dimen/dp_12"
+        app:layout_constraintStart_toEndOf="@id/tv_order_holiday"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_order_course_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:lineSpacingExtra="@dimen/dp_2"
+        android:textColor="@color/color_181818"
+        android:textSize="@dimen/dp_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tool:text="三年级语文直播长线班三年级语" />
+
+
+    <TextView
+        android:id="@+id/tv_order_course_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:drawableLeft="@mipmap/course_image_clock"
+        android:gravity="center"
+        android:text="  年 月 日- 月 日"
+        android:textColor="@color/color_9B9B9B"
+        android:textSize="@dimen/dp_12"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_course_name" />
+
+    <TextView
+        android:id="@+id/tv_course_outofDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_21"
+        android:background="@drawable/bg_pay"
+        android:paddingBottom="@dimen/dp_2"
+        android:paddingLeft="@dimen/dp_16"
+        android:paddingRight="@dimen/dp_16"
+        android:paddingTop="@dimen/dp_2"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tool:text="@string/near_endless" />
+
+    <include
+        android:id="@+id/layout_teacher1"
+        layout="@layout/layout_teacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_3"
+        android:layout_marginTop="@dimen/dp_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_order_course_time" />
+
+    <include
+        android:id="@+id/layout_teacher2"
+        layout="@layout/layout_teacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_9"
+        android:layout_marginTop="@dimen/dp_24"
+        app:layout_constraintLeft_toRightOf="@id/layout_teacher1"
+        app:layout_constraintTop_toBottomOf="@id/tv_order_course_time" />
+
+    <include
+        android:id="@+id/layout_assistant"
+        layout="@layout/layout_assistant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_9"
+        app:layout_constraintLeft_toRightOf="@id/layout_teacher2"
+        app:layout_constraintTop_toTopOf="@id/layout_teacher1" />
+
+    <ImageView
+        android:id="@+id/v_spots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_more"
+        app:layout_constraintBottom_toBottomOf="@id/layout_teacher2"
+
+        app:layout_constraintLeft_toRightOf="@id/layout_assistant"
+        app:layout_constraintStart_toEndOf="@+id/layout_assistant"
+        app:layout_constraintTop_toTopOf="@id/layout_teacher2" />
+
+
+    <TextView
+        android:id="@+id/tv_course_seeAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:gravity="center"
+        android:paddingEnd="@dimen/dp_10"
+        android:paddingStart="@dimen/dp_10"
+        android:text="@string/see_all"
+        android:textColor="@color/color_979797"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginTop="@dimen/dp_16"
+        android:background="@color/F3F3F3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_course_seeAll" />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_white_radius_10"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:showDividers="middle">
+
+    <TextView
+        android:id="@+id/tv_speed_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dp_4"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_4"
+        android:text="0.5X"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_speed_2"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dp_4"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_4"
+
+        android:text="1.0X"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_speed_3"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dp_4"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_4"
+        android:text="1.5X"
+
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_speed_4"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dp_4"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_4"
+        android:text="2.0X"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_speed_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dp_4"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_4"
+        android:text="2.5X"
+        android:textSize="12sp" />
+
+    <!--<TextView-->
+        <!--android:id="@+id/tv_speed_6"-->
+
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:paddingBottom="@dimen/dp_4"-->
+        <!--android:paddingLeft="@dimen/dp_10"-->
+        <!--android:paddingRight="@dimen/dp_10"-->
+        <!--android:paddingTop="@dimen/dp_4"-->
+        <!--android:text="3.0X"-->
+        <!--android:textSize="12sp" />-->
+</LinearLayout>

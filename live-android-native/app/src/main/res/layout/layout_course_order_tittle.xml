@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/dp_16">
+
+    <TextView
+        android:id="@+id/tv_order_holiday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_3"
+        android:layout_marginTop="@dimen/dp_2"
+        android:background="@drawable/bg_94e044_radius_2"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp_2"
+        android:paddingRight="@dimen/dp_2"
+        android:text="暑"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dp_12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_order_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_3"
+        android:layout_marginTop="@dimen/dp_2"
+        android:background="@drawable/bg_f5c942_radius_2"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp_2"
+        android:paddingRight="@dimen/dp_2"
+        android:text="语"
+        android:textColor="@color/color_75C82B"
+        android:textSize="@dimen/dp_12"
+        app:layout_constraintStart_toEndOf="@id/tv_order_holiday"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_order_course_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:lineSpacingExtra="@dimen/dp_2"
+        android:textColor="@color/color_181818"
+        android:textSize="@dimen/dp_14"
+        app:layout_constraintEnd_toStartOf="@+id/tv_status"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tool:text="三年级语文直播长线班三年级语" />
+
+
+    <TextView
+        android:id="@+id/tv_course_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:textColor="@color/color_363636"
+        android:textSize="@dimen/dp_12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_course_name"
+        tool:text="开课6/12" />
+
+    <TextView
+        android:id="@+id/tv_limitTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_8"
+        android:text="    年  月  日 -  月  日 · "
+        android:textColor="@color/color_9B9B9B"
+        android:textSize="@dimen/dp_12"
+        app:layout_constraintStart_toEndOf="@+id/tv_course_progress"
+        app:layout_constraintTop_toTopOf="@+id/tv_course_progress" />
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:drawablePadding="5dp"
+        android:drawableRight="@drawable/selector_mark_circle"
+        android:gravity="center_vertical"
+        android:text="已完成"
+        android:textColor="@color/color_979797"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_order_tag" />
+
+    <View
+        style="@style/line"
+        android:layout_height="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_8"
+        app:layout_constraintTop_toBottomOf="@+id/tv_course_progress" />
+</android.support.constraint.ConstraintLayout>

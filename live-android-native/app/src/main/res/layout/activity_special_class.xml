@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_toolbar" />
+
+    <com.haoke91.a91edu.widget.dropdownlayout.DropDownLayout
+        android:id="@+id/dropdown_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.haoke91.a91edu.widget.dropdownlayout.ClassifyCourseView
+            android:id="@+id/view_classify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white" />
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_below="@+id/view_classify"
+            android:background="@color/F3F3F3" />
+
+        <com.haoke91.baselibrary.views.emptyview.EmptyView
+            android:id="@+id/emptyView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/view_line"
+            app:ev_empty_drawable="@mipmap/empty_image_nocourse"
+
+            app:ev_empty_text="没有相关课程"
+            app:ev_error_drawable="@mipmap/net_error"
+
+            app:ev_error_text="@string/net_error">
+
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/refreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srlDragRate="0.5"
+                app:srlEnableAutoLoadMore="true"
+                app:srlEnableLoadMoreWhenContentNotFull="false"
+                app:srlEnableRefresh="false"
+                app:srlHeaderHeight="150dp"
+                app:srlHeaderInsetStart="?attr/actionBarSize"
+                app:srlHeaderMaxDragRate="1.3"
+                app:srlHeaderTriggerRate="0.5">
+                <!--<com.scwang.smartrefresh.layout.header.ClassicsHeader-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content" />-->
+
+                <com.haoke91.baselibrary.recycleview.WrapRecyclerView
+                    android:id="@+id/rv_course_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:overScrollMode="never" />
+
+                <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srlAccentColor="#888"
+                    app:srlClassicsSpinnerStyle="Translate" />
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+        </com.haoke91.baselibrary.views.emptyview.EmptyView>
+
+        <com.haoke91.a91edu.widget.dropdownlayout.MaskView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/view_classify"
+            android:background="#88838685" />
+
+        <com.haoke91.a91edu.widget.dropdownlayout.MenuLayout
+            android:id="@+id/menuLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_classify"
+            android:background="@color/white" />
+    </com.haoke91.a91edu.widget.dropdownlayout.DropDownLayout>
+</LinearLayout>

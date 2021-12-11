@@ -1,0 +1,16 @@
+gstudentlib
+           |--base
+           |      |--STBaseActivity.java
+           |      |--STBaseConstants.java
+           |      |--STBaseFragment.java
+           |--weex
+           |      |--WebPageEventDispatcher.java
+           |      |--component
+           |      |--module
+           |--bean
+           |      |--StudentInfo.java
+           |      |--event
+           |      |       |--ShowDialogEvent.java
+           |      |       |--UpdateHyResourceEvent.java
+           |--util
+           |      |--MockDialog.java

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/dp_20">
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:padding="@dimen/dp_15">-->
+    <!--<android.support.constraint.Guideline-->
+    <!--android:id="@+id/guideline"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:layout_constraintGuide_percent="0.5"-->
+    <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+    <TextView
+        android:id="@+id/tv_course_holiday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_18"
+        android:background="@drawable/bg_94e044_radius_2"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp_2"
+        android:paddingRight="@dimen/dp_2"
+        android:text="暑"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dp_12"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_course_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_course_name" />
+
+    <TextView
+        android:id="@+id/tv_course_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_3"
+        android:background="@drawable/bg_f5c942_radius_2"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp_2"
+        android:paddingRight="@dimen/dp_2"
+        android:text="语"
+        android:textColor="@color/color_75C82B"
+        android:textSize="@dimen/dp_12"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_course_name"
+        app:layout_constraintStart_toEndOf="@id/tv_course_holiday"
+        app:layout_constraintTop_toTopOf="@+id/tv_course_name" />
+
+    <TextView
+        android:id="@+id/tv_course_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_15"
+        android:gravity="center"
+        android:text="三年级语文暑假直播班"
+        android:textColor="@color/color_181818"
+        android:textSize="@dimen/dp_16"
+        app:layout_constraintStart_toEndOf="@id/tv_course_tag" />
+    <!--</RelativeLayout>-->
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content">-->
+
+
+    <!--<TextView-->
+    <!--android:id="@+id/tv_course_begin"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginEnd="@dimen/dp_16"-->
+    <!--android:text="起"-->
+    <!--android:textColor="@color/Orange"-->
+    <!--android:textSize="@dimen/dp_12"-->
+    <!--app:layout_constraintBottom_toBottomOf="@+id/tv_course_money"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+
+    <!--/>-->
+    <!--</RelativeLayout>-->
+    <TextView
+        android:id="@+id/tv_course_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_16"
+        android:text="￥9999起"
+        android:textColor="@color/FF4F00"
+        android:textSize="@dimen/dp_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_course_name" />
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:padding="15dp">-->
+
+
+    <TextView
+        android:id="@+id/tv_course_canchoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_32"
+        android:background="@drawable/bg_white_radius_25"
+        android:paddingBottom="@dimen/dp_2"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_7"
+        android:paddingTop="@dimen/dp_2"
+        android:text="20期课程可选"
+        android:textColor="@color/color_636363"
+        android:textSize="@dimen/dp_12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_course_name"
+        app:layout_goneMarginStart="@dimen/dp_16" />
+
+    <TextView
+        android:id="@+id/tv_sign_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:text="999+人已选"
+        android:textColor="@color/color_979797"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_course_money" />
+    <!--</RelativeLayout>-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="@dimen/dp_18"
+        android:background="@color/EBEBEB"
+        app:layout_constraintTop_toBottomOf="@id/tv_course_canchoice" />
+</android.support.constraint.ConstraintLayout>

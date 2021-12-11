@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/common_toolbar" />
+
+    <View
+        style="@style/line"
+        android:layout_below="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/tv_back_bank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_16"
+        android:text="退到银行卡"
+        android:textColor="@color/color_363636"
+        android:textSize="@dimen/dp_12" />
+
+    <EditText
+        android:id="@+id/et_bank_card"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_36"
+        android:layout_below="@+id/tv_back_bank"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_16"
+        android:background="@drawable/bg_strokegray_radius_2"
+        android:gravity="center_vertical"
+        android:hint="请填写银行卡号并认真核对"
+        android:inputType="number"
+        android:padding="@dimen/dp_5"
+        android:singleLine="true"
+        android:textColor="@color/color_363636"
+        android:textColorHint="@color/c3c3c3"
+        android:textSize="@dimen/dp_12" />
+
+    <EditText
+        android:id="@+id/et_bank_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_36"
+        android:layout_below="@+id/et_bank_card"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_16"
+        android:background="@drawable/bg_strokegray_radius_2"
+        android:gravity="center_vertical"
+        android:hint="输入开户行如“工商银行海淀黄庄支行”"
+        android:inputType="text"
+        android:padding="@dimen/dp_5"
+        android:singleLine="true"
+        android:textColor="@color/color_363636"
+        android:textColorHint="@color/c3c3c3"
+        android:textSize="@dimen/dp_12" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_bank_name"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_17"
+        android:orientation="horizontal">
+
+        <com.haoke91.baselibrary.views.RectFrameLayout
+            android:id="@+id/fl_front"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:layout_weight="1"
+            app:scaleToHeight="0.6">
+
+            <com.haoke91.baselibrary.views.RoundedImageView
+                android:id="@+id/iv_front"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/f8f8f8"
+
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="上传身份证正面"
+                android:textColor="@color/color_363636"
+                android:textSize="@dimen/dp_12" />
+
+        </com.haoke91.baselibrary.views.RectFrameLayout>
+
+        <com.haoke91.baselibrary.views.RectFrameLayout
+            android:id="@+id/fl_contrary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/f8f8f8"
+            app:scaleToHeight="0.6">
+
+            <com.haoke91.baselibrary.views.RoundedImageView
+                android:id="@+id/iv_contrary"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/f8f8f8"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="上传身份证反面"
+                android:textColor="@color/color_363636"
+                android:textSize="@dimen/dp_12" />
+        </com.haoke91.baselibrary.views.RectFrameLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_order_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_white_radius_4"
+        android:elevation="@dimen/dp_4"
+        android:visibility="visible"
+        tool:layout_editor_absoluteX="8dp"
+        tool:layout_editor_absoluteY="5dp">
+
+        <TextView
+            android:id="@+id/tv_pay_type"
+            style="@style/textView_order_count"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_16"
+            android:text="@string/except_back" />
+
+        <TextView
+            android:id="@+id/tv_except_back"
+            style="@style/textView_order_count"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tv_pay_type"
+            android:textColor="@color/FF4F00"
+            android:textSize="@dimen/dp_20"
+            tool:text="￥88.00" />
+
+        <TextView
+            android:id="@+id/tv_commit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_16"
+            android:background="@drawable/bg_pay"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dp_4"
+            android:paddingLeft="@dimen/dp_27"
+            android:paddingRight="@dimen/dp_27"
+            android:paddingTop="@dimen/dp_4"
+            android:text="@string/commit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_12" />
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_toLeftOf="@+id/tv_commit"
+            android:background="@drawable/line_979797_radius_20"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dp_4"
+            android:paddingLeft="@dimen/dp_27"
+            android:paddingRight="@dimen/dp_27"
+            android:paddingTop="@dimen/dp_4"
+            android:text="@string/action_cancel"
+            android:textColor="@color/color_363636"
+            android:textSize="@dimen/dp_12" />
+    </RelativeLayout>
+</RelativeLayout>

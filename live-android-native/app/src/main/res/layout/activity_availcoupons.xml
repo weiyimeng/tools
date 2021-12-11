@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/common_toolbar" />
+
+    <com.haoke91.baselibrary.views.emptyview.EmptyView
+        android:id="@+id/emptyview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:ev_empty_drawable="@mipmap/empty_image"
+        app:ev_empty_text="没有可用优惠券"
+        app:ev_error_drawable="@mipmap/net_error"
+        app:ev_error_text="@string/net_error">
+
+        <com.haoke91.baselibrary.recycleview.WrapRecyclerView
+            android:id="@+id/rv_coupons_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never" />
+    </com.haoke91.baselibrary.views.emptyview.EmptyView>
+
+    <RelativeLayout
+        android:id="@+id/rl_order_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/tv_save_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:gravity="center"
+            tool:text="已选择3张优惠券，优惠金额2000元"
+            android:textColor="@color/color_979797"
+            android:textSize="@dimen/dp_12" />
+
+
+        <TextView
+            android:id="@+id/tv_order_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_16"
+            android:background="@drawable/bg_pay"
+            android:elevation="@dimen/dp_5"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dp_4"
+            android:paddingLeft="@dimen/dp_16"
+            android:paddingRight="@dimen/dp_16"
+            android:paddingTop="@dimen/dp_4"
+            android:text="@string/use"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_12" />
+    </RelativeLayout>
+</LinearLayout>

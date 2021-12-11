@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.haoke91.baselibrary.recycleview.SwipeMenuLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:ios="true"
+    app:leftSwipe="true"
+    app:swipeEnable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_not_begin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/dp_14"
+                android:layout_marginTop="@dimen/dp_20"
+                android:background="@drawable/bg_9797_radius_25"
+                android:paddingEnd="@dimen/dp_2"
+                android:paddingStart="@dimen/dp_2"
+                android:text="@string/not_begin"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_10"
+                android:visibility="gone" />
+
+            <CheckBox
+                android:id="@+id/cb_choice_order"
+                android:layout_width="@dimen/dp_16"
+                android:layout_height="@dimen/dp_16"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/dp_14"
+                android:background="@drawable/selector_checkbox_green"
+                android:button="@null"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_invalid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/dp_14"
+                android:background="@drawable/bg_9797_radius_25"
+                android:paddingEnd="@dimen/dp_2"
+                android:paddingStart="@dimen/dp_2"
+                android:text="@string/Invalid"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_10"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <android.support.constraint.ConstraintLayout xmlns:tool="http://schemas.android.com/tools"
+            android:id="@+id/cl_course"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_weight="1"
+            android:paddingBottom="@dimen/dp_16"
+            android:paddingTop="@dimen/dp_16">
+
+            <TextView
+                android:id="@+id/tv_order_holiday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_94e044_radius_2"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_2"
+                android:paddingRight="@dimen/dp_2"
+                android:text="暑"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_12"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_order_course_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_order_course_name" />
+
+
+            <TextView
+                android:id="@+id/tv_order_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_3"
+                android:background="@drawable/bg_f5c942_radius_2"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_2"
+                android:paddingRight="@dimen/dp_2"
+                android:text="语"
+                android:textColor="@color/color_75C82B"
+                android:textSize="@dimen/dp_12"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_order_course_name"
+                app:layout_constraintStart_toEndOf="@+id/tv_order_holiday"
+                app:layout_constraintTop_toTopOf="@+id/tv_order_course_name" />
+
+            <TextView
+                android:id="@+id/tv_order_course_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_4"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/color_181818"
+                android:textSize="@dimen/dp_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_order_tag"
+                tools:text="三年级语文直播长线班三年级语" />
+
+
+            <TextView
+                android:id="@+id/tv_order_course_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:drawableLeft="@mipmap/course_image_clock"
+                android:gravity="center"
+                android:textColor="@color/color_9B9B9B"
+
+                android:textSize="@dimen/dp_12"
+                app:layout_constraintTop_toBottomOf="@+id/tv_order_course_name"
+                tools:text="2017年2月1日-6月1日 · 每周五18:30 - 20:30" />
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/bg_across_class_save"-->
+            <!--android:paddingBottom="@dimen/dp_2"-->
+            <!--android:paddingLeft="@dimen/dp_5"-->
+            <!--android:paddingRight="@dimen/dp_5"-->
+            <!--android:paddingTop="@dimen/dp_2"-->
+            <!--android:text="@string/across_class_save"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textSize="@dimen/dp_10"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="@+id/tv_order_course_time" />-->
+
+            <com.haoke91.a91edu.widget.CircleImageView
+                android:id="@+id/iv_order_teacher_icon"
+                android:layout_width="@dimen/dp_32"
+                android:layout_height="@dimen/dp_32"
+                android:layout_marginTop="@dimen/dp_24"
+                app:civ_border_overlay="true"
+                app:layout_constraintTop_toBottomOf="@+id/tv_order_course_time"
+                tools:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/tv_order_teacher_name"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_4"
+                android:maxLength="4"
+                android:singleLine="true"
+                android:textColor="@color/color_363636"
+                android:textSize="@dimen/dp_10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_order_teacher_icon"
+                tool:text="温馨" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_4"
+                android:text="@string/main_teacher"
+                android:textColor="@color/color_979797"
+                android:textSize="@dimen/dp_10"
+                app:layout_constraintEnd_toEndOf="@+id/iv_order_teacher_icon"
+                app:layout_constraintStart_toStartOf="@+id/iv_order_teacher_icon"
+                app:layout_constraintTop_toBottomOf="@+id/tv_order_teacher_name" />
+
+            <com.haoke91.a91edu.widget.CircleImageView
+                android:id="@+id/iv_order_assistant_icon"
+                android:layout_width="@dimen/dp_32"
+                android:layout_height="@dimen/dp_32"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_24"
+                app:civ_border_overlay="true"
+                app:layout_constraintStart_toEndOf="@+id/iv_order_teacher_icon"
+                app:layout_constraintTop_toBottomOf="@+id/tv_order_course_time"
+                tools:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/tv_assistant_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_4"
+                android:gravity="center"
+                android:maxLength="4"
+                android:singleLine="true"
+                android:textColor="@color/color_363636"
+                android:textSize="@dimen/dp_10"
+                app:layout_constraintEnd_toEndOf="@+id/iv_order_assistant_icon"
+                app:layout_constraintStart_toStartOf="@+id/iv_order_assistant_icon"
+                app:layout_constraintTop_toBottomOf="@+id/iv_order_assistant_icon"
+                tool:text="温馨" />
+
+            <TextView
+                android:id="@+id/tv_assistant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_4"
+                android:text="@string/assistant_teacher"
+                android:textColor="@color/color_979797"
+                android:textSize="@dimen/dp_10"
+                app:layout_constraintEnd_toEndOf="@+id/iv_order_assistant_icon"
+                app:layout_constraintStart_toStartOf="@+id/iv_order_assistant_icon"
+                app:layout_constraintTop_toBottomOf="@+id/tv_assistant_name" />
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="@dimen/dp_10"-->
+            <!--android:layout_marginTop="@dimen/dp_10"-->
+            <!--android:background="@drawable/bg_class_left_count"-->
+            <!--android:paddingLeft="@dimen/dp_8"-->
+            <!--android:paddingRight="@dimen/dp_8"-->
+            <!--android:text="剩余名额12个"-->
+            <!--android:textColor="@color/color_75C82B"-->
+            <!--android:textSize="@dimen/dp_12"-->
+            <!--app:layout_constraintStart_toEndOf="@+id/tv_assistant"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/tv_order_course_time" />-->
+
+            <TextView
+                android:id="@+id/tv_course_endTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="@drawable/bg_white_radius_25"
+                android:paddingBottom="@dimen/dp_2"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_7"
+                android:paddingTop="@dimen/dp_2"
+                android:text="共12讲"
+                android:textColor="@color/color_636363"
+                android:textSize="@dimen/dp_12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_assistant" />
+
+            <TextView
+                android:id="@+id/tv_course_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:text="￥888"
+                android:textColor="@color/FF4F00"
+                android:textSize="@dimen/dp_20"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_course_endTime"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_course_endTime" />
+
+        </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/tv_order_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:background="@color/EEEEEE"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp_23"
+        android:paddingRight="@dimen/dp_23"
+        android:src="@drawable/ic_mine_shop_icon_del"
+        android:text="左滑删除"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
+</com.haoke91.baselibrary.recycleview.SwipeMenuLayout>

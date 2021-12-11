@@ -1,0 +1,511 @@
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+//apply from: 'tinker-support.gradle'
+apply from: 'gsBuild.gradle'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'AndResGuard'
+apply plugin: 'walle'
+apply from: rootProject.file('checkstyle.gradle')
+
+@SuppressWarnings("GrMethodMayBeStatic")
+def generateApkTime() {
+    return new Date().format("yyyyMMddHHmm", TimeZone.getTimeZone("GMT+8"))
+}
+
+//kapt {
+//    useBuildCache = true
+//    javacOptions {
+//        option("-Xmaxerrs", 500)
+//    }
+//}
+
+android {
+    packagingOptions {
+        pickFirst 'lib/x86/libc++_shared.so'
+        pickFirst 'lib/arm64-v8a/libc++_shared.so'
+        pickFirst 'lib/x86_64/libc++_shared.so'
+        pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+    }
+    signingConfigs {
+        release {
+            keyAlias 'learn'
+            keyPassword '123456'
+            storeFile file('learn.jks')
+            storePassword '123456'
+        }
+        debug {
+            keyAlias 'learn'
+            keyPassword '123456'
+            storeFile file('learn.jks')
+            storePassword '123456'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+        applicationId "gaosi.com.learn"
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode getLocalVersionCode()
+        versionName getLocalVersionName()
+        multiDexEnabled true
+
+        ndk {
+            abiFilters "x86", "armeabi-v7a"
+        }
+        resConfigs "zh", "zh-rCN"
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+
+            //add base src dir
+            java.srcDirs = [
+                    'src/main/java',
+                    'assistantSrc/main/java'
+            ]
+
+            //add base res dir
+            res.srcDirs = [
+                    'src/main/res',
+                    'assistantSrc/main/res'
+            ]
+        }
+
+        test {
+            java.srcDirs = [
+                    'src/test/java'
+            ]
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+//            shrinkResources true
+//            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            buildConfigField("String", "BASEURL_STUDENT", "\"https://c.aixuexi.com/\"")
+            buildConfigField("String", "BASEURL_UPDATE", "\"https://api.aixuexi.com/\"")
+            buildConfigField "boolean", "ISDEBUG", "false" //控制更新等是否打开
+            buildConfigField("String", "BUILDTYPE", "\"release\"") //控制前端域名
+        }
+
+        releaseTest {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            buildConfigField("String", "BASEURL_STUDENT", "\"https://c.aixuexi.com/\"")
+            buildConfigField("String", "BASEURL_UPDATE", "\"https://api.aixuexi.com/\"")
+            buildConfigField "boolean", "ISDEBUG", "true"
+            buildConfigField("String", "BUILDTYPE", "\"release\"")
+        }
+
+        monkeyRelease {
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+            buildConfigField("String", "BASEURL_STUDENT", "\"https://c.aixuexi.com/\"")
+            buildConfigField("String", "BASEURL_UPDATE", "\"https://api.aixuexi.com/\"")
+            buildConfigField "boolean", "ISDEBUG", "false"
+            buildConfigField("String", "BUILDTYPE", "\"release\"")
+        }
+
+        monkey {
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+            buildConfigField("String", "BASEURL_STUDENT", "\"https://c.aixuexi.com/\"")
+            buildConfigField("String", "BASEURL_UPDATE", "\"https://api.dev.aixuexi.com/\"")
+            buildConfigField "boolean", "ISDEBUG", "false"
+            buildConfigField("String", "BUILDTYPE", "\"debug\"")
+        }
+
+        beta {
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+            buildConfigField("String", "BASEURL_STUDENT", "\"https://c.aixuexi.com/\"")
+            buildConfigField("String", "BASEURL_UPDATE", "\"https://api.dev.aixuexi.com/\"")
+            buildConfigField "boolean", "ISDEBUG", "true"
+            buildConfigField("String", "BUILDTYPE", "\"debug\"")
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+            buildConfigField("String", "BASEURL_STUDENT", "\"https://c.aixuexi.com/\"")
+            buildConfigField("String", "BASEURL_UPDATE", "\"https://api.dev.aixuexi.com/\"")
+            buildConfigField "boolean", "ISDEBUG", "true"
+            buildConfigField("String", "BUILDTYPE", "\"debug\"")
+        }
+
+        applicationVariants.all { variant ->
+            variant.outputs.all {
+                outputFileName = "student_${variant.buildType.name}_${defaultConfig.versionName}.apk"
+            }
+        }
+
+        buildTypes.all { type ->
+            type.matchingFallbacks = ['release']
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+        disable 'MissingTranslation' //无视字符串缺少本地化的情况
+        disable 'ExtraTranslation'//无视多做了本地化的字符串
+    }
+
+    configurations {//去除重复依赖库
+//        all*.exclude group: 'com.aliyun.ams', module: 'alicloud-android-utils'
+//        all*.exclude group: 'com.aliyun.ams', module: 'alicloud-android-utdid'
+        all*.exclude module: 'alicloud-android-utils'
+        all*.exclude module: 'alicloud-android-httpdns'
+    }
+}
+
+buildscript {
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://s3.amazonaws.com/fabric-artifacts/public'}
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.0'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+        classpath 'io.fabric.tools:gradle:1.29.0'
+        classpath 'com.tencent.mm:AndResGuard-gradle-plugin:1.2.17'
+    }
+}
+
+walle {
+    // 指定渠道包的输出路径
+    apkOutputFolder = new File("${project.buildDir}/outputs/channels");
+    // 定制渠道包的APK的文件名称
+    apkFileNameFormat = '${appName}-${packageName}-${channel}-${buildType}-v${versionName}.apk'
+    // 渠道配置文件
+    channelFile = new File("${project.getProjectDir()}/channels")
+}
+
+andResGuard {
+    //mappingFile = file("./resource_mapping.txt")
+    mappingFile = null
+    use7zip = false
+    useSign = true
+    //打开这个开关，会keep住所有资源的原始路径，只混淆资源的名字
+    keepRoot = false
+    fixedResName = "arg"
+    //打开这个开关会合并所有哈希值相同的资源，但请不要过度依赖这个功能去除去冗余资源
+    mergeDuplicatedRes = true
+    whiteList = [
+            // for your icon
+            "R.mipmap.ic_launcher",
+            "R.drawable.em_*",
+            // for fabric
+            "R.string.com.crashlytics.*",
+            // for google-services
+            "R.string.project_id",
+            "R.string.google_app_id",
+            "R.string.gcm_defaultSenderId",
+            "R.string.default_web_client_id",
+            "R.string.ga_trackingId",
+            "R.string.firebase_database_url",
+            "R.string.google_api_key",
+            "R.string.google_crash_reporting_api_key",
+
+            //可能遇到第三方使用getIdentifier访问的资源的问题，全部id都放入白名单
+            "R.id.*",
+            //友盟
+            "R.anim.umeng*",
+            "R.string.umeng*",
+            "R.string.UM*",
+            "R.string.tb_*",
+            "R.layout.umeng*",
+            "R.layout.socialize_*",
+            "R.layout.*messager*",
+            "R.layout.tb_*",
+            "R.color.umeng*",
+            "R.color.tb_*",
+            "R.style.*UM*",
+            "R.style.umeng*",
+            "R.drawable.umeng*",
+            "R.drawable.tb_*",
+            "R.drawable.sina*",
+            "R.drawable.qq_*",
+            "R.drawable.tb_*",
+            "R.id.umeng*",
+            "R.id.*messager*",
+            "R.id.progress_bar_parent",
+            "R.id.socialize_*",
+            "R.id.webView",
+            //闪验
+            "R.anim.umcsdk*",
+            "R.drawable.umcsdk*",
+            "R.layout.layout_shanyan*",
+            "R.id.shanyan_view*",
+
+            //gif
+            "R.drawable.living",
+            "R.drawable.loading",
+            "R.drawable.largeclasshomework_loading",
+            "R.drawable.largeclasshomework_bg_capture_mask",
+            "R.drawable.app_icon_living",
+    ]
+    compressFilePattern = [
+            "*.png",
+            "*.jpg",
+            "*.jpeg",
+            "*.gif",
+            "resources.arsc"
+    ]
+    sevenzip {
+        artifact = 'com.tencent.mm:SevenZip:1.2.17'
+        //path = "/usr/local/bin/7za"
+    }
+
+    /**
+     * 可选： 如果不设置则会默认覆盖assemble输出的apk
+     **/
+    // finalApkBackupPath = "${projproductFlavorsect.rootDir}/final.apk"
+
+    /**
+     * 可选: 指定v1签名时生成jar文件的摘要算法
+     * 默认值为“SHA-1”
+     **/
+    // digestalg = "SHA-256"
+}
+
+afterEvaluate {
+    tasks.getByName('assembleReleaseChannels') {
+        dependsOn(resguardRelease)
+    }
+//    tasks.getByName('assembleBetaChannels') {
+//        dependsOn(resguardBeta)
+//    }
+}
+
+repositories {
+    flatDir {
+        dirs '/libs', '../lib-classroomsdk-91haoke-android/libs', '../lib-gsplayer-91haoke-android/libs'
+    }
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+    maven { url 'http://s3.amazonaws.com/fabric-artifacts/public'}
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    implementation 'com.android.support.constraint:constraint-layout:2.0.0-alpha3'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    //扫码
+    implementation rootProject.ext.dependencies["zxing"]
+    //Router
+    implementation 'com.github.mzule.activityrouter:activityrouter:1.2.2'
+    kapt 'com.github.mzule.activityrouter:compiler:1.1.7'
+    //引导
+    implementation 'com.github.huburt-Hu:NewbieGuide:v2.4.0'
+    //firebase-analytics:17.2.0 使用了AndroidX
+    implementation 'com.google.firebase:firebase-analytics:16.0.6'
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.8@aar') {
+        transitive = true
+    }
+    implementation('com.crashlytics.sdk.android:answers:1.4.6@aar') {
+        transitive = true
+    }
+    implementation 'com.github.barteksc:android-pdf-viewer:2.5.1'
+    implementation 'com.haibin:calendarview:3.6.8'
+    //Umeng SDK必须依赖基础组件库，所以需要加入对应依赖
+    implementation 'com.umeng.umsdk:common:1.5.4'
+    //Umeng统计
+    implementation 'com.umeng.sdk:analytics:7.5.0'
+    //PushSDK必须依赖utdid库，所以需要加入对应依赖
+    implementation 'com.umeng.umsdk:utdid:1.1.5.3'
+    //PushSDK
+    implementation 'com.umeng.umsdk:push:5.0.2'
+    implementation 'com.umeng.umsdk:push-xiaomi:1.0.3'
+    implementation 'com.umeng.umsdk:push-huawei:1.0.3'
+    implementation 'com.umeng.umsdk:push-meizu:1.0.3'
+
+    // debugImplementation because LeakCanary should only run in debug builds.
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.2'
+
+
+    //recorder
+    if (isLibRecorderSource.toBoolean()) {
+        implementation project(':lib-recorder-android')
+    } else {
+        implementation rootProject.ext.dependencies["GSRecorderLib"]
+    }
+    //自我巩固
+    if (isLibHomeworkSource.toBoolean()) {
+        implementation project(':lib-business-android:lib-homework-android')
+    } else {
+        implementation(rootProject.ext.dependencies["GSHomeworkLib"]) {
+            transitive = true
+        }
+    }
+    //专题课
+    if (isLibSpecialCourseSource.toBoolean()) {
+        implementation project(':lib-business-android:lib-specialcourse-android')
+    } else {
+        implementation(rootProject.ext.dependencies["GSSpecialCourseLib"]) {
+            transitive = true
+        }
+    }
+    //口语
+    if (isLibEnglishHomeworkSource.toBoolean()) {
+        implementation project(':lib-business-android:lib-englishhomework-android')
+    } else {
+        implementation(rootProject.ext.dependencies["GSEnglishHomeworkLib"]) {
+            transitive = true
+        }
+    }
+
+    //在线外教
+    if (isLibTeacherOnLineSource.toBoolean()) {
+        implementation project(':lib-business-android:lib-teacheronline-android')
+    } else {
+        implementation(rootProject.ext.dependencies["GSTeacherOnLineLib"]) {
+            transitive = true
+        }
+    }
+
+    //资源替换工具
+    api('com.gaosi.android:WebresourceUploader:1.0.11') {
+        exclude group: 'com.gsbaselib'
+    }
+
+    //课前预习
+    if (isLibPreClassSource.toBoolean()) {
+        implementation project(':lib-business-android:lib-preclass-android')
+    } else {
+        implementation(rootProject.ext.dependencies["GSPreClassLib"]) {
+            transitive = true
+            exclude group: 'com.gaosi.axxstudentlib'
+        }
+    }
+
+    //AI口语背诵
+    if (isLibGSEnglishReciteSource.toBoolean()) {
+        implementation project(':lib-business-android:lib-englishrecite-android')
+    } else {
+        implementation(rootProject.ext.dependencies["GSEnglishReciteLib"]) {
+            transitive = true
+        }
+    }
+
+    //轻课
+//    if (isLibGSEnglishReciteSource.toBoolean()) {
+//        implementation project(':lib-business-android:lib-lightlessons-android')
+//    } else {
+//        implementation(rootProject.ext.dependencies["GSLightLessons"]) {
+//            transitive = true
+//        }
+//    }
+
+    //双师直播
+    if (isLibDTLiveSource.toBoolean()) {
+        implementation project(':lib-business-android:lib-dtlive-android')
+    } else {
+        implementation(rootProject.ext.dependencies["GSDTLiveLib"]) {
+            transitive = true
+            exclude group: 'com.gaosi.axxstudentlib'
+            exclude group: 'com.easefun.polyv.commonui'
+        }
+    }
+
+    //大班课后作业
+    if (isLibGSLargeClassHomeworkSource.toBoolean()) {
+        implementation project(':lib-specialcourse-android')
+    } else {
+        implementation(rootProject.ext.dependencies["GSLargeClassHomework"]) {
+            transitive = true
+            exclude group: 'com.gaosi.axxstudentlib'
+        }
+    }
+
+    //学习中心
+    if (isLibGStudyCenterSource.toBoolean()) {
+        implementation project(':lib-business-android:lib-studycenter-android')
+    } else {
+        implementation(rootProject.ext.dependencies["GStudyCenter"]) {
+            transitive = true
+            exclude group: 'com.gaosi.axxstudentlib'
+            exclude group: 'com.gaosi.axxnewgrouplive'
+            exclude group: 'com.gaosi.axxweex'
+        }
+    }
+
+    //新版集团直播（支持站播和坐播两种形式）
+    if (isLibNewGroupLiveSource.toBoolean()) {
+        implementation project(':lib-business-android:lib-newgrouplive-android')
+    } else {
+        implementation(rootProject.ext.dependencies["GSNewGroupLive"]) {
+            transitive = true
+            exclude group: 'com.gaosi.axxstudentlib'
+            exclude group: 'com.gaosi.axxweex'
+            exclude group: 'com.easefun.polyv.commonui'
+        }
+    }
+}
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 1, 'minutes'
+}
+
+def getLocalVersionCode() {
+    def versionFile = file('build.properties')
+
+    if (versionFile.exists()) {
+        Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionFile))
+        def versionCode = versionProps['versionCode'].toInteger()
+        return versionCode
+    } else {
+        throw new GradleException("Could not find version.properties!")
+    }
+}
+
+def getLocalVersionName() {
+    def versionFile = file('build.properties')
+
+    if (versionFile.exists()) {
+        Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionFile))
+        def versionName = versionProps['versionName'].toString()
+        return versionName
+    } else {
+        throw new GradleException("Could not find version.properties!")
+    }
+}
+
+apply plugin: 'com.google.gms.google-services'

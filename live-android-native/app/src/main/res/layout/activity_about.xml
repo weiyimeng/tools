@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_toolbar" />
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_40"
+        android:src="@mipmap/logo_login" />
+
+    <RelativeLayout
+        android:id="@+id/rl_setting_cache"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_52"
+        android:layout_marginTop="@dimen/dp_50">
+
+        <TextView
+            style="@style/textView_setting_tittle"
+            android:layout_marginStart="@dimen/dp_16"
+            android:text="@string/version"
+            android:textColor="@color/color_181818"
+            android:textSize="@dimen/dp_14" />
+
+        <TextView
+            android:id="@+id/tv_version_name"
+            style="@style/textView_setting_tittle"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:textColor="@color/color_181818"
+            android:textSize="@dimen/dp_14"
+            tools:text="v3.0" />
+    </RelativeLayout>
+
+    <View style="@style/line" />
+
+    <RelativeLayout
+        android:id="@+id/rl_service_phone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_52">
+
+        <TextView
+            style="@style/textView_setting_tittle"
+            android:layout_marginStart="@dimen/dp_16"
+            android:text="@string/service_phone"
+            android:textColor="@color/color_181818"
+            android:textSize="@dimen/dp_14" />
+
+        <TextView
+            style="@style/textView_setting_tittle"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:text="400-898-9991"
+            android:textColor="@color/color_181818"
+            android:textSize="@dimen/dp_14" />
+    </RelativeLayout>
+
+
+    <View style="@style/line" />
+
+</LinearLayout>

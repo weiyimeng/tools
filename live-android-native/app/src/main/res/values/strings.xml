@@ -1,0 +1,378 @@
+<resources>
+    <string name="app_name">91好课</string>
+    <string name="permission_apply">请允许该权限，保证应用的正常运行</string>
+    <string name="room_kickout">您已被请出教室！</string>
+    <string name="action_ok">确定</string>
+    <string name="action_cancel">取消</string>
+    <string name="error_text">加载失败</string>
+    <string name="all_order">全部订单</string>
+    <string name="do_cancel_order">取消订单</string>
+    <string name="back_order_check">退款审核中</string>
+    <string name="cancel_back">取消退款</string>
+
+    <string name="not_use">未使用</string>
+    <string name="used">已使用</string>
+    <string name="cant_used">已过期</string>
+    <string name="exchange_physical">实物兑换</string>
+    <string name="exchange_virtual">道具兑换</string>
+    <string name="exchange">兑换</string>
+    <string name="to_exchange">兑换优惠券，请输入优惠券码</string>
+
+    <string name="exchange_physical_history">实物兑换记录</string>
+    <string name="exchange_virtual_history">道具兑换记录</string>
+    <string name="net_error">网络连接异常</string>
+    <string name="back_balance">退至余额</string>
+
+
+    <string name="wait_pay">待支付</string>
+    <string name="have_pay">已支付</string>
+    <string name="cancel_order">已取消</string>
+    <string name="back_order">已退款</string>
+    <string name="back_order_list">退款单</string>
+    <string name="back_order_money">已退金额</string>
+
+    <string name="back_order_ing">退款中</string>
+    <string name="back_order_some">部分退款</string>
+    <string name="wait_back">待退款</string>
+    <string name="reject_back">退款驳回</string>
+    <string name="back_check">退款审核中</string>
+    <string name="think_back_num">预退金额</string>
+
+    <string name="shopping_cart_empty">购物车是空的</string>
+
+    <string name="collect_class">课程</string>
+    <string name="teacher">教师</string>
+    <string name="article">文章</string>
+    <string name="shopping_cart">购物车</string>
+    <string name="edit">编辑</string>
+    <string name="save">保存</string>
+    <string name="save_success">保存成功</string>
+
+    <string name="no_coupons">没有优惠券</string>
+    <string name="no_collect">没有收藏</string>
+
+    <string name="delete">删除</string>
+    <string name="consignee">收货人：</string>
+    <string name="hint_consignee"> 姓名最多为25字符</string>
+    <string name="contact_phone">联系电话：</string>
+    <string name="hint_contact_phone"> 请填写手机号</string>
+    <string name="address_detail">详细地址：</string>
+    <string name="hint_address_detail"> 建议如实填写街道名称，门牌号，楼层和房间号等信息</string>
+
+    <string name="complete">完成</string>
+    <string name="user_image">个人头像</string>
+
+    <string name="daily_work_history">历史任务</string>
+    <string name="daily_work">每日任务</string>
+    <string name="my_course">我的课程</string>
+    <string name="course_order">课次详情</string>
+    <string name="special_class">专题课程</string>
+    <string name="balance_record">余额记录</string>
+    <string name="public_class">公开课</string>
+
+    <string name="homework">作业</string>
+    <string name="wrong_note">错题本</string>
+    <string name="question_note">试题集</string>
+
+    <string name="chinese">语文</string>
+    <string name="math">数学</string>
+    <string name="english">英语</string>
+    <string name="chemical">化学</string>
+    <string name="physical">物理</string>
+    <string name="science">科学</string>
+    <string name="cart_save">已满足联报优惠，共减免%1$s元</string>
+
+    <string name="all_choice">全选</string>
+    <string name="all_price">总计</string>
+    <string name="pay_now">立即支付</string>
+    <string name="pay_success">支付成功</string>
+    <string name="my_homework">我的作业</string>
+    <string name="result_homework">作业结果</string>
+
+    <string name="waite_upload">未提交</string>
+    <string name="use">确认使用</string>
+    <string name="online_pay">在线支付</string>
+
+    <string name="checking">批改中</string>
+    <string name="checked">已批改</string>
+    <string name="see_flow">查看物流信息</string>
+
+
+    <string name="summer">暑期</string>
+    <string name="near_endless">即将过期</string>
+
+    <string name="across_class_save">限时优惠</string>
+    <string name="default_address">设为默认地址</string>
+    <string name="all_course">全部学科</string>
+    <string name="all_class">全部课程</string>
+    <string name="all_data">全部学期</string>
+    <string name="nealy_classify">最新分类</string>
+
+    <string name="all_garden">全部年级</string>
+    <string name="primary_garden">小学</string>
+    <string name="middle_garden">初中</string>
+    <string name="high_garden">高中</string>
+    <string name="add_address">+ 新增收货地址</string>
+    <string name="ad_address"> 新增收货地址</string>
+
+
+    <string name="all_classify">全部分类</string>
+    <string name="search_tittle">搜索课程或老师</string>
+    <string name="all">全部</string>
+    <string name="commit">确定</string>
+
+    <string name="sign">签到</string>
+    <string name="order_num">订单号:</string>
+    <string name="secret">保密</string>
+    <string name="sex_man">男</string>
+    <string name="sex_woman">女</string>
+
+    <string name="see_all">查看全部</string>
+    <string name="upload_homework">提交作业</string>
+    <string name="edit_userInfo">编辑个人资料 ></string>
+    <string name="about">关于</string>
+
+    <string name="login_more">登录注册发现更多</string>
+    <string name="cancel_reason">退款原因</string>
+    <string name="payed_money">实付金额</string>
+    <string name="cast_money">消耗金额</string>
+    <string name="except_back">预退总额</string>
+    <string name="extra_money">补交金额</string>
+
+    <string name="back_money">应退金额</string>
+
+    <string name="pay_money">应付金额</string>
+    <string name="pay_method">支付方式</string>
+    <string name="goods_count">商品数量</string>
+    <string name="apply_time">申请时间</string>
+    <string name="back_num">退款编号</string>
+    <string name="service_money">资料服务费</string>
+    <string name="new_course_money">新课价格</string>
+
+    <string name="goods_money">商品金额</string>
+    <string name="active_save">活动优惠</string>
+    <string name="left_money">余额抵扣</string>
+    <string name="order_statement">声明：本课程费用包含资料服务费，若退课时资料已签收，需扣除资料服务费¥60.00</string>
+    <string name="order_number">订单编号</string>
+    <string name="order_time">下单时间</string>
+    <string name="class_count"> 共%1$d讲</string>
+    <string name="class_left_count"> 剩余名额%1$d个</string>
+    <string name="course_left_count"> 共%1$d次，已上%2$d次</string>
+    <string name="left_count_add"> 账户余额%1$s，退至后剩余%2$s</string>
+
+    <string name="left_count"> 账户余额%1$s，使用后剩余%2$s</string>
+    <string name="coupon_use">已选择%1$d张优惠券，优惠金额%2$s元</string>
+
+    <string name="choice_course_count">%1$d期课程可选</string>
+    <string name="sign_count">%1$d人已选</string>
+
+
+    <string name="today_course_count">  共%s场直播</string>
+
+
+    <string name="course_count">优惠券优惠</string>
+
+
+    <string name="wx_pay">微信支付</string>
+    <string name="ali_pay">支付宝支付</string>
+    <string name="left_pay">余额抵扣</string>
+
+    <string name="project_class">专题课</string>
+    <string name="main_teacher">主讲</string>
+    <string name="assistant_teacher">助教</string>
+
+    <string name="user_info">个人信息</string>
+    <string name="head_img">头像</string>
+    <string name="nick">昵称</string>
+    <string name="name">姓名</string>
+    <string name="sex">性别</string>
+    <string name="birthday">生日</string>
+    <string name="garden">年级</string>
+    <string name="info_address">所在地区：</string>
+    <string name="hint_info_address"> 请选择省市区：</string>
+
+    <string name="school">学校</string>
+    <string name="gold">金币</string>
+    <string name="my_order">我的订单</string>
+    <string name="order_detail">订单详情</string>
+    <string name="apply_back">申请退款</string>
+    <string name="change_class">申请转班</string>
+    <string name="change_course">申请调课</string>
+
+    <string name="series_class">系列课程</string>
+    <string name="order_back_detail">退款单详情</string>
+
+    <string name="my_collect">我的收藏</string>
+    <string name="my_coupons">我的优惠券</string>
+    <string name="coupons">优惠券</string>
+    <string name="material">资料</string>
+
+    <string name="my_balance">我的余额</string>
+    <string name="confirm_order">确认订单</string>
+    <string name="gold_goods">金币商城</string>
+    <string name="exchange_history">兑换记录</string>
+    <string name="exchange_goods_details">兑换商品详情</string>
+
+    <string name="my_cart">我的购物车</string>
+    <string name="address_manager">地址管理</string>
+    <string name="address_edit">地址编辑</string>
+    <string name="gold_store">金币商城</string>
+
+    <string name="my_message">我的消息</string>
+    <string name="customer_service">客服中心</string>
+    <string name="clear_cache">清除缓存</string>
+    <string name="comment_us">评论我们</string>
+    <string name="about_us">关于我们</string>
+    <string name="login_out">退出登录</string>
+
+    <string name="go_pay">去支付</string>
+    <string name="version">当前版本</string>
+    <string name="service_phone">客服电话</string>
+    <string name="data">日期</string>
+
+    <string name="message_notice">新消息/系统通知提醒</string>
+    <string name="go_open">去开启</string>
+    <string name="only_wifi">仅WI-FI下使用</string>
+    <string name="notice_3g">切换到3G/4G网络时提醒我</string>
+    <string name="choice_order">选择课次</string>
+    <string name="not_begin">未开始</string>
+
+    <string name="setting">设置</string>
+    <string name="Invalid">失效</string>
+    <string name="back_method">退费方式</string>
+    <string name="back_origin">原路退回</string>
+    <string name="back_reason">退课原因</string>
+    <string name="back_detail">退课详情</string>
+    <string name="change_class_money">转班费用</string>
+
+
+    <string name="available_coupons">可用优惠券</string>
+
+    <string-array name="classifyOfGrade">
+        <item>全部年级</item>
+        <item>小学</item>
+        <item>初中</item>
+        <item>高中</item>
+    </string-array>
+    <string-array name="all_data">
+        <!--<item>全部学期</item>-->
+        <item>春季</item>
+        <item>暑季</item>
+        <item>秋季</item>
+        <item>冬季</item>
+
+    </string-array>
+    <string-array name="allClass">
+        <item>一年级</item>
+        <item>二年级</item>
+        <item>三年级</item>
+        <item>四年级</item>
+        <item>五年级</item>
+        <item>六年级</item>
+        <item>初一</item>
+        <item>初二</item>
+        <item>初三</item>
+        <item>高一</item>
+        <item>高二</item>
+        <item>高三</item>
+    </string-array>
+    <string-array name="all_course_type">
+        <item>全部课程</item>
+        <item>未结课程</item>
+        <item>已结课程</item>
+        <item>已退课程</item>
+    </string-array>
+    <string-array name="all_course">
+        <item>全部课程</item>
+        <item>语文</item>
+        <item>数学</item>
+        <item>英语</item>
+        <item>物理</item>
+        <item>化学</item>
+        <item>生物</item>
+        <item>历史</item>
+        <item>地理</item>
+        <item>政治</item>
+        <item>升学</item>
+        <item>科学</item>
+    </string-array>
+    <string-array name="primary_garden">
+        <item>一年级</item>
+        <item>二年级</item>
+        <item>三年级</item>
+        <item>四年级</item>
+        <item>五年级</item>
+        <item>六年级</item>
+    </string-array>
+    <string-array name="middle_garden">
+        <item>初一</item>
+        <item>初二</item>
+        <item>初三</item>
+    </string-array>
+    <string-array name="high_garden">
+        <item>高一</item>
+        <item>高二</item>
+        <item>高三</item>
+    </string-array>
+
+    <string-array name="apply_back_reason">
+        <item>课程太难跟不上</item>
+        <item>平台差卡顿</item>
+        <item>报错课程</item>
+    </string-array>
+    <string-array name="change_class_reason">
+        <item>课程太难跟不上</item>
+        <item>与其它课程冲突</item>
+        <item>报错课程</item>
+    </string-array>
+    <string-array name="change_course_reason">
+        <item>有事上不了课</item>
+        <item>听其它老师怎么讲</item>
+    </string-array>
+    <string-array name="start_zero">
+        <item>重点模糊</item>
+        <item>内容浅易</item>
+        <item>感受平平</item>
+    </string-array>
+    <string-array name="start_one">
+        <item>重点模糊</item>
+        <item>内容浅易</item>
+        <item>感受平平</item>
+    </string-array>
+    <string-array name="start_two">
+        <item>内容充实</item>
+        <item>流畅完整</item>
+        <item>兴趣不足</item>
+    </string-array>
+    <string-array name="start_three">
+        <item>思路清晰</item>
+        <item>注重落实</item>
+        <item>认真负责</item>
+    </string-array>
+    <string-array name="start_four">
+        <item>重点精准</item>
+        <item>专业过硬</item>
+        <item>激发兴趣</item>
+    </string-array>
+    <string-array name="start_five">
+        <item>内容精彩</item>
+        <item>干货满满</item>
+        <item>激情四射</item>
+    </string-array>
+    <string name="gravity_left">left</string>
+    <string name="gravity_center">center</string>
+    <string name="gravity_right">right</string>
+    <string name="login">登录</string>
+    <string name="regist">注册</string>
+    <string name="statement">&#160;&#8201;&#160;&#160;声明&#160;&#160;&#160;&#8201;</string>
+    <string name="found">发现</string>
+    <string name="entershopcar"><![CDATA[&#160;&#160;&#8201;购物车&#160;&#160;&#8201;]]></string>
+    <string name="gotostudy"><![CDATA[&#160;&#160;&#8201去学习&#160;&#160;&#8201]]></string>
+    <string name="introduceofexchangegold">金币兑换说明</string>
+    <string name="lookhomework">查看作业</string>
+    <string name="mobile_is_empty">手机号不能为空</string>
+    <string name="next_step">下一步</string>
+    <string name="reset_pwd">重置密码</string>
+    <string name="makesure">确认</string>
+</resources>
+

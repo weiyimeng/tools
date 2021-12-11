@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_all_homework_white_board"
+    >
+    <LinearLayout
+        android:layout_marginTop="60dp"
+        android:id="@+id/llSex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <RelativeLayout
+            android:layout_marginLeft="37dp"
+            android:layout_marginRight="37dp"
+            android:id="@+id/rlManAndWoman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_centerVertical="true"
+                android:id="@+id/llMan"
+                android:background="@drawable/bg_man_selector"
+                android:layout_width="78dp"
+                android:layout_height="78dp">
+                <LinearLayout
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/ivMan"
+                        android:src="@drawable/icon_man_selector"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp" />
+                    <TextView
+                        android:id="@+id/tvMan"
+                        android:layout_marginTop="5dp"
+                        android:textSize="14sp"
+                        android:textColor="@drawable/text_color_sex_selector"
+                        android:text="男"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_centerVertical="true"
+                android:id="@+id/llWoman"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/bg_woman_selector"
+                android:layout_width="78dp"
+                android:layout_height="78dp">
+                <LinearLayout
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/ivWoman"
+                        android:src="@drawable/icon_woman_selector"
+                        android:layout_width="41dp"
+                        android:layout_height="41dp" />
+                    <TextView
+                        android:id="@+id/tvWoman"
+                        android:textSize="14sp"
+                        android:textColor="@drawable/text_color_sex_selector"
+                        android:text="女"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+        <TextView
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:id="@+id/tvContent"
+            android:layout_marginTop="25dp"
+            android:lineSpacingMultiplier="1.1"
+            android:textSize="14sp"
+            android:textColor="#a5000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvComfirm"
+        android:layout_margin="20dp"
+        android:layout_below="@+id/llSex"
+        android:background="@drawable/bg_jili_btn"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/ibBack"
+        android:padding="15dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/icon_close"
+        android:layout_width="42dp"
+        android:layout_height="42dp" />
+</RelativeLayout>

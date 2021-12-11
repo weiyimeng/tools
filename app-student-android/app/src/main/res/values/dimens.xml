@@ -1,0 +1,39 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!--padding-->
+    <dimen name="padding_svprogresshuddefault">15dp</dimen>
+    <!--窗口最小宽度-->
+    <dimen name="size_minwidth_svprogresshuddefault">40dp</dimen>
+
+    <dimen name="choosen_tv_size">14sp</dimen>
+    <dimen name="choosen_height">48dp</dimen>
+    <dimen name="beike_item_textsize">16sp</dimen>
+    <dimen name="title_height">41dp</dimen>
+    <dimen name="title_pad_top">0dp</dimen>
+    <dimen name="webview_padding">20dp</dimen>
+    <dimen name="head_detail_margin_leftright">12dp</dimen>
+    <dimen name="home_work_vp_margin">-2dp</dimen>
+    <dimen name="study_translationZ">3dp</dimen>
+
+    <dimen name="statusbar_view_height">0dp</dimen>
+    <dimen name="dp_12">12dp</dimen>
+    <dimen name="dp_14">14dp</dimen>
+    <dimen name="dp_16">16dp</dimen>
+    <dimen name="dp_3">3dp</dimen>
+    <dimen name="dp_24">24dp</dimen>
+    <dimen name="dp_20">20dp</dimen>
+    <dimen name="dp_8">8dp</dimen>
+    <dimen name="dp_2">2dp</dimen>
+    <dimen name="dp_147">147dp</dimen>
+    <dimen name="dp_22">22dp</dimen>
+    <dimen name="dp_328">328dp</dimen>
+    <dimen name="dp_26">26dp</dimen>
+    <dimen name="dp_18">18dp</dimen>
+    <dimen name="dp_68">68dp</dimen>
+    <dimen name="dp_5">5dp</dimen>
+    <dimen name="dp_23">23dp</dimen>
+    <dimen name="dp_15">15dp</dimen>
+    <dimen name="dp_36">36dp</dimen>
+</resources>

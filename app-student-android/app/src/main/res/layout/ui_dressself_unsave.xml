@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_all_homework_white_board"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    >
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#a5000000"
+        android:text="@string/dress_self_unsave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dress_self_unsave_description"
+        android:textColor="#a5000000"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_marginTop="74dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:background="@drawable/bg_round_cancel_btn"
+            android:id="@+id/tvUnSaveAndExit"
+            android:layout_width="108dp"
+            android:layout_height="44dp"
+            android:gravity="center"
+            android:text="@string/dress_self_unsave_nosave"
+            android:textColor="@color/main_green_color"
+            android:textSize="16sp" />
+        <TextView
+            android:layout_marginLeft="23dp"
+            android:id="@+id/tvSaveAndExit"
+            android:background="@drawable/bg_dress_save"
+            android:layout_width="108dp"
+            android:layout_height="44dp"
+            android:gravity="center"
+            android:text="@string/dress_self_unsave_save_and_exit"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</LinearLayout>

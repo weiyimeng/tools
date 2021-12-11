@@ -1,0 +1,97 @@
+# This file is a template, and might need editing before it works on your project.
+# Read more about this script on this blog post https://about.gitlab.com/2018/10/24/setting-up-gitlab-ci-for-android-projects/, by Jason Lenny
+image: openjdk:8-jdk
+
+variables:
+  ANDROID_COMPILE_SDK: "26"
+  ANDROID_BUILD_TOOLS: "26.0.2"
+  ANDROID_SDK_TOOLS:   "4333796"
+  path: "app/build/outputs/apk/"
+  ukey: "d30b9f03f0de643f34f5e04b76d18dbc"
+  apikey: "f446ffb12e372c1a8f9334c6c1094783"
+  httpServerUrl: "http://10.39.3.11:8080/mockserver"
+  otaServerUrl: http://192.168.0.240:10393
+
+before_script:
+  - /data/soft/android-sdk-macosx/tools/bin/sdkmanager --update > update.log
+  - /data/soft/android-sdk-macosx/tools/bin/sdkmanager "platforms;android-${ANDROID_COMPILE_SDK}" "build-tools;${ANDROID_BUILD_TOOLS}" > installPlatform.log
+
+  - chmod +x ./gradlew
+  - touch local.properties
+  - curl -o $PWD/app/src/main/assets/prod.zip ${httpServerUrl}/aixuexiapp/res/student/prod.zip
+  - curl -o $PWD/app/src/main/assets/react.zip ${httpServerUrl}/aixuexiapp/res/student/react.zip
+
+stages:
+  - build
+  - pgyer
+
+cache:
+  key: "$CI_COMMIT_REF_SLUG"
+  paths:
+    - .gradle/
+    - build/
+    - ${ANDROID_HOME}
+
+#lintDebug:
+#  stage: build
+#  script:
+#    - ./gradlew -Pci --console=plain :app:lintDebug -PbuildDir=lint
+
+buildDebug:
+  stage: build
+  script:
+    - ./gradlew assembleDebug
+  tags:
+    - Android
+  only:
+    - branches
+  except:
+    - release
+    - master
+
+#trigger_build:
+#  stage: deploy
+#  script:
+#  - curl -X POST -F token=9ec87375e9710ce68d352f13bc6c5a -F ref=release http://gitlab.ops.aixuexi.com/api/v4/projects/17/trigger/pipeline
+
+uploadApk:
+  stage: build
+  script:
+    - versionH5=$(unzip -p $PWD/app/src/main/assets/prod.zip version.json)
+    - versionRN=$(unzip -p $PWD/app/src/main/assets/react.zip version.json)
+    - rm -rf app/build/outputs/
+    # 切换打包需更改下面两行配置
+    - ./gradlew resguardRelease
+    - APK=$(ls app/build/outputs/apk/release/AndResGuard_*/student_*_signed.apk)
+    - echo 123456 | sudo -S cp $APK /Users/tester/Documents/apache-tomcat-7.0.93/webapps/mockserver/aixuexiapp/res/student/ota_student_release.apk
+    # 上传资源包到应用服务器
+    - curl -F "username=student" -F "file1=@${APK}" ${httpServerUrl}/uploadFile
+    # 获取从现在到1天前的提交日志
+    - dis=$(git log --no-merges --pretty=format:"提交人：%an 提交时间：%cd 提交日志：%s" --after="1 day ago" --date=iso)
+    # 上传资源包到蒲公英
+    - curl -F "file=@${APK}" -F "uKey=${ukey}" -F "_api_key=${apikey}"  -F "buildUpdateDescription=${dis}\n${MSG_RN}\n${MSG_H5}" https://www.pgyer.com/apiv2/app/upload
+    # 读取资源包日志
+    - curl -F "_api_key=${apikey}" -F "appKey=540843b60d7248061b5a667b2131950e" https://www.pgyer.com/apiv2/app/view > app/build/outputs/commit.json
+    - buildName=$(cat app/build/outputs/commit.json | jq .data.buildName)
+    - buildVersion=$(aapt dump badging ${APK} | grep "versionName" | sed -e "s/.*versionName='//" -e "s/' .*//")
+    - buildUpdateDescription=$(cat app/build/outputs/commit.json | jq .data.buildUpdateDescription)
+    # 发送邮件到QA
+    - email=dingyuanzheng@gaosiedu.com,huangshan0@aixuexi.com,yaoran@aixuexi.com,yinjianzhuo@aixuexi.com
+    - subject="学生端安卓出包了, 赶快去下载吧！版本号：${buildVersion}"
+    - curl -F "subject=${subject}" -F "emailMsg=${dis}" -F "email=${email}" ${httpServerUrl}/sendMail
+    # 发送企业微信到QA
+    - curl -F "key=b4a82146-98be-4357-bf11-b3229f1f949d" -F "content=${subject} 下载地址：https://www.pgyer.com/xsd-android 或 扫描二维码下载 http://10.39.3.11:8080/mockserver/fileList.jsp" -F "msgtype=text" -F "mentioned_list=yaoran,tianhuiying,yinjianzhuo"  ${httpServerUrl}/sendWxMsg
+    # ota升级方式
+  #    - curl -XPOST -d "proj=student&app_v=${buildVersion}&h5_v=${versionH5}&rn_v=${versionRN}&log=$(git log -10 --no-merges --pretty=format:'%ad %an %s')" $otaServerUrl
+  tags:
+    - Android
+  only:
+    - release
+
+#upload_Pgyer:
+#  stage: pgyer
+#  script:
+#  tags:
+#    - Android
+#  only:
+#    - release

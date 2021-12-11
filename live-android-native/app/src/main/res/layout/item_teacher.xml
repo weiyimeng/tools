@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.haoke91.a91edu.widget.CircleImageView
+        android:id="@+id/iv_assistant"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_alignLeft="@id/tv_head_two"
+        android:layout_alignRight="@id/tv_head_two"
+        android:layout_marginTop="@dimen/dp_24"
+        app:civ_border_overlay="true" />
+
+    <TextView
+        android:id="@+id/tv_head_two"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_assistant"
+        android:layout_marginTop="@dimen/dp_4"
+        android:gravity="center"
+        android:maxLength="4"
+        android:textColor="@color/color_363636"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintEnd_toEndOf="@+id/iv_assistant"
+        app:layout_constraintStart_toStartOf="@+id/iv_assistant"
+        app:layout_constraintTop_toBottomOf="@+id/iv_assistant"
+        tool:text="温馨温馨温馨" />
+
+    <TextView
+        android:id="@+id/tv_role"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_head_two"
+        android:layout_alignRight="@id/tv_head_two"
+        android:layout_below="@id/tv_head_two"
+        android:layout_marginTop="@dimen/dp_4"
+        android:gravity="center"
+        android:text="@string/main_teacher"
+        android:textColor="@color/color_979797"
+        android:textSize="@dimen/dp_10" />
+
+    <TextView
+        android:id="@+id/tvRemainCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-10dp"
+        android:layout_toRightOf="@id/iv_assistant"
+        android:background="@drawable/bg_class_left_count"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:text="剩余名额 个"
+        android:textColor="@color/color_75C82B"
+        android:textSize="12dp"
+        android:visibility="gone" />
+</RelativeLayout>

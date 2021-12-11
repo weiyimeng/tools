@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="time_yel">#FCD000</color>
+    <color name="time_red">#F30606</color>
+    <color name="window_back_black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="nothing">#00000000</color>
+    <color name="color_hands_up">#EB4852</color>
+    <color name="popup_title_color">#FFFFFF</color>
+
+    <color name="popup_course_media_title_color">#913706</color>
+
+    <color name="color_chat_nickname">#795CBF</color>
+
+    <color name="popup_window_choose_photo_color">#FFFFFF</color>
+    <!--<color name="color_bar_background">#4B65EC</color>-->
+    <color name="color_bar_background">#503A8F</color>
+    <color name="color_below_bar_background">#3C257C</color>
+
+    <color name="color_media_play_seek_bar_no_play">#4Dffffff</color>
+    <color name="color_media_play_seek_bar_have_play">#FFDC54</color>
+
+
+
+    <color name="color_mp4_file_name">#FFFFFF</color>
+    <color name="color_mp4_play_time">#FFFFFF</color>
+    <color name="color_media_play_bg">#991f1e21</color>
+    <color name="color_play_speed_bg">#57387F</color>
+
+    <color name="color_teacher_video_popup_bg">#FF6B58</color>
+    <color name="color_student_video_popup_bg">#FF6B58</color>
+
+
+    <color name="color_play_speed">#FFFFFF</color>
+    <color name="color_student_press_home_button">#B3291B4F</color>
+    <color name="color_small_input_edit_bg">#F4F4F4</color>
+    <color name="color_no_read_chat_message_bg">#FF3811</color>
+
+    <color name="color_course_popup_text_select">#FFFFFF</color>
+    <color name="color_course_popup_text_default">#913706</color>
+
+    <color name="color_chat_pop_send_text">#FFFFFF</color>
+    <color name="tv_exit_dialog_message">#913705</color>
+    <color name="txt_gift_num">#6D6D6D</color>
+    <color name="color_re_loading_bg">#70000000</color>
+
+    <color name="color_memberlist_item_bg">#FFE99E</color>
+
+    <color name="color_course_pop_line">#913706</color>
+
+    <color name="color_file_pressed_background">#913706</color>
+    <color name="old_color_file_pressed_background">#212123</color>
+
+    <color name="color_seekbar_point">#FFFFFF</color>
+    <color name="color_choose_role_stroke">#795CBF</color>
+    <color name="color_choose_role_no_checked">#795CBF</color>
+
+    <color name="color_dialog_input_pwd">#FFFDCA</color>
+    <color name="color_dialog_input_pwd_stroke">#913705</color>
+
+    <color name="color_round_back_blue_5dp">#4468D0</color>
+    <color name="color_round_back_handing_up_5dp">#FF9B41</color>
+    <color name="edit_input_cursor_color">#FFFFFF</color>
+
+
+    <color name="color_chose_edit">#913705</color>
+
+    <color name="color_chat_send">#FFFFFF</color>
+    <color name="color_choose_munber">#FFFFFF</color>
+
+    <color name="color_choose_input_munber">#070708</color>
+
+    <color name="color_input_solid">#FFE99E</color>
+
+
+    <color name="chat_txt_ch_msg_link_color">#795cbf</color>
+
+    <color name="color_send_crash_text">#795CBF</color>
+
+
+
+    <!--以下紫色模板-->
+    <color name="three_purper">#4F3D84</color>
+    <color name="three_one_outclass">#A34D23</color>
+
+    <color name="three_color_chose_number">#795CBF</color>
+    <color name="three_popup_student_name_title_color">#C1B3E7</color>
+    <color name="three_popup_student_name_color">#795CBF</color>
+    <color name="three_color_chat_input_hint">#C6C0D7</color>
+    <color name="three_color_chat_input">#503A8F</color>
+    <color name="three_color_chat_time">#C6BBE6</color>
+    <color name="three_color_chat_list_item_line">#E1D6FF</color>
+    <color name="three_color_system_chat_time">#A291D3</color>
+    <color name="three_bg_video_back">#E3E5F1</color>
+
+    <color name="three_vidios_bg">#4D070117</color>
+    <color name="three_gift_num_bg">#99FFFFFF</color>
+
+</resources>

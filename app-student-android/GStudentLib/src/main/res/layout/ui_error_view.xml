@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    >
+
+    <ImageView
+        android:id="@+id/ivIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_errorview_book"
+        />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tvRemindSingle"
+        android:textSize="14sp"
+        android:textColor="#9BA1AC"
+        android:layout_marginTop="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="网络加载失败"
+        />
+
+    <LinearLayout
+        android:id="@+id/llRemind"
+        android:visibility="gone"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        >
+        <TextView
+            android:id="@+id/tvRemindTop"
+            android:textSize="14sp"
+            android:textColor="#9BA1AC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tvRemindBottom"
+            android:textSize="14sp"
+            android:textColor="#9BA1AC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llJoinClass"
+        android:visibility="gone"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        >
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/tvJoinClassTop"
+            android:textSize="16sp"
+            android:textColor="#051535"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/tvJoinClassBottom"
+            android:textSize="16sp"
+            android:textColor="#051535"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tvErrorRefresh"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:background="@drawable/ripple_error_refresh"
+        android:textSize="14sp"
+        android:textColor="#ffffff"
+        android:layout_width="106dp"
+        android:layout_height="40dp"
+        android:text="点击刷新"/>
+
+</LinearLayout>

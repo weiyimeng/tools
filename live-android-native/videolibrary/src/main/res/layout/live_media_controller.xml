@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+
+    <LinearLayout
+        android:id="@+id/ll_video_controller"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_vertical"
+        android:background="@color/control_boor"
+        android:clickable="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_prise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:clickable="false"
+            android:padding="@dimen/dp_4"
+            android:src="@drawable/ic_prise"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/iv_gift"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:clickable="false"
+
+            android:padding="@dimen/dp_4"
+            android:src="@drawable/ic_flower"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tv_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/bottom_line"
+            android:clickable="false"
+            android:hint="@string/say_some"
+            android:imeOptions="flagNoFullscreen|flagNoExtractUi"
+            android:paddingTop="@dimen/dp_10"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="@dimen/dp_12"
+            android:visibility="invisible" />
+
+
+        <TextView
+            android:id="@+id/tv_video_resolution"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:background="@drawable/line_white_radius_20"
+            android:clickable="false"
+            android:padding="@dimen/dp_5"
+            android:text="高清"
+            android:textColor="@android:color/white"
+            android:textSize="11sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_only_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:background="@drawable/line_white_orange_selector"
+            android:clickable="false"
+            android:padding="@dimen/dp_5"
+            android:text="@string/only_teacher"
+            android:textColor="@android:color/white"
+
+            android:textSize="11sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_video_danmu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:background="@drawable/line_white_radius_20"
+            android:clickable="true"
+            android:padding="@dimen/dp_5"
+            android:text="竖屏"
+            android:textColor="@android:color/white"
+            android:textSize="11dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/expand"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:padding="3dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_vod_fullscreen"
+            android:visibility="visible" />
+
+        <!--</RelativeLayout>-->
+    </LinearLayout>
+
+
+</RelativeLayout>

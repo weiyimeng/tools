@@ -1,0 +1,234 @@
+apply plugin: 'com.tencent.bugly.tinker-support'
+import groovy.json.JsonSlurper
+
+def bakPath = file("${buildDir}/bakApk")
+
+/**
+ * 此处填写每次构建生成的基准包目录
+ */
+def baseApkDir = file("${buildDir}/base")
+
+def baseThinkerId = "base_1.1";
+def isAssembleReleaseTask = false
+
+def useTinker = false
+
+tasks.whenObjectAdded { task ->
+    if (task.name == 'assembleRelease') {
+        task.dependsOn changeThinkIdTask
+        buildReleaseApk.dependsOn assembleRelease
+    } else if (task.name == "assembleDebug") {
+        installDebugFile.dependsOn assembleDebug
+    } else if (task.name == "assembleReleasetest") {
+        installReleaseTestFile.dependsOn task
+    } else if (task.name == "buildTinkerPatchRelease") {
+        task.dependsOn changeThinkIdTask
+        task.dependsOn copyBaseApkTask
+        copyPatchTask.dependsOn buildTinkerPatchRelease
+    }
+}
+
+/**
+ * 配置thinkerId，每次发版都要求独立，所以用versionName做唯一标识
+ */
+task changeThinkIdTask() {
+    isAssembleReleaseTask = true
+    baseThinkerId = "base_" + getVersionName()
+    removeOldReleaseApk()
+}
+
+/**
+ * 配置thinkerId，每次发版都要求独立，所以用versionName做唯一标识
+ * 补丁包的id和完整包的id尽量分开
+ */
+task changePatchIdTask() {
+    if (!isAssembleReleaseTask) {
+        baseThinkerId = "patch_" + getVersionName();
+    }
+}
+
+task copyBaseApkTask(type : Sync) {
+    if (!baseApkDir.exists()) {
+        baseApkDir.mkdir()
+    }
+
+    def srcPath = ""
+    if (baseApkDir.listFiles() == null || baseApkDir.listFiles().length == 0) {
+        if (bakPath != null && bakPath.exists()) {
+            bakPath.listFiles().each {f->
+                if (srcPath == null || srcPath.length() == 0) {
+                    srcPath = f.absolutePath
+                } else {
+                    if (f.absolutePath.compareToIgnoreCase(srcPath) > 0) {
+                        srcPath = f.absolutePath
+                    }
+                }
+            }
+        }
+    }
+
+    from srcPath
+    into baseApkDir
+}
+
+task copyPatchTask(type : Copy) {
+    println("copyPatchTask")
+    def distSrc = "${baseApkDir}/patch"
+    def file = file(distSrc)
+    if (!file.exists()) {
+        file.mkdir()
+    }
+
+    from "${buildDir}/outputs/patch/release"
+    into distSrc
+}
+
+task installReleaseTestFile(type: Exec){
+    def  purposeDir = "$buildDir/outputs/apk/"
+    workingDir  =  "$purposeDir"
+    def myCommand = ['adb', 'install', '-r', getApkName("releasetest")]
+    commandLine  myCommand
+}
+
+task installDebugFile(type: Exec){
+    def  purposeDir = "$buildDir/outputs/apk/"
+    workingDir  =  "$purposeDir"
+    def myCommand = ['adb', 'install', '-r', getApkName("debug")]
+    commandLine  myCommand
+}
+
+task installDebugApk(type:Exec, dependsOn:installDebugFile){
+    def packageName ='gaosi.com.learn'
+
+    commandLine "adb", "shell", "am", "start", "-n", "$packageName/.studentapp.loading.SplashingActivity"
+}
+
+task installReleaseTest(type:Exec, dependsOn:installReleaseTestFile){
+    def packageName ='gaosi.com.learn'
+
+    commandLine "adb", "shell", "am", "start", "-n", "$packageName/.studentapp.loading.SplashingActivity"
+}
+
+task buildReleaseApk() {
+    def useBugly = project.hasProperty("useBugly")
+    if (useBugly) {
+        println("useBugly = true")
+        useTinker = true
+    }
+}
+buildReleaseApk.onlyIf{!project.hasProperty("useBugly")}
+
+def getApkName(buildType) {
+    def name = "student_" + buildType + ".apk";
+
+    return name;
+}
+
+/**
+ * 对于插件各参数的详细解析请参考
+ */
+tinkerSupport {
+
+    // 开启tinker-support插件，默认值true
+    enable = useTinker
+
+    // 指定归档目录，默认值当前module的子目录tinker
+    autoBackupApkDir = "${bakPath}"
+
+    // 是否启用覆盖tinkerPatch配置功能，默认值false
+    // 开启后tinkerPatch配置不生效，即无需添加tinkerPatch
+    overrideTinkerPatchConfiguration = true
+
+    // 编译补丁包时，必需指定基线版本的apk，默认值为空
+    // 如果为空，则表示不是进行补丁包的编译
+    // @{link tinkerPatch.oldApk }
+    baseApk = "${baseApkDir}/student-release.apk"
+
+    // 对应tinker插件applyMapping
+    baseApkProguardMapping = "${baseApkDir}/student-release-mapping.txt"
+
+    // 对应tinker插件applyResourceMapping
+    baseApkResourceMapping = "${baseApkDir}/app-release-R.txt"
+
+    // 构建基准包和补丁包都要指定不同的tinkerId，并且必须保证唯一性
+    tinkerId = baseThinkerId
+
+    // 构建多渠道补丁时使用
+    // buildAllFlavorsDir = "${bakPath}/${baseApkDir}"
+
+    // 是否启用加固模式，默认为false.(tinker-spport 1.0.7起支持）
+    // isProtectedApp = true
+
+    // 是否开启反射Application模式
+    enableProxyApplication = false
+}
+
+/**
+ * 一般来说,我们无需对下面的参数做任何的修改
+ * 对于各参数的详细介绍请参考:
+ * https://github.com/Tencent/tinker/wiki/Tinker-%E6%8E%A5%E5%85%A5%E6%8C%87%E5%8D%97
+ */
+tinkerPatch {
+    //oldApk ="${bakPath}/${appName}/app-release.apk"
+    ignoreWarning = false
+    useSign = true
+    dex {
+        dexMode = "jar"
+        pattern = ["classes*.dex"]
+        loader = []
+    }
+    lib {
+        pattern = ["lib/*/*.so"]
+    }
+
+    res {
+        pattern = ["res/*", "r/*", "assets/*", "resources.arsc", "AndroidManifest.xml"]
+        ignoreChange = []
+        largeModSize = 100
+    }
+
+    packageConfig {
+    }
+    sevenZip {
+        zipArtifact = "com.tencent.mm:SevenZip:1.1.10"
+//        path = "/usr/local/bin/7za"
+    }
+    buildConfig {
+        keepDexApply = false
+        tinkerId = "1.0.1-patch"
+        //applyMapping = "${bakPath}/${appName}/app-release-mapping.txt" //  可选，设置mapping文件，建议保持旧apk的proguard混淆方式
+        //applyResourceMapping = "${bakPath}/${appName}/app-release-R.txt" // 可选，设置R.txt文件，通过旧apk文件保持ResId的分配
+    }
+}
+
+/**
+ * 得到当前版本名称
+ *
+ * @return 版本名称
+ */
+def getVersionName() {
+    def file = file("../../../config/config.json")
+    if (file.exists()) {
+        def config = new JsonSlurper().parse(file.text.toCharArray())
+        return config.android.version.toString()
+    } else {
+        return "1.0.0"
+    }
+}
+
+def removeOldReleaseApk() {
+    def file = file("${buildDir}/base")
+    if (file.isDirectory()) {
+        file.listFiles().each {it->
+            if (it != null && it.isDirectory()) {
+                println("deleteFile->" + it.absolutePath)
+                it.listFiles().each {it1->
+                    it1.delete()
+                }
+                it.delete()
+            } else if (it != null) {
+                it.delete()
+            }
+        }
+    }
+}

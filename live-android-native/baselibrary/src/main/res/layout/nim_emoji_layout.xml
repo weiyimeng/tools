@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/emojiLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+    <!--<View-->
+    <!--android:id="@+id/top_divider_line"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="2px"-->
+    <!--android:background="@color/black"-->
+    <!--android:visibility="gone" />-->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/scrPlugin"
+        android:layout_width="fill_parent"
+        android:layout_height="180dp"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
+
+    <LinearLayout
+        android:id="@+id/layout_scr_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="bottom"
+        android:orientation="horizontal" />
+
+    <!--<com.haoke91.baselibrary.smarttab.SmartTabLayout-->
+    <!--android:id="@+id/tab_layout"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="16dp"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:gravity="center"-->
+    <!--app:stl_clickable="true"-->
+    <!--app:stl_customTabTextLayoutId="@layout/custom_tab_circle"-->
+    <!--app:stl_dividerColor="@color/transparent"-->
+    <!--app:stl_dividerThickness="0dp"-->
+    <!--app:stl_indicatorColor="@color/color_4A4A4A"-->
+    <!--app:stl_indicatorCornerRadius="50dp"-->
+    <!--app:stl_indicatorGravity="center"-->
+    <!--app:stl_indicatorInFront="true"-->
+    <!--app:stl_indicatorInterpolation="linear"-->
+    <!--app:stl_indicatorThickness="2dp"-->
+    <!--app:stl_indicatorWidth="auto"-->
+    <!--app:stl_indicatorWithoutPadding="true"-->
+    <!--app:stl_titleOffset="auto_center"-->
+    <!--app:stl_underlineColor="@color/transparent"-->
+    <!--app:stl_underlineThickness="0dp" />-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<HorizontalScrollView-->
+    <!--android:id="@+id/emoj_tab_view_container"-->
+    <!--android:layout_width="0dip"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="@android:color/white"-->
+    <!--android:scrollbars="none">-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/emoj_tab_view"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="44dp"-->
+    <!--android:orientation="horizontal"></LinearLayout>-->
+    <!--</HorizontalScrollView>-->
+    <!--</LinearLayout>-->
+
+</LinearLayout>

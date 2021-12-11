@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GStudentLib</string>
+    <string name="meeting_password">教室密码</string>
+    <string name="text_tips">温馨提示</string>
+</resources>

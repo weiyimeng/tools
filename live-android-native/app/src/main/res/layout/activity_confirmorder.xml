@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/common_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_order_bottom"
+        android:layout_below="@+id/toolbar"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants"
+
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_choice_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginStart="@dimen/dp_16">
+
+                <TextView
+                    android:id="@+id/tv_order_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_636363"
+                    android:textSize="@dimen/dp_12"
+                    tool:text="北京市 海淀区 " />
+
+                <TextView
+                    android:id="@+id/tv_order_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:textColor="@color/color_181818"
+                    android:textSize="@dimen/dp_18"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_order_city"
+                    tool:text="学清嘉创大厦 A座10层  " />
+
+                <TextView
+                    android:id="@+id/tv_order_recipient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:textColor="@color/color_636363"
+                    android:textSize="@dimen/dp_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_order_address"
+                    tool:text="邓旭 18612381019 " />
+
+                <ImageView
+                    android:id="@+id/iv_order_choice_address"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:background="@drawable/ic_mine_icon_front"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_order_noAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="暂无地址，去添加 "
+                    android:textColor="@color/color_979797"
+                    android:textSize="@dimen/dp_12"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_4"
+                android:layout_marginBottom="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="@color/FBFBFB" />
+
+            <com.haoke91.baselibrary.recycleview.WrapRecyclerView
+                android:id="@+id/rv_order_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_4"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="@color/FBFBFB" />
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="@dimen/dp_16"-->
+            <!--android:text="@string/pay_method"-->
+            <!--android:textColor="@color/color_181818"-->
+            <!--android:textSize="@dimen/dp_12" />-->
+
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/vg_blance_pay"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:paddingStart="@dimen/dp_16">
+
+                <TextView
+                    android:id="@+id/tv_order_leftPay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:drawableLeft="@drawable/ic_buy_image_remain"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:gravity="center"
+                    android:text="@string/left_pay"
+                    android:textColor="@color/color_363636"
+                    android:textSize="@dimen/dp_12"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/cb_balance_pay"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:background="@drawable/selector_checkbox_green"
+                    android:button="@null"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_order_leftPay"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_order_leftPay" />
+
+                <TextView
+                    android:id="@+id/tv_order_left_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_30"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:textColor="@color/FF4F00"
+                    android:textSize="@dimen/dp_10"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_order_leftPay"
+                    tool:text="@string/left_count" />
+            </android.support.constraint.ConstraintLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_order_choice_coupons"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44"
+                android:paddingEnd="@dimen/dp_16"
+                android:paddingStart="@dimen/dp_16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:drawableLeft="@mipmap/buy_image_discount_small"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:text="@string/coupons"
+                    android:textColor="@color/color_181818"
+                    android:textSize="@dimen/dp_12" />
+
+                <TextView
+                    android:id="@+id/tv_coupon_use"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_5"
+                    android:layout_toLeftOf="@+id/iv_coupon_go"
+                    android:text="已选择0张优惠券，优惠金额0元"
+                    android:textColor="@color/color_979797"
+                    android:textSize="@dimen/dp_10" />
+
+                <ImageView
+                    android:id="@+id/iv_coupon_go"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/ic_mine_icon_front" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_4"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:background="@color/FBFBFB" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginStart="@dimen/dp_16">
+
+                <TextView
+                    style="@style/textView_order_count"
+                    android:text="@string/goods_count" />
+
+                <TextView
+                    android:id="@+id/tv_order_count"
+                    style="@style/textView_order_count"
+                    android:layout_alignParentRight="true"
+                    tool:text="￥1" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginStart="@dimen/dp_16">
+
+                <TextView
+                    style="@style/textView_order_count"
+                    android:text="@string/goods_money" />
+
+                <TextView
+                    android:id="@+id/tv_order_money"
+                    style="@style/textView_order_count"
+                    android:layout_alignParentRight="true"
+                    tool:text="￥1000.00" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_coupon_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8">
+
+                <TextView
+                    style="@style/textView_order_count"
+                    android:text="@string/course_count" />
+
+                <TextView
+                    android:id="@+id/tv_coupon_save"
+                    style="@style/textView_order_count"
+                    android:layout_alignParentRight="true"
+                    android:text="¥0.00" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rv_activity_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8">
+
+                <TextView
+                    style="@style/textView_order_count"
+                    android:text="@string/active_save" />
+
+                <TextView
+                    android:id="@+id/tv_activity_save"
+                    style="@style/textView_order_count"
+                    android:layout_alignParentRight="true"
+                    android:text="￥0.00" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginStart="@dimen/dp_16">
+
+                <TextView
+                    style="@style/textView_order_count"
+                    android:text="@string/left_money" />
+
+                <TextView
+                    android:id="@+id/tv_balance_save"
+                    style="@style/textView_order_count"
+                    android:layout_alignParentRight="true"
+                    android:text="¥0.00" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_4"
+                android:layout_marginBottom="@dimen/dp_8"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@color/FBFBFB" />
+
+            <TextView
+                android:id="@+id/tv_order_statement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:layout_marginStart="@dimen/dp_16"
+                android:text="@string/order_statement"
+                android:textColor="@color/color_979797"
+                android:textSize="@dimen/dp_10" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_4"
+                android:layout_marginBottom="@dimen/dp_8"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@color/FBFBFB" />
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rl_order_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/tv_pay_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:gravity="center"
+            android:text="@string/pay_money"
+            android:textColor="@color/color_979797"
+            android:textSize="@dimen/dp_12" />
+
+        <TextView
+            android:id="@+id/tv_pay_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_4"
+            android:layout_toRightOf="@+id/tv_pay_money"
+            android:gravity="center"
+            android:textColor="@color/FF4F00"
+            android:textSize="@dimen/dp_20"
+            tool:text="￥999" />
+
+        <TextView
+            android:id="@+id/tv_order_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_16"
+            android:background="@drawable/bg_pay"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dp_8"
+            android:paddingLeft="@dimen/dp_16"
+            android:paddingRight="@dimen/dp_16"
+            android:paddingTop="@dimen/dp_8"
+            android:text="@string/confirm_order"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_12" />
+    </RelativeLayout>
+</RelativeLayout>

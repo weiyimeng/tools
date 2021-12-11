@@ -1,0 +1,85 @@
+include ':app', ':lib-business-android', ':lib-support-android', ':lib-largeclasshomework-android', ':lib-recorder-android', ':lib-specialcourse-android', ':lib-largeclasshomework'
+if (isLibPolyvSource.toBoolean()) {
+    include ':lib-support-android:lib-polyvcommonui-android'
+}
+if (isLibGSBaseLibSource.toBoolean()) {
+    include ':lib-gsbase-android'
+}
+if (isLibGSJLatexSource.toBoolean()) {
+    include ':lib-support-android:lib-jlatexmath-android'
+}
+if (isLibGSBiLogSource.toBoolean()) {
+    include ':lib-support-android:lib-gsbilog-android'
+}
+if (isLibPassportSource.toBoolean()) {
+    include ':lib-support-android:lib-passport-android'
+}
+if (isLibRecorderSource.toBoolean()) {
+    include ':lib-support-android:lib-recorder-android'
+}
+if (isLib91HaoKeSource.toBoolean()) {
+    include ':lib-gsplayer-91haoke-android'
+//    include ':lib-eduhdsdk-91haoke-android'
+//    include ':lib-classroomsdk-91haoke-android'
+//    include ':lib-baselib-91haoke-android'
+}
+if (isLibHomeworkSource.toBoolean()) {
+    include ':lib-business-android:lib-homework-android'
+}
+if (isLibEnglishHomeworkSource.toBoolean()) {
+    include ':lib-business-android:lib-englishhomework-android'
+}
+if (isLibPreClassSource.toBoolean()) {
+    include ':lib-business-android:lib-preclass-android'
+}
+if (isLibSpecialCourseSource.toBoolean()) {
+    include ':lib-business-android:lib-specialcourse-android'
+}
+if (isLibTeacherOnLineSource.toBoolean()) {
+    include ':lib-business-android:lib-teacheronline-android'
+}
+if (isLibAiCorrectionSource.toBoolean()) {
+    include ':lib-business-android:lib-aicorrection-android'
+}
+if (isLibGStudentLibSource.toBoolean()) {
+    include ':GStudentLib'
+}
+if (isLibRnSource.toBoolean()) {
+    include ':lib-support-android:lib-rn-android'
+}
+if (isLibRnStudentSource.toBoolean()) {
+    include ':lib-support-android:lib-rn-student-android'
+}
+if (isLibWeexSource.toBoolean()) {
+    include ':lib-support-android:lib-weex-android'
+}
+if (isLibJSLibbrarySource.toBoolean()) {
+    include ':lib-support-android:lib-jslibrary-android'
+}
+if (isLibDTLiveSource.toBoolean()) {
+    include ':lib-business-android:lib-dtlive-android'
+}
+if (isLibGSQAOnLineSource.toBoolean()) {
+    include ':lib-business-android:lib-qa-online-android'
+}
+if (isLibGSLargeClassHomeworkSource.toBoolean()) {
+    include ':lib-business-android:lib-largeclasshomework-android'
+}
+if(isLibNewGroupLiveSource.toBoolean()){
+    include ':lib-business-android:lib-newgrouplive-android'
+}
+if (isLibGStudyCenterSource.toBoolean()) {
+    include ':lib-business-android:lib-studycenter-android'
+}
+if (isLibGSEnglishReciteSource.toBoolean()) {
+    include ':lib-business-android:lib-englishrecite-android'
+}
+if (isLibSingSoundSource.toBoolean()) {
+    include ':lib-support-android:lib-singsound-android'
+}
+if (isLibUiComponentsSource.toBoolean()) {
+    include ':lib-support-android:lib-uicomponents-android'
+}
+if(isLibLightLessonsSource.toBoolean()) {
+    include ':lib-business-android:lib-lightlessons-android'
+}

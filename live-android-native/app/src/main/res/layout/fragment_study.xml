@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        app:contentInsetStart="0dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="学习中心"
+            android:textColor="@color/color_4A4A4A"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+    </android.support.v7.widget.Toolbar>
+
+    <!--  head  -->
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/dp_10">
+
+        <com.haoke91.a91edu.widget.CircleImageView
+            android:id="@+id/iv_head"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginLeft="@dimen/dp_27"
+            android:layout_marginTop="@dimen/dp_5"
+            android:src="@mipmap/study_image_head"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_motto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="生日快乐，不羁的学霸！"
+            android:textColor="@color/color_363636"
+            android:textSize="@dimen/dp_12"
+            app:layout_constraintStart_toStartOf="@+id/tv_login_more"
+            app:layout_constraintTop_toTopOf="@id/iv_head" />
+
+        <TextView
+            android:id="@+id/tv_goldCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@mipmap/study_image_coin1"
+            android:gravity="center"
+            android:textColor="@color/FFCA45"
+            android:textSize="@dimen/dp_12"
+            app:layout_constraintStart_toEndOf="@id/iv_head"
+            app:layout_constraintTop_toBottomOf="@id/tv_motto"
+            tool:text="1000" />
+
+        <TextView
+            android:id="@+id/tv_grow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_toRightOf="@id/tv_goldCount"
+            android:drawableLeft="@mipmap/study_image_coin"
+            android:gravity="center"
+            android:text="成长值"
+            android:textColor="@color/color_75C82B"
+            android:textSize="@dimen/dp_12"
+            app:layout_constraintStart_toEndOf="@id/tv_goldCount"
+            app:layout_constraintTop_toTopOf="@+id/tv_goldCount" />
+
+        <TextView
+            android:id="@+id/tv_growValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_toRightOf="@id/tv_grow"
+            android:gravity="center"
+            android:text="99"
+            android:textColor="@color/color_75C82B"
+            android:textSize="@dimen/dp_12"
+            app:layout_constraintStart_toEndOf="@id/tv_grow"
+            app:layout_constraintTop_toTopOf="@+id/tv_goldCount" />
+
+        <TextView
+            android:id="@+id/tv_user_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_21"
+            android:background="@drawable/bg_75c82b_radius_7"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_10"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_growValue"
+            app:layout_constraintStart_toEndOf="@id/tv_growValue"
+            app:layout_constraintTop_toTopOf="@+id/tv_goldCount"
+            tool:text="沉睡种子" />
+
+        <TextView
+            android:id="@+id/tv_login_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_6"
+            android:layout_marginStart="@dimen/dp_16"
+            android:text="@string/login_more"
+            android:textColor="@color/color_979797"
+            android:textSize="@dimen/dp_10"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_head"
+            app:layout_constraintStart_toEndOf="@id/iv_head" />
+    </android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_10"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/dp_19">
+
+        <TextView
+            android:id="@+id/tv_daily_work"
+            style="@style/textView_study_tittle"
+            android:drawableTop="@mipmap/study_icon_dailytask"
+            android:text="@string/daily_work" />
+
+
+        <TextView
+            android:id="@+id/tv_my_class"
+            style="@style/textView_study_tittle"
+            android:drawableTop="@mipmap/study_icon_minecourse"
+            android:text="@string/my_course" />
+
+        <TextView
+            android:id="@+id/tv_my_homework"
+            style="@style/textView_study_tittle"
+            android:drawableTop="@mipmap/stuy_icon_work"
+            android:text="@string/homework" />
+
+        <TextView
+            android:id="@+id/tv_my_wrong"
+            style="@style/textView_study_tittle"
+            android:clickable="true"
+            android:drawableTop="@mipmap/study_icon_errors"
+            android:text="@string/wrong_note"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_question_note"
+            style="@style/textView_study_tittle"
+            android:drawableTop="@mipmap/study_icon_test"
+            android:text="@string/question_note"
+            android:visibility="gone" />
+
+    </LinearLayout>
+    <!--  每日任务 课程 -->
+
+    <View
+        style="@style/line"
+        android:layout_height="@dimen/dp_4"
+        android:background="@color/FBFBFB" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_16">
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="8月10日"
+            android:textColor="@color/color_979797"
+            android:textSize="@dimen/dp_10" />
+
+        <TextView
+            android:id="@+id/tv_countOfLive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_5"
+            android:layout_toRightOf="@id/tv_date"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/color_979797"
+            android:textSize="@dimen/dp_10" />
+
+        <TextView
+            android:id="@+id/tv_gotoCalendarCourse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:drawableRight="@mipmap/mine_icon_front"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="课程日历"
+            android:textColor="@color/color_363636"
+            android:textSize="@dimen/dp_10" />
+    </RelativeLayout>
+
+    <com.haoke91.baselibrary.views.emptyview.EmptyView
+        android:id="@+id/emptylayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:ev_empty_drawable="@mipmap/empty_image_play_nor"
+        app:ev_empty_text="今天没有直播课哦~"
+        app:ev_empty_textColor="#111"
+        app:ev_error_drawable="@mipmap/net_error"
+        app:ev_error_text="@string/net_error"
+        app:ev_error_textColor="#111">
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="always"
+            app:srlDragRate="0.5"
+            app:srlEnableAutoLoadMore="false"
+            app:srlEnableLoadMoreWhenContentNotFull="false"
+            app:srlEnableRefresh="true"
+            app:srlHeaderHeight="60dp"
+            app:srlHeaderInsetStart="0dp"
+            app:srlHeaderMaxDragRate="1.3"
+            app:srlHeaderTriggerRate="0.5">
+
+            <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.haoke91.baselibrary.recycleview.WrapRecyclerView
+                android:id="@+id/wr_today_course"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never" />
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    </com.haoke91.baselibrary.views.emptyview.EmptyView>
+</LinearLayout>

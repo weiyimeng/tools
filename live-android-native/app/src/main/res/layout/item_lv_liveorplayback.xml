@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="7dp"
+    android:layout_marginTop="7dp"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dp_16"
+    android:paddingRight="@dimen/dp_16">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_13">
+
+        <TextView
+            android:id="@+id/tv_Tag1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_94e044_radius_2"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:text="春"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/tv_videoTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_3"
+            android:layout_toRightOf="@id/tv_Tag1"
+            android:background="@drawable/bg_f5c942_radius_2"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:text="暑"
+            android:textColor="@color/color_75C82B"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/tv_videoTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@id/tv_videoTag"
+            android:text="牛吃草问题的解答方案"
+            android:textColor="@color/color_181818"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/iv_videoImgStatus"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/refresh_head_arrow" />
+
+        <TextView
+            android:id="@+id/tv_videoTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/iv_videoImgStatus"
+            android:paddingBottom="3dp"
+            android:paddingTop="3dp"
+            android:text="18:00-20:00 直播"
+            android:textColor="@color/colorGray4"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/tv_nextAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:text="进入直播"
+            android:textColor="@color/color_75C82B"
+            android:textSize="13dp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/dp_13"
+        android:background="@color/line" />
+</LinearLayout>
+

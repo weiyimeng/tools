@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.haoke91.baselibrary.views.emptyview.EmptyView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/empty_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:ev_error_text="@string/error_text"
+    app:ev_error_textColor="#111">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.haoke91.a91edu.MainActivity">
+
+        <com.haoke91.videolibrary.videoplayer.VideoPlayer
+            android:id="@+id/play_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible" />
+
+
+        <FrameLayout
+            android:id="@+id/fl_dialogParent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:clickable="true"
+            android:visibility="gone" />
+    </FrameLayout>
+</com.haoke91.baselibrary.views.emptyview.EmptyView>

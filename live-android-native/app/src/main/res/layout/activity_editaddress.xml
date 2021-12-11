@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_toolbar" />
+
+    <LinearLayout style="@style/LinearLayout_edit_address">
+
+        <TextView
+            style="@style/textView_edit_address_tittle"
+            android:text="@string/consignee" />
+
+        <EditText
+            android:id="@+id/et_address_name"
+            style="@style/editText_edit_address_content"
+            android:hint="@string/hint_consignee"
+            android:inputType="text"
+            android:maxLength="25" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LinearLayout_edit_address">
+
+        <TextView
+            style="@style/textView_edit_address_tittle"
+            android:text="@string/contact_phone" />
+
+        <com.haoke91.a91edu.widget.PhoneEditText
+            android:id="@+id/tv_address_phone"
+            style="@style/editText_edit_address_content"
+            android:hint="@string/hint_contact_phone"
+            android:inputType="phone"
+            android:maxLength="14" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_address_region"
+        style="@style/LinearLayout_edit_address">
+
+        <TextView
+            style="@style/textView_edit_address_tittle"
+            android:text="@string/info_address" />
+
+        <TextView
+            android:id="@+id/tv_address_region"
+            style="@style/editText_edit_address_content"
+            android:hint="@string/hint_info_address" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LinearLayout_edit_address">
+
+        <TextView
+            style="@style/textView_edit_address_tittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/address_detail" />
+
+        <EditText
+            android:id="@+id/et_address_detail"
+            style="@style/editText_edit_address_content"
+            android:hint="@string/hint_address_detail"
+            android:maxLength="50" />
+    </LinearLayout>
+
+    <View
+        style="@style/line"
+        android:layout_height="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_16" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_16">
+
+        <TextView
+            style="@style/textView_edit_address_tittle"
+            android:layout_centerVertical="true"
+            android:text="@string/default_address" />
+
+        <CheckBox
+            android:id="@+id/cb_default"
+            android:layout_width="@dimen/dp_16"
+            android:layout_height="@dimen/dp_16"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:background="@drawable/selector_checkbox_green"
+            android:button="@null" />
+    </RelativeLayout>
+
+</LinearLayout>

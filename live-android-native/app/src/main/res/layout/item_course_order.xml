@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_courser_tittle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_16"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="题目"
+        android:textColor="@color/color_181818"
+        android:textSize="@dimen/dp_14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_order_teacher_icon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_assistant_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_4"
+        android:maxEms="4"
+        android:lines="1"
+        android:ellipsize="end"
+        android:textColor="@color/color_363636"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_order_assistant_icon"
+        tool:text="姓名" />
+
+    <TextView
+        android:id="@+id/tv_assistant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4"
+        android:text="@string/assistant_teacher"
+        android:textColor="@color/color_979797"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_order_assistant_icon"
+        app:layout_constraintEnd_toEndOf="@+id/tv_assistant_name" />
+
+    <com.haoke91.a91edu.widget.CircleImageView
+        android:id="@+id/iv_order_assistant_icon"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginEnd="@dimen/dp_5"
+        android:src="@mipmap/ic_launcher"
+        app:civ_border_overlay="true"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_courser_tittle"
+        app:layout_constraintEnd_toStartOf="@+id/tv_assistant_name"
+        app:layout_constraintTop_toTopOf="@+id/tv_courser_tittle" />
+
+
+    <TextView
+        android:id="@+id/tv_order_teacher_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_16"
+        android:textColor="@color/color_363636"
+        android:textSize="@dimen/dp_10"
+        android:lines="1"
+        android:maxEms="4"
+        android:ellipsize="end"
+        app:layout_constraintEnd_toStartOf="@+id/iv_order_assistant_icon"
+        app:layout_constraintTop_toTopOf="@+id/tv_assistant_name"
+        tool:text="姓名" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_teacher"
+        android:textColor="@color/color_979797"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintStart_toStartOf="@+id/tv_order_teacher_name"
+        app:layout_constraintTop_toTopOf="@+id/tv_assistant" />
+
+    <com.haoke91.a91edu.widget.CircleImageView
+        android:id="@+id/iv_order_teacher_icon"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginEnd="@dimen/dp_5"
+        android:src="@mipmap/ic_launcher"
+        app:civ_border_overlay="true"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_order_assistant_icon"
+        app:layout_constraintEnd_toStartOf="@+id/tv_order_teacher_name" />
+
+
+    <TextView
+        android:id="@+id/tv_course_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        android:text="  年 月 日 -  年 月 日"
+        android:textColor="@color/color_9B9B9B"
+        android:textSize="@dimen/dp_12"
+        app:layout_constraintStart_toStartOf="@+id/tv_courser_tittle"
+        app:layout_constraintTop_toBottomOf="@+id/tv_courser_tittle" />
+
+    <TextView
+        android:id="@+id/tv_man_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_c3c3c3_radius_40"
+        android:paddingEnd="@dimen/dp_15"
+        android:paddingStart="@dimen/dp_15"
+        android:text="缺勤"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dp_12"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_course_data"
+        app:layout_constraintEnd_toEndOf="@+id/tv_assistant"
+        app:layout_constraintTop_toTopOf="@+id/tv_course_data"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/line"
+        style="@style/line"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_16"
+        app:layout_constraintTop_toBottomOf="@+id/tv_course_data" />
+
+    <LinearLayout
+        android:id="@+id/ll_course_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/line">
+
+        <TextView
+            android:id="@+id/tv_homework_status"
+            style="@style/textView_course_order"
+            android:drawableTop="@drawable/selector_course_homeworkcommit"
+            android:text="111111" />
+
+        <TextView
+            android:id="@+id/tv_clztest_status"
+            style="@style/textView_course_order"
+            android:drawableTop="@drawable/selector_course_clztest"
+            android:visibility="gone"
+            tool:text="111111" />
+
+        <TextView
+            android:id="@+id/tv_report_status"
+            style="@style/textView_course_order"
+            android:drawableTop="@drawable/selector_course_report"
+            android:text="学习报告" />
+
+
+        <TextView
+            android:id="@+id/tv_videosource_status"
+            style="@style/textView_course_order"
+            android:drawableTop="@mipmap/study_detailpage_icon_replay_sel"
+            tool:text="111111" />
+    </LinearLayout>
+
+    <View
+        style="@style/line"
+        android:layout_height="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_16"
+        app:layout_constraintTop_toBottomOf="@id/ll_course_order" />
+</android.support.constraint.ConstraintLayout>

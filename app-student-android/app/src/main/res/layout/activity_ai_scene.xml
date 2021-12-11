@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:clipChildren="false">
+
+    <!-- 背景 -->
+    <com.gstudentlib.view.moveimage.MovingImageView
+        android:id="@+id/mivSceneBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <View
+        android:id="@+id/vStatusBar2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/transparent" />
+
+    <RelativeLayout
+        android:id="@+id/rlTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vStatusBar2"
+        android:paddingTop="10dp"
+        android:paddingBottom="15dp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/icon_back_white_smooth" />
+
+        <ImageView
+            android:id="@+id/ivTitleRight"
+            android:layout_width="34dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="11dp"
+            android:padding="5dp"
+            android:src="@drawable/icon_ai_scene_gantan" />
+    </RelativeLayout>
+
+    <!-- 问题图片提示 -->
+    <LinearLayout
+        android:id="@+id/llPromptImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-25dp"
+        android:elevation="10dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="220dp"
+            android:layout_height="160dp"
+            android:background="@drawable/bg_ai_scene_prompt_img">
+
+            <com.gstudentlib.view.RoundCornerImageView
+                android:id="@+id/ivPromptImg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="6dp"
+                android:scaleType="centerCrop"
+                app:borderRadius="8dp"
+                app:type="round" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlPromptImageAndText"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-17.5dp"
+            android:elevation="1dp">
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="12dp"
+                android:src="@drawable/icon_ai_scene_prompt_left" />
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="45dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="12dp"
+                android:src="@drawable/icon_ai_scene_prompt_right" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvPromptText"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="-17.5dp"
+            android:background="@drawable/bg_ai_scene_prompt_text"
+            android:gravity="center"
+            android:textColor="#051535"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <!-- 问题图片提示-纯文字 -->
+    <RelativeLayout
+        android:id="@+id/rlPromptText"
+        android:layout_width="130dp"
+        android:layout_height="108dp"
+        android:layout_above="@+id/llFox"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-58dp"
+        android:background="@drawable/bg_ai_scene_prompt_text_img"
+        android:elevation="10dp"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/tvPromptOnlyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingLeft="19dp"
+            android:paddingRight="19dp"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <!-- 狐狸动画 -->
+    <RelativeLayout
+        android:id="@+id/lllavFox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lavFox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp" />
+    </RelativeLayout>
+
+    <!-- 狐狸元素占位 -->
+    <RelativeLayout
+        android:id="@+id/llFox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <View
+            android:id="@+id/vFox"
+            android:layout_width="270dp"
+            android:layout_height="270dp"
+            android:layout_marginTop="40dp" />
+    </RelativeLayout>
+
+    <!-- 狐狸元素点击占位 -->
+    <RelativeLayout
+        android:id="@+id/llFoxClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <View
+            android:id="@+id/vFoxClick"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="40dp" />
+    </RelativeLayout>
+
+    <!-- 翻译 -->
+    <LinearLayout
+        android:id="@+id/llQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/llFox"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="-108dp"
+        android:elevation="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_ai_scene_shadow_white"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <TextView
+                android:id="@+id/tvQuestionEnglish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="7"
+                android:scrollbars="none"
+                android:textColor="#051535"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="-6dp"
+            android:src="@drawable/bg_ai_scene_white_middle_big" />
+    </LinearLayout>
+
+    <!-- 回答不对哦，听听小括弧说了些什么~ -->
+    <LinearLayout
+        android:id="@+id/llWeakPromptGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/llFox"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-188dp"
+        android:elevation="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_ai_scene_answer_error"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            android:paddingTop="12dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="12dp"
+            android:text="回答不对哦，听听小括弧说了些什么~"
+            android:textColor="#fff"
+            android:textSize="14sp" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lavWeakPromptGuide"
+            android:layout_width="180dp"
+            android:layout_height="180dp" />
+    </LinearLayout>
+
+    <!-- 弱提示 -->
+    <LinearLayout
+        android:id="@+id/llWeakPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="156dp"
+        android:elevation="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_ai_scene_white_2"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/tvWeakPrompt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="你可以更礼貌点些回答哦，对他说，你见到他也很高兴"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="8dp"
+            android:layout_marginTop="-4dp"
+            android:src="@drawable/bg_ai_scene_white_middle" />
+    </LinearLayout>
+
+    <!-- 强提示 -->
+    <gaosi.com.learn.studentapp.aiscene.WrapContentHeightViewPager
+        android:id="@+id/vpStrongPrompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="156dp"
+        android:clipChildren="false"
+        android:elevation="10dp"
+        android:visibility="invisible" />
+
+    <!-- 好像没有声音，是不是话筒或操作不对劲 -->
+    <TextView
+        android:id="@+id/tvVoiceTips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="148dp"
+        android:background="@drawable/bg_ai_scene_black_transparent"
+        android:paddingLeft="16dp"
+        android:paddingTop="10dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="10dp"
+        android:text="好像没有声音？是不是话筒或者操作不对劲？"
+        android:textColor="#fff"
+        android:textSize="14sp"
+        android:visibility="invisible" />
+
+    <!-- 点击录音、点击结束 -->
+    <TextView
+        android:id="@+id/tvRecorderTips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="130dp"
+        android:background="@drawable/bg_ai_scene_black_transparent"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingTop="6dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="6dp"
+        android:text="点击录音"
+        android:textColor="#fff"
+        android:textSize="14sp"
+        android:visibility="invisible" />
+
+    <!-- 控制按钮 -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ivFanyi"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:src="@drawable/icon_ai_scene_fanyi_not_clickable" />
+
+        <RelativeLayout
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp">
+
+            <ImageView
+                android:id="@+id/ivRecorder"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@drawable/icon_ai_scene_unrecord" />
+
+            <gaosi.com.learn.studentapp.aiscene.view.AiSceneVoiceSizeView
+                android:id="@+id/avvVoiceSize"
+                android:layout_width="63dp"
+                android:layout_height="31dp"
+                android:layout_centerInParent="true"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/ivProgress"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_ai_scene_recording_progress"
+                android:visibility="invisible" />
+
+            <gaosi.com.learn.studentapp.aiscene.AiSceneProgressView
+                android:id="@+id/aspVoice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/ivTips"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:src="@drawable/icon_ai_scene_answer_not_clickable" />
+
+    </LinearLayout>
+
+    <!-- 3s没有说话提醒点击说话 -->
+    <LinearLayout
+        android:id="@+id/llThreeNotSay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:elevation="10dp"
+        android:visibility="invisible">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lavThreeNotSay"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginLeft="20dp" />
+    </LinearLayout>
+
+    <!-- 对话组进度条 -->
+    <LinearLayout
+        android:id="@+id/llProgress"
+        android:layout_width="44dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="165dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivAiSceneProgress"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center_horizontal"
+            android:elevation="1dp"
+            android:src="@drawable/icon_ai_scene_progress_loading" />
+
+        <RelativeLayout
+            android:layout_width="22dp"
+            android:layout_height="165dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="-13dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bg_ai_scene_progress" />
+
+            <FrameLayout
+                android:id="@+id/flProgress"
+                android:layout_width="16dp"
+                android:layout_height="0dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="3dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/gradient_pb_ai_scene_progress_bg" />
+            </FrameLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="0%"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- 评测成功 -->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lavTestStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:elevation="10dp"
+        android:visibility="invisible" />
+
+    <!-- 气球 -->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lavSceneSuccess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:elevation="10dp"
+        android:visibility="invisible" />
+
+    <!-- 数据加载中 -->
+    <LinearLayout
+        android:id="@+id/llLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_scene_loading_layout" />
+    </LinearLayout>
+
+</RelativeLayout>

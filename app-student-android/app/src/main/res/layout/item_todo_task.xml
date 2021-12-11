@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/ysf_white"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginBottom="20dp"
+    app:cardPreventCornerOverlap="true">
+
+    <LinearLayout
+        android:id="@+id/llContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingTop="24dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp">
+
+        <!-- 讲次信息，主标题和副标题 -->
+        <RelativeLayout
+            android:id="@+id/rlLessonInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp">
+
+            <ImageView
+                android:id="@+id/ivSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_math_label" />
+
+            <TextView
+                android:id="@+id/tvLessonName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@+id/ivSubject"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="#1F243D"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="第1讲 有理数和无理数" />
+
+            <TextView
+                android:id="@+id/tvClassName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvLessonName"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="#A3B3C2"
+                android:textSize="14sp"
+                tools:text="爱学习在线2020春季爱学习数学三阶思维突破" />
+        </RelativeLayout>
+
+        <!-- 完成课前预习 pre_study-->
+
+        <!-- 完成预习课件 pre_course_ware-->
+
+        <!-- 去上专题课 special_class-->
+
+        <!-- 提交自我巩固 homework-->
+
+        <!-- 完成口语练习 english_oral-->
+
+        <!-- 完成课文背诵 english_recite-->
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

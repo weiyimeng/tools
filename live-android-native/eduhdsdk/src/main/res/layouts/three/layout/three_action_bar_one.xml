@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80px"
+    android:background="@color/three_purper">
+
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@+id/re_top_right"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="34px"
+            android:layout_height="34px"
+            android:layout_marginLeft="10px"
+            android:src="@drawable/three_common_icon_return" />
+
+        <LinearLayout
+            android:id="@+id/lin_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20px"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/txt_hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6px"
+                android:gravity="center"
+                android:text="00"
+                android:textColor="@color/white"
+                android:textSize="18px" />
+
+            <TextView
+                android:id="@+id/txt_mao_01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textColor="@color/white"
+                android:textSize="18px" />
+
+            <TextView
+                android:id="@+id/txt_min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="00"
+                android:textColor="@color/white"
+                android:textSize="18px" />
+
+            <TextView
+                android:id="@+id/txt_mao_02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textColor="@color/white"
+                android:textSize="18px" />
+
+            <TextView
+                android:id="@+id/txt_ss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="00"
+                android:textColor="@color/white"
+                android:textSize="18px" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/re_top_right"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical|right">
+
+        <RelativeLayout
+            android:id="@+id/rl_member_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20px">
+
+            <CheckBox
+                android:id="@+id/cb_member_list"
+                android:layout_width="34px"
+                android:layout_height="34px"
+                android:background="@drawable/three_selector_member_list"
+                android:button="@null"
+                android:enabled="false"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/iv_hand"
+                android:layout_width="10px"
+                android:layout_height="10px"
+                android:layout_marginLeft="24px"
+                android:src="@drawable/munber_hand"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <CheckBox
+            android:id="@+id/cb_file_person_media_list"
+            android:layout_width="34px"
+            android:layout_height="34px"
+            android:layout_marginRight="20px"
+            android:background="@drawable/three_selector_file_person_media_list"
+            android:button="@null"
+            android:enabled="false"
+            android:visibility="visible" />
+
+        <CheckBox
+            android:id="@+id/cb_tool_case"
+            android:layout_width="34px"
+            android:layout_height="34px"
+            android:layout_marginRight="20px"
+            android:background="@drawable/three_selector_tool_case"
+            android:button="@null"
+            android:enabled="false"
+            android:visibility="visible" />
+
+        <CheckBox
+            android:id="@+id/cb_control"
+            android:layout_width="34px"
+            android:layout_height="34px"
+            android:layout_marginRight="20px"
+            android:background="@drawable/three_selector_control"
+            android:button="@null"
+            android:enabled="false"
+            android:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/rl_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16px">
+
+            <CheckBox
+                android:id="@+id/cb_message"
+                android:layout_width="34px"
+                android:layout_height="34px"
+                android:background="@drawable/three_selector_message"
+                android:button="@null"
+                android:enabled="false"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_no_read_message_number"
+                android:layout_width="20px"
+                android:layout_height="14px"
+                android:layout_marginLeft="18px"
+                android:background="@drawable/shape_no_read_chat_message_round_bg"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="10px"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+        <CheckBox
+            android:id="@+id/cb_choose_photo"
+            android:layout_width="34px"
+            android:layout_height="34px"
+            android:layout_marginRight="20px"
+            android:background="@drawable/three_selector_choose_photo"
+            android:button="@null"
+            android:enabled="false"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/flip_camera"
+            android:layout_width="34px"
+            android:layout_height="34px"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="30px"
+            android:src="@drawable/three_flip_camera" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_class_begin"
+                android:layout_width="wrap_content"
+                android:layout_height="34px"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="10px"
+                android:paddingLeft="10px"
+                android:paddingRight="10px"
+                android:background="@drawable/commom_btn_xiake1"
+                android:gravity="center"
+                android:text="@string/classbegin"
+                android:textColor="@color/three_one_outclass"
+                android:textSize="18px" />
+
+            <TextView
+                android:id="@+id/txt_hand_up"
+                android:layout_width="wrap_content"
+                android:layout_height="34px"
+                android:paddingLeft="10px"
+                android:paddingRight="10px"
+                android:layout_centerVertical="true"
+                android:background="@drawable/commom_btn_xiake1"
+                android:gravity="center"
+                android:text="@string/raise"
+                android:textColor="@color/three_one_outclass"
+                android:textSize="18px"
+                android:visibility="invisible" />
+        </FrameLayout>
+
+    </LinearLayout>
+</RelativeLayout>

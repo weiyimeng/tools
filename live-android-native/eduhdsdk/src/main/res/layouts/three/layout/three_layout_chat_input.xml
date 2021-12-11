@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="47px"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/lin_input_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="44px"
+            android:background="@drawable/three_shape_popup_chat_input_bg">
+
+            <ImageView
+                android:id="@+id/iv_photo"
+                android:layout_width="20px"
+                android:layout_height="20px"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="51px"
+                android:gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/three_icon_pic"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_chat"
+                android:layout_width="20px"
+                android:layout_height="20px"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12px"
+                android:gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/three_icon_expression" />
+
+            <View
+                android:id="@+id/chat_line_vertical"
+                android:layout_width="1dp"
+                android:layout_height="20px"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10px"
+                android:layout_toLeftOf="@id/iv_chat"
+                android:background="#E0D3FF" />
+
+            <TextView
+                android:id="@+id/edt_input_chat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/say_something"
+                android:imeOptions="flagNoExtractUi"
+                android:lines="1"
+                android:layout_toLeftOf="@+id/chat_line_vertical"
+                android:paddingLeft="20px"
+                android:textColor="@color/three_color_chat_input"
+                android:textColorHint="@color/three_color_chat_input_hint"
+                android:textSize="15px" />
+
+        </RelativeLayout>
+
+        <GridView
+            android:id="@+id/chart_face_gv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:numColumns="14"
+            android:padding="10dp"
+            android:verticalSpacing="5dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</LinearLayout>

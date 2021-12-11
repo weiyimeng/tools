@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5dp"
+    android:paddingBottom="12dp"
+    >
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <View
+            android:layout_width="60dp"
+            android:layout_height="1dp"
+            android:background="#269BA1AC"
+            />
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:textSize="12sp"
+            android:textColor="#9BA1AC"
+            android:text="爱上学习，收获成长"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <View
+            android:layout_width="60dp"
+            android:layout_height="1dp"
+            android:background="#269BA1AC"
+            />
+    </LinearLayout>
+</RelativeLayout>
+
+

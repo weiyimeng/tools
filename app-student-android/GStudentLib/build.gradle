@@ -1,0 +1,131 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply from: 'mavenUpload.gradle'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+
+            //add base src dir
+            java.srcDirs = [
+                    'src/main/java',
+                    'assistantSrc/main/java'
+            ]
+
+            //add base res dir
+            res.srcDirs = [
+                    'src/main/res',
+                    'assistantSrc/main/res'
+            ]
+        }
+
+        test {
+            java.srcDirs = [
+                    'src/test/java'
+            ]
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        applicationVariants {
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    compileOptions {
+    }
+}
+
+buildscript {
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url "http://maven.aixuexi.com:8081/nexus/content/groups/public/" }
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.1'
+    }
+}
+
+repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    maven { url "http://maven.aixuexi.com:8081/nexus/content/groups/public/" }
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    api 'com.android.support:multidex:1.0.3'
+    api 'com.android.support:support-v4:28.0.0'
+    api 'com.android.support:appcompat-v7:28.0.0'
+    api 'com.android.support:recyclerview-v7:28.0.0'
+    api 'com.android.support:design:28.0.0'
+    api 'com.android.support.constraint:constraint-layout:1.1.3'
+
+    if (isLibGSBaseLibSource.toBoolean()) {
+        api project(':lib-support-android:lib-gsbase-android')
+    } else {
+        api(rootProject.ext.dependencies["GSBaselib"]) {
+            transitive = true
+        }
+    }
+    api 'com.android.support:cardview-v7:28.0.0'
+    api 'com.airbnb.android:lottie:2.7.0'
+    api 'com.r0adkll:slidableactivity:2.0.5'
+    //七鱼客服
+    api 'com.qiyukf.unicorn:unicorn:4.4.0'
+    //Router
+    api 'com.github.mzule.activityrouter:activityrouter:1.2.2'
+    kapt 'com.github.mzule.activityrouter:compiler:1.1.7'
+    //图片放大
+    api 'com.github.chrisbanes:PhotoView:2.0.0'
+    api 'com.android.support:support-annotations:28.0.0'
+
+    //passport
+    if (isLibPassportSource.toBoolean()) {
+        api project(':lib-support-android:lib-passport-android')
+    } else {
+        api(rootProject.ext.dependencies["GSPassportLib"]) {
+            transitive = true
+        }
+    }
+    //bi
+    if (isLibGSBiLogSource.toBoolean()) {
+        api project(':lib-support-android:lib-gsbilog-android')
+    } else {
+        api(rootProject.ext.dependencies["GSbiloglib"]) {
+            transitive = true
+        }
+    }
+
+    //资源替换工具
+    api('com.gaosi.android:WebresourceUploader:1.0.11') {
+        exclude group: 'com.gsbaselib'
+    }
+}

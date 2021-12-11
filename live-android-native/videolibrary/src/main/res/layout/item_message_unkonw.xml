@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_message_system"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="7dip"
+        android:layout_marginRight="7dip"
+        android:background="@drawable/bg_gray_radius_10"
+        android:gravity="center"
+        android:paddingBottom="2dp"
+        android:paddingLeft="7dip"
+        android:paddingRight="7dip"
+        android:paddingTop="2dp"
+        android:text="未知消息"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp" />
+</FrameLayout>

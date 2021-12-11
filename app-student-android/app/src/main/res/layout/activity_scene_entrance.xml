@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#60D9FD"
+    tools:context=".studentapp.aiscene.SceneEntranceActivity">
+
+    <View
+        android:id="@+id/vStatusBar2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/vStatusBar2"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:padding="4dp"
+        android:src="@drawable/icon_back_white_smooth" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rlScene"
+        android:layout_below="@+id/ivBack"
+        android:layout_marginBottom="14dp"
+        android:layout_marginTop="14dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvChinese"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:lineSpacingMultiplier="1.1"
+            android:maxLines="2"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvEnglish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvChinese"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:lineSpacingMultiplier="1.1"
+            android:maxLines="4"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlScene"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_above="@+id/ivBottom"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/bg_header_white">
+
+        <com.gstudentlib.view.RoundCornerImageView
+            android:id="@+id/ivScene"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            app:type="circle" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/ivBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/icon_scene_entrance_bottom" />
+
+    <Button
+        android:id="@+id/tvStart"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="106dp"
+        android:layout_height="48dp"
+        android:layout_alignTop="@+id/ivBottom"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/gradient_green"
+        android:gravity="center"
+        android:text="开始"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+</RelativeLayout>

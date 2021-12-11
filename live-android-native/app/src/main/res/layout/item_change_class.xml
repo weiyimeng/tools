@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/dp_16"
+    android:layout_marginStart="@dimen/dp_16">
+
+    <TextView
+        android:id="@+id/tv_order_holiday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_94e044_radius_2"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp_2"
+        android:paddingRight="@dimen/dp_2"
+        android:text="暑"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dp_12"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_order_course_name"
+        app:layout_constraintStart_toEndOf="@id/tv_order_holiday"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_order_course_name" />
+
+
+    <TextView
+        android:id="@+id/tv_order_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_3"
+        android:background="@drawable/bg_f5c942_radius_2"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp_2"
+        android:paddingRight="@dimen/dp_2"
+        android:text="语"
+        android:textColor="@color/color_75C82B"
+        android:textSize="@dimen/dp_12"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_order_course_name"
+        app:layout_constraintStart_toEndOf="@id/tv_order_holiday"
+        app:layout_constraintTop_toTopOf="@+id/tv_order_course_name" />
+
+    <TextView
+        android:id="@+id/tv_order_course_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_4"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/color_181818"
+        android:textSize="@dimen/dp_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_order_tag"
+        app:layout_constraintTop_toTopOf="parent"
+        tool:text="三年级语文直播长线班三年级语" />
+
+
+    <TextView
+        android:id="@+id/tv_order_course_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:drawableLeft="@mipmap/course_image_clock"
+        android:gravity="center"
+        android:text="2017年2月1日-6月1日 · 每周五18:30 - 20:30"
+        android:textColor="@color/color_9B9B9B"
+        android:textSize="@dimen/dp_12"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_course_name" />
+
+    <com.haoke91.a91edu.widget.CircleImageView
+        android:id="@+id/iv_order_teacher_icon"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginTop="@dimen/dp_24"
+        android:src="@mipmap/ic_launcher"
+        app:civ_border_overlay="true"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_course_time" />
+
+    <TextView
+        android:id="@+id/tv_order_teacher_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4"
+        android:gravity="center"
+        android:maxLength="4"
+        android:singleLine="true"
+        android:textColor="@color/color_363636"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintEnd_toEndOf="@id/iv_order_teacher_icon"
+        app:layout_constraintStart_toStartOf="@id/iv_order_teacher_icon"
+        app:layout_constraintTop_toBottomOf="@+id/iv_order_teacher_icon"
+        tool:text="温馨" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4"
+        android:text="@string/main_teacher"
+        android:textColor="@color/color_979797"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintEnd_toEndOf="@id/iv_order_teacher_icon"
+        app:layout_constraintStart_toStartOf="@id/iv_order_teacher_icon"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_teacher_name" />
+
+    <com.haoke91.a91edu.widget.CircleImageView
+        android:id="@+id/iv_teacher_two_icon"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginStart="@dimen/dp_9"
+        android:layout_marginTop="@dimen/dp_24"
+        android:src="@mipmap/ic_launcher"
+        app:civ_border_overlay="true"
+        app:layout_constraintStart_toEndOf="@+id/iv_order_teacher_icon"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_course_time" />
+
+    <TextView
+        android:id="@+id/tv_order_teacher_name_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4"
+        android:gravity="center"
+        android:maxLength="4"
+        android:singleLine="true"
+        android:textColor="@color/color_363636"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintEnd_toEndOf="@+id/iv_teacher_two_icon"
+        app:layout_constraintStart_toStartOf="@+id/iv_teacher_two_icon"
+        app:layout_constraintTop_toBottomOf="@+id/iv_teacher_two_icon"
+        tool:text="温馨" />
+
+    <TextView
+        android:id="@+id/tv_teacher_main"
+        android:layout_width="wrap_content"
+        android:layout_height="11dp"
+        android:layout_marginTop="@dimen/dp_4"
+        android:text="@string/main_teacher"
+        android:textColor="@color/color_979797"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintEnd_toEndOf="@+id/iv_teacher_two_icon"
+        app:layout_constraintStart_toStartOf="@+id/iv_teacher_two_icon"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_teacher_name_two" />
+
+    <ImageView
+        android:id="@+id/iv_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_more"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_teacher_two_icon"
+        app:layout_constraintStart_toEndOf="@+id/iv_teacher_two_icon"
+        app:layout_constraintTop_toTopOf="@+id/iv_teacher_two_icon" />
+
+    <com.haoke91.a91edu.widget.CircleImageView
+        android:id="@+id/iv_order_assistant_icon"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginStart="@dimen/dp_9"
+        android:layout_marginTop="@dimen/dp_24"
+        android:src="@mipmap/ic_launcher"
+        app:civ_border_overlay="true"
+        app:layout_constraintStart_toEndOf="@+id/iv_more"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_course_time" />
+
+    <TextView
+        android:id="@+id/tv_assistant_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4"
+        android:gravity="center"
+        android:maxLength="4"
+        android:singleLine="true"
+        android:textColor="@color/color_363636"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintEnd_toEndOf="@id/iv_order_assistant_icon"
+        app:layout_constraintStart_toStartOf="@id/iv_order_assistant_icon"
+        app:layout_constraintTop_toBottomOf="@+id/iv_order_assistant_icon"
+        tool:text="温馨" />
+
+    <TextView
+        android:id="@+id/tv_assistant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4"
+        android:text="@string/assistant_teacher"
+        android:textColor="@color/color_979797"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintEnd_toEndOf="@id/iv_order_assistant_icon"
+        app:layout_constraintStart_toStartOf="@id/iv_order_assistant_icon"
+        app:layout_constraintTop_toBottomOf="@+id/tv_assistant_name" />
+
+    <TextView
+        android:id="@+id/tv_course_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_radius_25"
+        android:gravity="center"
+        android:paddingEnd="@dimen/dp_8"
+        android:paddingStart="@dimen/dp_8"
+        android:textColor="@color/color_636363"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintTop_toTopOf="@+id/tv_order_money"
+        tool:text="共15次，已上10次" />
+
+    <TextView
+        android:id="@+id/tv_order_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:textColor="@color/FF4F00"
+        android:textSize="@dimen/dp_12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_assistant"
+        tool:text="￥888" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_8"
+        android:background="@color/FBFBFB"
+        app:layout_constraintTop_toBottomOf="@+id/ll_order_extra" />
+
+</android.support.constraint.ConstraintLayout>

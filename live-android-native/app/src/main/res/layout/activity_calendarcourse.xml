@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:onClick="clickEvent"
+                android:padding="5dp"
+                android:src="@drawable/ic_back_black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textStyle="bold"
+                android:text="课程日历"
+                android:textColor="@color/text_title_color"
+                android:textSize="16dp" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/rl_choseDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+
+        <TextView
+            android:id="@+id/tv_selectedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
+
+        <ImageView
+            android:id="@+id/iv_preDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:onClick="clickEvent"
+            android:paddingBottom="5dp"
+            android:paddingLeft="@dimen/dp_24"
+            android:paddingRight="@dimen/dp_24"
+            android:paddingTop="5dp"
+            android:rotation="180"
+            android:src="@mipmap/study_icon_front" />
+
+        <ImageView
+            android:id="@+id/iv_nextDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+            android:onClick="clickEvent"
+            android:paddingBottom="5dp"
+            android:paddingLeft="@dimen/dp_24"
+            android:paddingRight="@dimen/dp_24"
+            android:paddingTop="5dp"
+            android:src="@mipmap/study_icon_front" />
+    </RelativeLayout>
+
+    <com.haibin.calendarview.CalendarLayout
+        android:id="@+id/calendarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_choseDate"
+        android:orientation="vertical"
+        app:calendar_content_view_id="@+id/layout_dataList"
+        app:calendar_show_mode="both_month_week_view"
+        app:default_status="expand">
+
+        <com.haibin.calendarview.CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            app:calendar_height="50dp"
+            app:current_month_lunar_text_color="#CFCFCF"
+            app:current_month_text_color="#333333"
+            app:day_text_size="12dp"
+            app:min_year="2004"
+            app:month_view="com.haoke91.a91edu.widget.calendar.MyMonthView"
+            app:month_view_show_mode="mode_fix"
+            app:other_month_text_color="#e1e1e1"
+            app:scheme_text="假"
+            app:scheme_text_color="#333"
+            app:scheme_theme_color="#333"
+            app:selected_text_color="#fff"
+            app:selected_theme_color="#333"
+            app:week_background="#fff"
+            app:week_start_with="mon"
+            app:week_text_color="@color/color_636363"
+            app:week_text_size="12dp"
+            app:week_view="com.haoke91.a91edu.widget.calendar.MyWeekView" />
+
+        <FrameLayout
+            android:id="@+id/layout_dataList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="@color/FBFBFB" />
+
+            <com.haoke91.baselibrary.views.emptyview.EmptyView
+                android:id="@+id/emptyView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:background="@color/white"
+                app:ev_empty_drawable="@mipmap/empty_image_play_nor"
+                app:ev_empty_text="今天没有直播课哦~"
+                app:ev_error_drawable="@mipmap/net_error"
+                app:ev_error_text="网络连接异常"
+                app:ev_gravity="top">
+
+                <com.haoke91.baselibrary.recycleview.WrapRecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.haoke91.baselibrary.views.emptyview.EmptyView>
+        </FrameLayout>
+    </com.haibin.calendarview.CalendarLayout>
+
+
+</RelativeLayout>

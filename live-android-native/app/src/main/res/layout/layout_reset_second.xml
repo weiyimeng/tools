@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:id="@+id/et_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:singleLine="true"
+            android:text=""
+            android:layout_toLeftOf="@id/iv_canSee"
+            android:textColor="#666666"
+            android:textColorHint="@color/c3c3c3"
+            android:textSize="14dp" />
+
+        <ImageView
+            android:id="@+id/iv_clean_pwd"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:padding="5dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_close_black"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_canSee"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@id/iv_clean_pwd"
+            android:padding="5dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_eye"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/line_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_below="@id/et_pwd"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/E9E9E9" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/et_pwd2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="请输入确认新密码"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:singleLine="true"
+            android:text=""
+            android:layout_toLeftOf="@id/iv_canSee2"
+            android:textColor="#666666"
+            android:textColorHint="@color/c3c3c3"
+            android:textSize="14dp" />
+
+        <ImageView
+            android:id="@+id/iv_clean_pwd2"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:padding="5dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_close_black"
+            android:visibility="gone" />
+        <ImageView
+            android:id="@+id/iv_canSee2"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@id/iv_clean_pwd2"
+            android:padding="5dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_eye"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/line_pwd2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_below="@id/et_pwd2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/E9E9E9" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/goto_reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/btn_selector_green_gray_radius_4"
+        android:enabled="false"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/makesure"
+        android:textColor="@color/white"
+        android:textSize="18dp" />
+
+</LinearLayout>

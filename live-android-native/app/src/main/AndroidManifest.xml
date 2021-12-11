@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.haoke91.a91edu">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 查询 切换 audio 输出通道 -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+
+    <uses-sdk android:minSdkVersion="19" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature android:name="android.hardware.Camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:name="com.haoke91.a91edu.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/MainTheme">
+        <!--<meta-data-->
+        <!--android:name="android.max_aspect"-->
+        <!--android:value="2.1" />-->
+        <activity
+            android:name=".ui.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--<activity-->
+        <!--android:name=".TestActivity"-->
+        <!--android:screenOrientation="portrait"-->
+        <!--android:theme="@style/SplashTheme"-->
+        <!--android:windowSoftInputMode="adjustResize|stateAlwaysHidden">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.MAIN" />-->
+        <!--<category android:name="android.intent.category.LAUNCHER" />-->
+        <!--</intent-filter>-->
+        <!--</activity>-->
+
+        <activity
+            android:name="com.haoke91.a91edu.MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden">
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+
+        <!-- activites of myapp  -->
+
+
+        <activity
+            android:name=".ui.course.SearchActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".ui.learn.CalendarCourseActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".ui.course.CourseDetailActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".ui.homework.CorrectExamActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".ui.learn.AnswerAnalysisActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".ui.learn.WrongExamBookActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
+        <activity
+            android:name=".ui.learn.WrongExamListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
+
+        <activity
+            android:name="com.haoke91.a91edu.ui.liveroom.VideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullTheme"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
+        <activity
+            android:name="com.haoke91.a91edu.ui.liveroom.LivePlayerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullTheme"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.MAIN" />-->
+        <!--<category android:name="android.intent.category.LAUNCHER" />-->
+        <!--</intent-filter>-->
+        <activity
+            android:name=".ui.liveroom.VideoPlayerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:theme="@style/FullTheme"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
+
+        <!--<activity-->
+        <!--android:name="com.haoke91.im.DemoActivity"-->
+        <!--android:windowSoftInputMode="stateAlwaysHidden|adjustResize">-->
+        <!--&lt;!&ndash;<intent-filter>&ndash;&gt;-->
+        <!--&lt;!&ndash;<action android:name="android.intent.action.MAIN" />&ndash;&gt;-->
+        <!--&lt;!&ndash;<category android:name="android.intent.category.LAUNCHER" />&ndash;&gt;-->
+        <!--&lt;!&ndash;</intent-filter>&ndash;&gt;-->
+        <!--&lt;!&ndash;  聊天界面&ndash;&gt;-->
+        <!--</activity>-->
+        <!--  apk 更新-->
+        <!--<receiver-->
+        <!--android:name=".presenter.update.ApkUpdateManager$ApkDownloadReceiver"-->
+        <!--android:enabled="true"-->
+        <!--android:exported="true">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.DOWNLOAD_COMPLETE" />-->
+        <!--<category android:name="android.intent.category.DEFAULT" />-->
+        <!--</intent-filter>-->
+        <!--</receiver>-->
+        <service android:name=".presenter.update.service.DownloadService" />
+        <provider
+            android:name=".presenter.update.UpdateFileProvider"
+            android:authorities="${applicationId}.haoke.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- 支付宝支付 -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="com.alipay.sdk.app.H5AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="com.haoke91.a91edu.ui.liveroom.TkActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.liveroom.AgoraActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustResize">
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+
+        </activity>
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity
+            android:name=".ui.homework.UpLoadHomeworkActivity"
+            android:label="@string/upload_homework"
+            android:screenOrientation="portrait"
+            android:theme="@style/homework" />
+        <activity
+            android:name=".ui.user.AboutUsActivity"
+            android:label="@string/about"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.course.SeriesClassActivity"
+            android:label="@string/series_class"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.order.OrderCenterActivity"
+            android:label="@string/my_order"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.user.MyCouponsActivity"
+            android:label="@string/my_coupons"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.order.OrderDetailPayActivity"
+            android:label="@string/order_detail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.order.ApplyBackOrderActivity"
+            android:label="@string/apply_back"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.order.ChangeClassActivity"
+            android:label="@string/change_class"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.order.ConfirmChangeClassActivity"
+            android:label="@string/change_class"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.order.ChoiceChangeClassActivity"
+            android:label="@string/change_class"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.order.ChangeCourseActivity"
+            android:label="@string/change_course"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.order.ChoiceCourseActivity"
+            android:label="@string/change_course"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".ui.order.SetBankInfoActivity"
+            android:label="@string/apply_back"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ui.order.OrderDetailCancelActivity"
+            android:label="@string/order_detail"
+            android:screenOrientation="portrait" />
+
+        <activity
+
+            android:name=".ui.order.OrderDetailBackActivity"
+            android:label="@string/order_back_detail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.order.ConfirmOrderActivity"
+            android:label="@string/confirm_order"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.found.GoldGoodsActivity"
+            android:label="@string/gold_goods"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.found.GoldHelpActivity"
+            android:label="@string/introduceofexchangegold"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.found.ExchangeHistoryActivity"
+            android:label="@string/exchange_history"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.found.GoodsDetailsActivity"
+            android:label="@string/exchange_goods_details"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.order.PaySuccessActivity"
+            android:label="@string/pay_success"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.order.PayActivity"
+            android:label="@string/online_pay"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.homework.MyHomeworkActivity"
+            android:label="@string/my_homework"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.homework.LookHomeworkActivity"
+            android:label="@string/lookhomework"
+            android:screenOrientation="portrait"
+
+            android:theme="@style/homework" />
+        <activity
+            android:name=".ui.homework.HomeworkResultActivity"
+            android:label="@string/result_homework"
+            android:screenOrientation="portrait"
+
+            android:theme="@style/homework" />
+        <activity
+            android:name=".ui.user.UserInfoActivity"
+            android:label="@string/user_info"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.order.AvailableCouponsActivity"
+            android:label="@string/available_coupons"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.address.AddressManagerActivity"
+            android:label="@string/address_manager"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.address.EditAddressActivity"
+            android:label="@string/address_edit"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.mycollect.MycollectActivity"
+            android:label="@string/my_collect"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.order.ShoppingCartActivity"
+            android:label="@string/shopping_cart"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.user.UserImgActivity"
+            android:label="@string/user_image"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.user.MyBalanceActivity"
+            android:label="@string/my_balance"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.learn.DailyWorkActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/daily_work"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.learn.DailyWorkHistoryActivity"
+            android:label="@string/daily_work_history"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.user.BalanceRecordActivity"
+            android:label="@string/balance_record"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.learn.MyCourseActivity"
+            android:label="@string/my_course"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.course.SpecialClassActivity"
+            android:label="@string/special_class"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.GeneralWebViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.course.PublicClassActivity"
+            android:label="@string/public_class"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.learn.CourseOrderActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/course_order"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:label="@string/login"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.login.ResetActivity"
+            android:label="@string/reset_pwd"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.login.RegisterActivity"
+            android:label="@string/regist"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${channelID}" />
+        <meta-data
+            android:name="com.haoke91.a91edu.GlideCache"
+            android:value="AppGlideModule" />
+
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent100424468" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".ui.user.SettingActivity"
+            android:label="@string/setting" />
+
+    </application>
+
+</manifest>

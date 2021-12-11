@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.haoke91.baselibrary.views.emptyview.EmptyView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:ev_empty_drawable="@mipmap/empty_image_nocourse"
+    app:ev_empty_text="暂无数据"
+    app:ev_error_drawable="@mipmap/net_error"
+    app:ev_error_text="请求失败"/>

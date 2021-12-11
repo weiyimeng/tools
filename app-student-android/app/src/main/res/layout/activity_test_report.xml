@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFD"
+    tools:context=".studentapp.testreport.TestReportActivity">
+
+    <com.gsbaselib.utils.title.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:divideVisibility="false"
+        app:tvTitle="@string/test_report" />
+
+    <TextView
+        android:id="@+id/tvSelector"
+        android:layout_below="@+id/title_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="@string/all_grade"
+        android:drawablePadding="7dp"
+        android:textColor="#636B7B"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:drawableEnd="@drawable/icon_gray_arrow_down"
+        android:background="@drawable/white_shape_8"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tvSelector"
+        android:fadingEdge="none"
+        android:overScrollMode="never"/>
+
+</RelativeLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- errorView  -->
+    <declare-styleable name="JoinClassErrorView">
+        <attr name="stu_icon_net" format="reference" />
+        <attr name="stu_icon_uncontent" format="reference" />
+        <attr name="stu_error_text_net" format="string" />
+        <attr name="stu_error_text_uncontent_top1" format="string" />
+        <attr name="stu_error_text_uncontent_bottom1" format="string" />
+        <attr name="stu_error_text_uncontent_top2" format="string" />
+        <attr name="stu_error_text_uncontent_bottom2" format="string" />
+        <attr name="stu_view_net" format="reference" />
+        <attr name="stu_view_nocontent" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundImageView">
+        <attr name="borderRadius" />
+        <attr name="type" />
+    </declare-styleable>
+    <attr name="borderRadius" format="dimension" />
+    <attr name="type">
+        <enum name="circle" value="0" />
+        <enum name="round" value="1" />
+    </attr>
+
+</resources>

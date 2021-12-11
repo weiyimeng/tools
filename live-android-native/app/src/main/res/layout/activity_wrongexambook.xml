@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:clickable="true"
+                android:onClick="clickEvent"
+                android:src="@drawable/ic_back_black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="错题本"
+                android:textColor="@color/color_181818"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/filtraGradebtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_16"
+                android:clickable="true"
+                android:drawablePadding="0dp"
+                android:drawableTop="@mipmap/home_nav_icon_class"
+                android:onClick="clickEvent"
+                android:text="年级"
+                android:textColor="@color/color_363636"
+                android:textSize="10dp" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <com.haoke91.baselibrary.views.emptyview.EmptyView
+        android:id="@+id/emptyView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:ev_empty_text="暂无数据"
+        app:ev_empty_drawable="@mipmap/empty_image"
+        app:ev_error_text="链接异常">
+
+        <com.haoke91.baselibrary.recycleview.WrapRecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp">
+
+        </com.haoke91.baselibrary.recycleview.WrapRecyclerView>
+    </com.haoke91.baselibrary.views.emptyview.EmptyView>
+
+</LinearLayout>

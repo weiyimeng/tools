@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:onClick="clickEvent"
+                android:padding="5dp"
+                android:src="@drawable/ic_back_black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="课程详情"
+                android:textColor="@color/text_title_color"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingRight="15dp"
+                android:text="分享"
+                android:textColor="@color/text_title_color"
+                android:textSize="14dp"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <com.haoke91.baselibrary.views.emptyview.EmptyView
+        android:id="@+id/mEmptyView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_bottom"
+        android:layout_below="@id/toolbar"
+        app:ev_empty_drawable="@mipmap/empty_image"
+        app:ev_empty_text="课程已下架"
+        app:ev_error_drawable="@mipmap/net_error"
+        app:ev_error_text="网络连接异常">
+
+        <com.haoke91.a91edu.widget.CanLocationScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:background="@color/white"
+            android:fillViewport="true"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:id="@+id/mTerm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_2"
+                        android:background="@drawable/bg_ffae00_radius_2"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:text="暑"
+
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/mSubjectName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="@dimen/dp_2"
+                        android:layout_toRightOf="@id/mTerm"
+                        android:background="@drawable/bg_75c82b_stroke_radius2"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:text="科"
+                        android:textColor="@color/color_75C82B"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/mCourseName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toLeftOf="@+id/mCountOfKnowledge"
+                        android:lineSpacingExtra="@dimen/dp_2"
+                        android:textColor="@color/color_181818"
+                        android:textSize="@dimen/dp_14"
+                        tools:text="题目：" />
+
+                    <TextView
+                        android:id="@+id/mCountOfKnowledge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/bg_gray_radius_10"
+                        android:paddingBottom="3dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="3dp"
+                        android:textColor="#9B9B9B"
+                        android:textSize="12dp"
+                        tools:text="共s讲" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/mTimeRemark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="课程安排:"
+                    android:textColor="#9B9B9B"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/mUsedRange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="10dp"
+                    android:text="适用范围:"
+                    android:textColor="#9B9B9B"
+                    android:textSize="12dp" />
+
+                <com.haoke91.a91edu.widget.flowlayout.TagFlowLayout
+                    android:id="@+id/mFlow_courseTags"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginRight="@dimen/dp_15">
+
+                </com.haoke91.a91edu.widget.flowlayout.TagFlowLayout>
+
+                <com.haoke91.baselibrary.recycleview.WrapRecyclerView
+                    android:id="@+id/mTeachersAndAssistantRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:overScrollMode="never">
+
+                </com.haoke91.baselibrary.recycleview.WrapRecyclerView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:id="@+id/mTip1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_f3f3f3_radius2"
+                        android:text="限时销售"
+                        android:textColor="#979797"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/mTvTipLimitSale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@id/mTip1"
+                        android:text=""
+                        android:textColor="#363636"
+                        android:textSize="12dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/mTip2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_f3f3f3_radius2"
+                        android:text="报名限制"
+                        android:textColor="#979797"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/mTvTipLimitEnroll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@id/mTip2"
+                        android:text="入学考试成绩达到70，可报名 "
+                        android:textColor="#363636"
+                        android:textSize="12dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/mTip3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_f3f3f3_radius2"
+                        android:text="课程资料"
+                        android:textColor="#979797"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/mTvTipCourseInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@id/mTip3"
+                        android:text="纸质讲义 "
+                        android:textColor="#363636"
+                        android:textSize="12dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/mTip4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_f3f3f3_radius2"
+                        android:text="@string/statement"
+                        android:textColor="#979797"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/mTvTipStatement"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@id/mTip4"
+                        android:text="若退课时资料已签收，需扣除资料服务费60元 "
+                        android:textColor="#363636"
+                        android:textSize="12dp" />
+                </RelativeLayout>
+                //优惠
+
+                <LinearLayout
+                    android:id="@+id/ll_favoriteActivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_15"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginRight="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="vertical" />
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_courseContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="1000dp"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="#fffbfbfb" />
+
+                <FrameLayout
+                    android:id="@+id/fl_replaceTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:background="@color/white" />
+
+                <include
+                    android:id="@+id/area_courseIntroduce"
+                    layout="@layout/layout_vs_course_introduce" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="@dimen/dp_11"
+                    android:layout_marginRight="@dimen/dp_11"
+                    android:background="@color/F3F3F3" />
+
+                <include
+                    android:id="@+id/area_coursePlan"
+                    layout="@layout/layout_course_plan" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="@dimen/dp_11"
+                    android:layout_marginRight="@dimen/dp_11"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:background="@color/F3F3F3" />
+
+                <include
+                    android:id="@+id/area_teacherIntroduce"
+                    layout="@layout/layout_teacher_introduce" />
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:background="@color/white"
+                    app:tabIndicatorColor="#75C82B"
+                    app:tabSelectedTextColor="#75C82B"
+                    app:tabTextColor="#363636" />
+
+            </LinearLayout>
+        </com.haoke91.a91edu.widget.CanLocationScrollView>
+    </com.haoke91.baselibrary.views.emptyview.EmptyView>
+
+    <!--<android.support.design.widget.TabLayout-->
+    <!--android:id="@+id/tabLayoutOut"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@id/toolbar"-->
+    <!--android:background="@color/white"-->
+    <!--android:visibility="gone"-->
+    <!--app:tabIndicatorColor="#75C82B"-->
+    <!--app:tabSelectedTextColor="#75C82B"-->
+    <!--app:tabTextColor="#363636" />-->
+
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/mNowPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:textColor="@color/Orange"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            tools:text="￥888" />
+
+        <TextView
+            android:id="@+id/mOldPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/mNowPrice"
+            android:textColor="@color/colorGray5"
+            android:textSize="12dp"
+            tools:text="￥999" />
+
+        <ImageView
+            android:id="@+id/mIsCollected"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/ll_colorBtns"
+            android:clickable="true"
+            android:onClick="clickEvent"
+            android:padding="5dp"
+            android:src="@drawable/selector_collect"
+            android:textSize="12dp" />
+
+        <LinearLayout
+            android:id="@+id/ll_colorBtns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/mBottomBtn_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_leftcircle_gradientyellow"
+                android:clickable="true"
+                android:onClick="clickEvent"
+                android:paddingBottom="8dp"
+                android:paddingLeft="9dp"
+                android:paddingRight="9dp"
+                android:paddingTop="8dp"
+                android:text="@string/shopping_cart"
+                android:textColor="@color/white"
+                android:textSize="12dp" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/line" />
+
+            <TextView
+                android:id="@+id/mBottomBtn_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rightcircle_gradientred"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="clickEvent"
+                android:paddingBottom="8dp"
+                android:paddingLeft="9dp"
+                android:paddingRight="9dp"
+                android:paddingTop="8dp"
+                android:textColor="@color/white"
+                android:textSize="12dp" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

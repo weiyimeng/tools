@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F1F1F1</color>
+    <color name="colorPrimaryDark">#00F1F1F1</color>
+    <color name="colorAccent">#10BCB5</color>
+    <color name="main_green_color">#A9DC35</color>
+    <color name="title_color">#F6F6F7</color>
+    <color name="title_line_color">#CECDD3</color>
+    <color name="text_green_color">#2abf73</color>
+    <color name="text_line_color">#D9DBE0</color>
+    <color name="btn_green">#2cBF5F</color>
+    <color name="background_color">#FFF</color>
+    <color name="beike_item_line_color">#D8DCE2</color>
+    <color name="beike_item_text_color">#222222</color>
+    <color name="tab_text_color">#2DBE5F</color>
+    <color name="tab_back_color">#F2313441</color>
+    <color name="getcode_btn_red">#ECC1C2</color>
+    <color name="btn_gray">#A8A8AB</color>
+    <color name="black">#000000</color>
+    <color name="title_black">#d8000000</color>
+    <color name="tab_text_unselected_color">#636B7B</color>
+    <color name="tab_text_selected_color">#1F243D</color>
+    <color name="color_text_selected">#5fd6ea</color>
+
+    <color name="newcolor">#66d8e8</color>
+    <color name="playlist_parent">#10BCB5</color>
+    <color name="playlist_unselect">#969BAF</color>
+    <color name="playlist_child_background">#81dadd</color>
+    <color name="video_btn_gray">#F1F2F5</color>
+    <color name="video_btn_green">#2cBF5F</color>
+    <color name="beike_kecheng_text">#969baf</color>
+    <color name="beike_ll_black_text">#333333</color>
+    <color name="beike_ll_blue_text">#45bdce</color>
+    <color name="beike_storage_text">#999999</color>
+    <color name="bottom_layout_color_blue">#0000ff</color>
+
+    <color name="study_tab_bg">#0a000000</color>
+    <color name="login_button_green">#A9DC35</color>
+    <color name="percent6_black">#0f000000</color>
+
+    <color name="percent40_black">#66000000</color>
+    <color name="percent45_black">#73000000</color>
+    <color name="percent50_black">#7f000000</color>
+    <color name="percent65_black">#a6000000</color>
+    <color name="percent78_black">#c3000000</color>
+    <color name="percent85_black">#d8000000</color>
+    <color name="percent90_black">#e5000000</color>
+    <color name="light_grey">#d8d8d8</color>
+
+    <color name="class_math">#36C6FF</color>
+    <color name="class_chinese">#FF5F06</color>
+    <color name="class_english">#8987FF</color>
+    <color name="class_physics">#4B94FF</color>
+    <color name="class_chemistry">#FFBF00</color>
+    <color name="class_history">#FFA51E</color>
+    <color name="class_geography">#1BC7B9</color>
+    <color name="class_biology">#52CC52</color>
+    <color name="class_politics">#F44343</color>
+
+    <color name="light_gray">#E0E0E0</color>
+    <color name="text_black">#051535</color>
+    <color name="text_hint">#9BA1AC</color>
+    <color name="scene_title_bg">#80166000</color>
+</resources>

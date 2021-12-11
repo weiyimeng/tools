@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="app_student_excellent">
+        <item>@mipmap/app_student_excellent0</item>
+        <item>@mipmap/app_student_excellent1</item>
+        <item>@mipmap/app_student_excellent2</item>
+        <item>@mipmap/app_student_excellent3</item>
+        <item>@mipmap/app_student_excellent4</item>
+        <item>@mipmap/app_student_excellent5</item>
+        <item>@mipmap/app_student_excellent6</item>
+        <item>@mipmap/app_student_excellent7</item>
+        <item>@mipmap/app_student_excellent8</item>
+        <item>@mipmap/app_student_excellent9</item>
+        <item>@mipmap/app_student_excellent10</item>
+        <item>@mipmap/app_student_excellent11</item>
+        <item>@mipmap/app_student_excellent12</item>
+        <item>@mipmap/app_student_excellent13</item>
+        <item>@mipmap/app_student_excellent14</item>
+        <item>@mipmap/app_student_excellent15</item>
+        <item>@mipmap/app_student_excellent16</item>
+        <item>@mipmap/app_student_excellent17</item>
+        <item>@mipmap/app_student_excellent18</item>
+        <item>@mipmap/app_student_excellent19</item>
+        <item>@mipmap/app_student_excellent20</item>
+        <item>@mipmap/app_student_excellent21</item>
+        <item>@mipmap/app_student_excellent22</item>
+    </array>
+
+    <array name="app_student_good">
+        <item>@mipmap/app_student_good0</item>
+        <item>@mipmap/app_student_good1</item>
+        <item>@mipmap/app_student_good2</item>
+        <item>@mipmap/app_student_good3</item>
+        <item>@mipmap/app_student_good4</item>
+        <item>@mipmap/app_student_good5</item>
+        <item>@mipmap/app_student_good6</item>
+        <item>@mipmap/app_student_good7</item>
+        <item>@mipmap/app_student_good8</item>
+        <item>@mipmap/app_student_good9</item>
+        <item>@mipmap/app_student_good10</item>
+        <item>@mipmap/app_student_good11</item>
+        <item>@mipmap/app_student_good12</item>
+        <item>@mipmap/app_student_good13</item>
+        <item>@mipmap/app_student_good14</item>
+        <item>@mipmap/app_student_good15</item>
+        <item>@mipmap/app_student_good16</item>
+        <item>@mipmap/app_student_good17</item>
+        <item>@mipmap/app_student_good18</item>
+        <item>@mipmap/app_student_good19</item>
+        <item>@mipmap/app_student_good20</item>
+        <item>@mipmap/app_student_good21</item>
+        <item>@mipmap/app_student_good22</item>
+    </array>
+
+    <array name="app_student_welldone">
+        <item>@mipmap/app_student_welldone0</item>
+        <item>@mipmap/app_student_welldone1</item>
+        <item>@mipmap/app_student_welldone2</item>
+        <item>@mipmap/app_student_welldone3</item>
+        <item>@mipmap/app_student_welldone4</item>
+        <item>@mipmap/app_student_welldone5</item>
+        <item>@mipmap/app_student_welldone6</item>
+        <item>@mipmap/app_student_welldone7</item>
+        <item>@mipmap/app_student_welldone8</item>
+        <item>@mipmap/app_student_welldone9</item>
+        <item>@mipmap/app_student_welldone10</item>
+        <item>@mipmap/app_student_welldone11</item>
+        <item>@mipmap/app_student_welldone12</item>
+        <item>@mipmap/app_student_welldone13</item>
+        <item>@mipmap/app_student_welldone14</item>
+        <item>@mipmap/app_student_welldone15</item>
+        <item>@mipmap/app_student_welldone16</item>
+        <item>@mipmap/app_student_welldone17</item>
+        <item>@mipmap/app_student_welldone18</item>
+        <item>@mipmap/app_student_welldone19</item>
+        <item>@mipmap/app_student_welldone20</item>
+        <item>@mipmap/app_student_welldone21</item>
+        <item>@mipmap/app_student_welldone22</item>
+    </array>
+
+    <array name="app_student_tryagain">
+        <item>@mipmap/app_student_tryagain5</item>
+        <item>@mipmap/app_student_tryagain6</item>
+        <item>@mipmap/app_student_tryagain7</item>
+        <item>@mipmap/app_student_tryagain8</item>
+        <item>@mipmap/app_student_tryagain9</item>
+        <item>@mipmap/app_student_tryagain10</item>
+        <item>@mipmap/app_student_tryagain11</item>
+        <item>@mipmap/app_student_tryagain12</item>
+        <item>@mipmap/app_student_tryagain13</item>
+        <item>@mipmap/app_student_tryagain14</item>
+        <item>@mipmap/app_student_tryagain15</item>
+        <item>@mipmap/app_student_tryagain16</item>
+        <item>@mipmap/app_student_tryagain17</item>
+        <item>@mipmap/app_student_tryagain18</item>
+        <item>@mipmap/app_student_tryagain19</item>
+        <item>@mipmap/app_student_tryagain20</item>
+        <item>@mipmap/app_student_tryagain21</item>
+        <item>@mipmap/app_student_tryagain22</item>
+    </array>
+</resources>

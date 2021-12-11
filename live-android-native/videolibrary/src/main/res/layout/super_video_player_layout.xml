@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/video_inner_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.tencent.rtmp.ui.TXCloudVideoView
+        android:id="@+id/cloud_video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+    </com.tencent.rtmp.ui.TXCloudVideoView>
+
+    <RelativeLayout
+        android:id="@+id/rl_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F6F6F6"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_play_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:id="@+id/tv_play_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_play_bg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="@string/say_something"
+            android:textColor="@color/color_181818"
+            android:textSize="14dp" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_volume"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/simple_player_center_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_volume_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/simple_player_volume_up_white_36dp" />
+
+        <TextView
+            android:id="@+id/tv_volume_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="18dp"
+            tools:text="50%" />
+    </LinearLayout>
+    //亮度
+
+    <LinearLayout
+        android:id="@+id/ll_video_brightness_box"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/simple_player_center_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/app_video_brightness_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/simple_player_brightness_6_white_36dp" />
+
+        <TextView
+            android:id="@+id/tv_video_brightness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/operation_bg"
+            android:paddingTop="8dp"
+            android:text="50%"
+            android:textColor="@android:color/white"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_change_time"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_80"
+        android:layout_centerInParent="true"
+        android:background="@drawable/simple_player_center_bg"
+        android:gravity="center"
+        android:lines="1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dp_16"
+        android:visibility="gone"
+        tools:text="11111111" />
+
+
+    <com.haoke91.videolibrary.videoplayer.MediaToolbar
+        android:id="@+id/video_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:visibility="gone" />
+
+    <com.haoke91.baselibrary.views.MarqueeTextView
+        android:id="@+id/marqueeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="#44000000"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:focusableInTouchMode="true"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        app:scroll_first_delay="0"
+        app:scroll_interval="2000"
+        app:scroll_mode="mode_forever"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/fl_controller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+
+    <TextView
+        android:id="@+id/btn_load_fail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/btn_selector_green_gray"
+        android:clickable="true"
+        android:paddingBottom="6dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="6dp"
+        android:text="@string/load_fail"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_halftransf_10r"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateDrawable="@drawable/progressbar_orangge"
+            android:visibility="visible" />
+    </FrameLayout>
+
+</RelativeLayout>

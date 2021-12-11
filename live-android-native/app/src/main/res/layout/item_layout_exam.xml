@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_16">
+
+    <!-- 来源-->
+    <RelativeLayout
+        android:id="@+id/rl_examOrigin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_sourceFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="来自：%s"
+            android:textColor="#979797"
+            android:textSize="10dp" />
+
+        <ImageView
+            android:id="@+id/iv_isCollected"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_toLeftOf="@id/tv_delete"
+            android:clickable="true"
+            android:padding="3dp"
+            android:src="@drawable/selector_collect"
+            android:textSize="10dp" />
+
+        <ImageView
+            android:id="@+id/tv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:padding="3dp"
+            android:src="@mipmap/ic_delete"
+            android:textSize="10dp" />
+    </RelativeLayout>
+    <!--  题干-->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8">
+
+        <com.haoke91.a91edu.widget.exam.ChoiceExamView
+            android:id="@+id/choiceExamView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+        </com.haoke91.a91edu.widget.exam.ChoiceExamView>
+
+        <com.haoke91.a91edu.widget.exam.FillBlankExamView
+            android:id="@+id/fillBlankExamView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+        </com.haoke91.a91edu.widget.exam.FillBlankExamView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/cb_showAnalyzeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:button="@null"
+            android:gravity="center"
+            android:text="答案解析"
+            android:textColor="@color/color_363636"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/tv_lookOrEditReason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:padding="5dp"
+            android:text="总结错因"
+            android:textColor="@color/color_363636"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/tv_CorrectBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/tv_lookOrEditReason"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="订正习题"
+            android:textColor="@color/color_363636"
+            android:textSize="10dp" />
+    </RelativeLayout>
+    <!-- answer area-->
+    <LinearLayout
+        android:id="@+id/ll_answerArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_10"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_yourAnswer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="你的答案：%s"
+                android:textColor="@color/color_363636"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/tv_questionAnser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="你的答案：%s"
+                android:textColor="@color/color_75C82B"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_analysisTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dp_5"
+                android:paddingTop="@dimen/dp_5"
+                android:text="题目解析："
+                android:textColor="@color/color_363636"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/tv_questionAnalysis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_analysisTitle"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:textColor="@color/color_636363"
+                android:textSize="12dp" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

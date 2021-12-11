@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/common_toolbar" />
+
+    <com.haoke91.baselibrary.views.emptyview.EmptyView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_order_bottom"
+        android:layout_below="@+id/toolbar"
+        app:ev_empty_drawable="@mipmap/empty_image_nocourse"
+        app:ev_empty_text="没有相关课程"
+        app:ev_error_drawable="@mipmap/net_error"
+        app:ev_error_text="@string/net_error">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:descendantFocusability="blocksDescendants"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_60"
+                    android:background="@mipmap/pay_image_background">
+
+
+                    <TextView
+                        android:id="@+id/tv_order_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:layout_marginTop="@dimen/dp_19"
+                        android:drawableLeft="@drawable/ic_pay_image_cancle"
+                        android:drawablePadding="@dimen/dp_7"
+                        android:text="@string/cancel_order"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dp_16" />
+
+                    <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_marginEnd="@dimen/dp_16"-->
+                    <!--android:layout_marginTop="@dimen/dp_22"-->
+                    <!--android:text="未支付的订单将在30分钟后取消"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="@dimen/dp_12" />-->
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:descendantFocusability="blocksDescendants">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_order_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_16">
+
+                    <TextView
+                        style="@style/textView_order_count"
+                        android:text="@string/goods_money" />
+
+                    <TextView
+                        android:id="@+id/tv_order_total"
+                        style="@style/textView_order_count"
+                        android:layout_alignParentRight="true"
+                        tool:text="￥1000.00" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_8">
+
+                    <TextView
+                        style="@style/textView_order_count"
+                        android:text="@string/course_count" />
+
+                    <TextView
+                        android:id="@+id/tv_coupon_save"
+                        style="@style/textView_order_count"
+                        android:layout_alignParentRight="true"
+                        tool:text="￥20.00" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_8">
+
+                    <TextView
+                        style="@style/textView_order_count"
+                        android:text="@string/active_save" />
+
+                    <TextView
+                        android:id="@+id/tv_active_save"
+                        style="@style/textView_order_count"
+                        android:layout_alignParentRight="true"
+                        tool:text="￥1000.00" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_8">
+
+                    <TextView
+                        style="@style/textView_order_count"
+                        android:text="@string/pay_money" />
+
+                    <TextView
+                        android:id="@+id/tv_pay_money"
+                        style="@style/textView_order_count"
+                        android:layout_alignParentRight="true"
+                        android:text="￥88.00"
+                        android:textColor="@color/FF4F00" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_8">
+
+                    <TextView
+                        style="@style/textView_order_count"
+                        android:text="@string/left_money" />
+
+                    <TextView
+                        android:id="@+id/tv_balance_save"
+                        style="@style/textView_order_count"
+                        android:layout_alignParentRight="true"
+                        tool:text="￥1000.00" />
+                </RelativeLayout>
+
+                <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginEnd="@dimen/dp_16"-->
+                <!--android:layout_marginStart="@dimen/dp_16"-->
+                <!--android:layout_marginTop="@dimen/dp_2">-->
+
+                <!--<TextView-->
+                <!--style="@style/textView_order_count"-->
+                <!--android:text="微信支付" />-->
+
+                <!--<TextView-->
+                <!--style="@style/textView_order_count"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--tool:text="￥1000.00" />-->
+                <!--</RelativeLayout>-->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_4"
+                    android:layout_marginBottom="@dimen/dp_8"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:background="@color/FBFBFB" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_order_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16">
+
+                    <TextView
+                        style="@style/textView_order_count"
+                        android:text="@string/order_number" />
+
+                    <TextView
+                        android:id="@+id/tv_order_no"
+                        style="@style/textView_order_count"
+                        android:layout_alignParentRight="true"
+                        tool:text="712038833342" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_order_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_8">
+
+                    <TextView
+                        style="@style/textView_order_count"
+                        android:text="@string/order_time" />
+
+                    <TextView
+                        android:id="@+id/tv_order_time"
+                        style="@style/textView_order_count"
+                        android:layout_alignParentRight="true"
+                        tool:text="712038833342" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_order_pay_method"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/textView_order_count"
+                        android:text="@string/pay_method" />
+
+                    <TextView
+                        android:id="@+id/tv_pay_method"
+                        style="@style/textView_order_count"
+                        android:layout_alignParentRight="true"
+                        tool:text="余额抵扣" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_4"
+                    android:layout_marginBottom="@dimen/dp_8"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:background="@color/FBFBFB" />
+            </LinearLayout>
+        </ScrollView>
+
+
+    </com.haoke91.baselibrary.views.emptyview.EmptyView>
+
+    <RelativeLayout
+        android:id="@+id/rl_order_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_white_radius_4"
+        android:elevation="@dimen/dp_4"
+        android:visibility="invisible"
+        tool:layout_editor_absoluteX="8dp"
+        tool:layout_editor_absoluteY="5dp">
+
+        <TextView
+            android:id="@+id/tv_order_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_16"
+            android:background="@drawable/bg_pay"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dp_4"
+            android:paddingLeft="@dimen/dp_16"
+            android:paddingRight="@dimen/dp_16"
+            android:paddingTop="@dimen/dp_4"
+            android:text="重新购买"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_12" />
+
+    </RelativeLayout>
+</RelativeLayout>

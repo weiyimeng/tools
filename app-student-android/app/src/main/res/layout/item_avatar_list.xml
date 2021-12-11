@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal">
+
+    <RelativeLayout
+        android:id="@+id/bgCard"
+        android:layout_width="match_parent"
+        android:layout_height="164dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/bg_white_12dp">
+
+        <ImageView
+            android:id="@+id/ivAlreadyBuy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_already_bought_avatar"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.gstudentlib.view.RoundCornerImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="86dp"
+                android:layout_height="86dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/icon_default_placeholder"
+                app:type="circle" />
+
+            <TextView
+                android:id="@+id/tvAvatarName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:textColor="#051535"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="金秋小括弧" />
+
+            <TextView
+                android:id="@+id/tvUsageTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:maxLines="1"
+                android:textColor="#636B7B"
+                android:textSize="12sp"
+                tools:text="剩余使用天数：7" />
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:drawableStart="@drawable/icon_gold_mall_coin_small"
+                android:drawablePadding="6dp"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:textColor="#FFC836"
+                android:textSize="12sp"
+                android:visibility="gone"
+                tools:text="150/7天" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/ivCurrentUse"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/icon_buy_avatar_success"
+        android:visibility="gone" />
+
+</RelativeLayout>

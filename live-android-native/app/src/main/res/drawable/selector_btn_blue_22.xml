@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/bg_btn_pressed_radius_22" android:state_pressed="true" />
+    <!--<item android:drawable="@drawable/bg_btn_green_radius5" android:state_selected="true" />-->
+    <item android:drawable="@drawable/bg_75c82b_radius_22" />
+</selector>

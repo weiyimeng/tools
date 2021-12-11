@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/common_toolbar" />
+
+    <com.haoke91.baselibrary.views.emptyview.EmptyView
+        android:id="@+id/mEmptyView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <!-- 来源-->
+                <RelativeLayout
+                    android:id="@+id/rl_examOrigin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16">
+
+                    <TextView
+                        android:id="@+id/tvSourceFrom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="来自："
+                        android:textColor="#979797"
+                        android:textSize="10dp" />
+
+                    <ImageView
+                        android:id="@+id/ivIsCollected"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:layout_toLeftOf="@id/ivDelete"
+                        android:clickable="true"
+                        android:padding="3dp"
+                        android:src="@drawable/selector_collect"
+                        android:textSize="10dp" />
+
+                    <ImageView
+                        android:id="@+id/ivDelete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="true"
+                        android:padding="3dp"
+                        android:src="@mipmap/ic_delete"
+                        android:textSize="10dp" />
+                </RelativeLayout>
+
+                <FrameLayout
+                    android:id="@+id/examContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"></FrameLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:layout_marginTop="10dp">
+
+                    <CheckBox
+                        android:id="@+id/cb_showAnalyzeBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:button="@null"
+                        android:drawableRight="@drawable/selector_arrow_updown"
+                        android:gravity="center"
+                        android:text="收起解析"
+                        android:textColor="#979797"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/tvLookOrEditReason"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="true"
+                        android:padding="5dp"
+                        android:text="总结错因"
+                        android:textColor="@color/color_363636"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/tvCorrectBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@id/tvLookOrEditReason"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="订正习题"
+                        android:textColor="@color/color_363636"
+                        android:textSize="10dp" />
+
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_4"
+                    android:background="@color/FBFBFB"/>
+
+                <RelativeLayout
+                    android:id="@+id/rlAnswerArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/tvYourAnswer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="15dp"
+                        android:paddingTop="15dp"
+                        android:textColor="@color/color_363636"
+                        android:textSize="12dp"
+                        tools:text="你的答案" />
+
+                    <TextView
+                        android:id="@+id/tvCorrectAnswer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvYourAnswer"
+                        android:paddingBottom="15dp"
+                        android:textColor="@color/color_75C82B"
+                        android:textSize="12dp"
+                        tools:text="正确答案" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_analysis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="15dp"
+                        android:paddingTop="15dp"
+                        android:text="题目解析:"
+                        android:textColor="@color/color_75C82B"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/tvAnalysis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp_16"
+                        android:textColor="@color/color_636363"
+                        android:textSize="12dp"
+                        tools:text="题目解析" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlRecordArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16">
+
+                    <CheckBox
+                        android:id="@+id/cbRecord"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:drawableRight="@drawable/selector_arrow_updown"
+                        android:gravity="center_vertical"
+                        android:text="订正记录"
+                        android:textColor="@color/color_979797"
+                        android:textSize="10dp" />
+
+                    <com.haoke91.baselibrary.recycleview.WrapRecyclerView
+                        android:id="@+id/rvRecord"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/cbRecord"
+                        android:layout_marginBottom="@dimen/dp_16">
+
+                    </com.haoke91.baselibrary.recycleview.WrapRecyclerView>
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </com.haoke91.baselibrary.views.emptyview.EmptyView>
+</android.support.constraint.ConstraintLayout>

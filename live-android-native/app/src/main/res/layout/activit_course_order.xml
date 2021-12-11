@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_toolbar" />
+
+    <com.haoke91.baselibrary.views.emptyview.EmptyView
+        android:id="@+id/mEmptyView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:ev_error_drawable="@mipmap/net_error"
+        app:ev_error_text="@string/net_error">
+
+        <com.haoke91.baselibrary.recycleview.WrapRecyclerView
+            android:id="@+id/wr_daily_work"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never" />
+    </com.haoke91.baselibrary.views.emptyview.EmptyView>
+</LinearLayout>

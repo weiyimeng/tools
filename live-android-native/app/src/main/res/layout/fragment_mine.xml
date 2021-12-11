@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentInsetStart="0dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="我的"
+                android:textColor="@color/color_4A4A4A"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_userInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_11"
+            android:layout_marginStart="@dimen/dp_27"
+            android:layout_marginTop="@dimen/dp_16">
+
+
+            <com.haoke91.a91edu.widget.CircleImageView
+                android:id="@+id/iv_user_head"
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_60"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/study_image_head"
+                app:civ_border_overlay="true" />
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_6"
+                android:textColor="@color/color_363636"
+                android:textSize="@dimen/dp_16"
+                app:layout_constraintStart_toEndOf="@+id/iv_user_head"
+                app:layout_constraintTop_toTopOf="@+id/iv_user_head"
+                tool:text="1111" />
+
+            <TextView
+                android:id="@+id/tv_user_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:background="@drawable/bg_75c82b_radius_7"
+                android:paddingLeft="@dimen/dp_2"
+                android:paddingRight="@dimen/dp_2"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_10"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_user_name"
+
+                app:layout_constraintStart_toEndOf="@+id/tv_user_name"
+                app:layout_constraintTop_toTopOf="@+id/tv_user_name"
+                tool:text="沉睡种子" />
+
+            <TextView
+                android:id="@+id/tv_goldCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_6"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_5"
+                android:drawableLeft="@mipmap/study_image_coin1"
+                android:gravity="center"
+                android:textColor="@color/FFCA45"
+                android:textSize="@dimen/dp_12"
+                app:layout_constraintBottom_toBottomOf="@id/iv_user_head"
+                app:layout_constraintStart_toEndOf="@id/iv_user_head"
+                tool:text="1000" />
+
+            <TextView
+                android:id="@+id/tv_grow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_19"
+                android:layout_toRightOf="@+id/tv_goldCount"
+                android:drawableLeft="@mipmap/study_image_coin"
+                android:drawablePadding="@dimen/dp_2"
+                android:gravity="center"
+                android:text="成长值"
+                android:textColor="@color/color_75C82B"
+                android:textSize="@dimen/dp_12"
+                app:layout_constraintStart_toEndOf="@id/tv_goldCount"
+                app:layout_constraintTop_toTopOf="@+id/tv_goldCount" />
+
+            <TextView
+                android:id="@+id/tv_growValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_toRightOf="@id/tv_grow"
+                android:gravity="center"
+                android:text="99"
+                android:textColor="@color/color_75C82B"
+                android:textSize="@dimen/dp_12"
+                app:layout_constraintStart_toEndOf="@id/tv_grow"
+                app:layout_constraintTop_toTopOf="@+id/tv_goldCount" />
+
+
+            <TextView
+                android:id="@+id/tv_edit_userInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_10"
+                android:paddingEnd="@dimen/dp_0"
+                android:text="@string/edit_userInfo"
+                android:textColor="@color/color_979797"
+                android:textSize="@dimen/dp_10"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_user_head"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv_user_head" />
+
+            <TextView
+                android:id="@+id/tv_login_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_6"
+                android:layout_marginStart="@dimen/dp_16"
+                android:text="@string/login_more"
+                android:textColor="@color/color_979797"
+                android:textSize="@dimen/dp_10"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_user_head"
+                app:layout_constraintStart_toEndOf="@id/iv_user_head" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <!--<View style="@style/line" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_24"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_order"
+                style="@style/textView_userInf_banner"
+                android:drawableTop="@mipmap/mine_order_image"
+                android:text="@string/my_order" />
+
+            <TextView
+                android:id="@+id/tv_collect"
+
+                style="@style/textView_userInf_banner"
+                android:drawableTop="@mipmap/mine_collect_image"
+                android:text="@string/my_collect" />
+
+            <TextView
+                android:id="@+id/tv_coupons"
+                style="@style/textView_userInf_banner"
+                android:drawableTop="@mipmap/mine_coupon_image1"
+                android:text="@string/my_coupons" />
+
+            <TextView
+                android:id="@+id/tv_balance"
+                style="@style/textView_userInf_banner"
+                android:drawableTop="@mipmap/mine_coupon_image"
+                android:text="@string/my_balance" />
+        </LinearLayout>
+
+
+        <View
+            style="@style/line"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_16" />
+        <!--<TextView-->
+        <!--android:id="@+id/tv_homework"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="作业" />-->
+
+
+        <TextView
+            android:id="@+id/tv_shopping_cart"
+            style="@style/textView_userInf_item"
+            android:drawableLeft="@drawable/ic_mine_image_shopcart"
+            android:text="@string/my_cart" />
+
+        <View
+            style="@style/line"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:layout_marginStart="@dimen/dp_16" />
+
+        <TextView
+            android:id="@+id/tv_userInfo_address"
+            style="@style/textView_userInf_item"
+            android:drawableLeft="@drawable/ic_mine_image_address"
+            android:text="@string/address_manager" />
+
+        <View
+            style="@style/line"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:layout_marginStart="@dimen/dp_16" />
+
+        <TextView
+            android:id="@+id/tv_gotoGold"
+            style="@style/textView_userInf_item"
+            android:drawableLeft="@drawable/ic_mine_gold_store"
+            android:text="@string/gold_store" />
+
+
+        <View
+            style="@style/line"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:layout_marginStart="@dimen/dp_16"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_userInfo_message"
+            style="@style/textView_userInf_item"
+            android:drawableLeft="@drawable/ic_mine_image_massge"
+            android:text="@string/my_message"
+            android:visibility="gone" />
+
+        <View
+            style="@style/line"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:layout_marginStart="@dimen/dp_16"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/play_view"
+            style="@style/textView_userInf_item"
+            android:drawableLeft="@drawable/ic_mine_image_service"
+            android:text="@string/customer_service"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/play_view_agora"
+            style="@style/textView_userInf_item"
+            android:drawableLeft="@drawable/ic_mine_image_service"
+            android:text="生网测试"
+            android:visibility="gone" />
+
+        <View
+            style="@style/line"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:layout_marginStart="@dimen/dp_16"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/play_view_talk"
+            style="@style/textView_userInf_item"
+            android:drawableLeft="@drawable/ic_mine_image_setting"
+            android:text="拓课测试"
+            android:visibility="gone" />
+
+        <View
+            style="@style/line"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:layout_marginStart="@dimen/dp_16"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_userInfo_setting"
+            style="@style/textView_userInf_item"
+            android:drawableLeft="@drawable/ic_mine_image_setting"
+            android:text="@string/setting" />
+
+        <View
+            style="@style/line"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:layout_marginStart="@dimen/dp_16" />
+    </LinearLayout>
+</ScrollView>

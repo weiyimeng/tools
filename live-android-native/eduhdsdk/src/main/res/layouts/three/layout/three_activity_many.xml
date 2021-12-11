@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical">
+
+    <!--bar界面-->
+    <include
+        android:id="@+id/rel_tool_bar"
+        layout="@layout/three_action_bar_one"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rel_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical">
+
+        <RelativeLayout
+            android:id="@+id/rel_wb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" /><!--兼容弹出框，写的一个和白板高度相同的view-->
+        <!--白板-->
+        <RelativeLayout
+            android:id="@+id/rel_wb_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/re_menu"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_toLeftOf="@+id/rl_rightSide">
+
+            <FrameLayout
+                android:id="@+id/wb_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@color/color_round_back_blue_5dp" />
+
+        </RelativeLayout>
+
+        <!--视频区-->
+        <RelativeLayout
+            android:id="@+id/rel_students"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/rl_rightSide"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:splitMotionEvents="false"
+            android:background="#00000000">
+
+            <View
+                android:id="@+id/v_student"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_hideStudents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:text="》》"
+            android:padding="15dp"
+            android:textColor="#6D6D6D"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/re_menu"
+            layout="@layout/menu_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@id/rl_rightSide"
+            android:visibility="visible"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_rightSide"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:visibility="visible"
+            android:focusableInTouchMode="false">
+
+            <include
+                android:id="@+id/vdi_teacher"
+                layout="@layout/three_item_video_frame_many"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"
+                android:layout_marginRight="10px"
+                android:layout_marginTop="15px" />
+
+            <com.eduhdsdk.ui.ChatView
+                android:id="@+id/chatView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/vdi_teacher"
+                android:focusableInTouchMode="false"
+                android:clickable="false">
+
+            </com.eduhdsdk.ui.ChatView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10px"
+            android:layout_marginLeft="10px"
+            android:layout_marginRight="10px"
+            android:orientation="horizontal">
+
+            <!--mp3播放界面-->
+            <include
+                android:id="@+id/lin_audio_control"
+                layout="@layout/layout_media_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/img_disk"
+                android:visibility="gone" />
+
+            <!--MP3图标-->
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/img_disk"
+                android:layout_width="85px"
+                android:layout_height="85px"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/play_mp3_gif"
+                android:visibility="gone" />
+        </RelativeLayout>
+        <!-- 顶部工具栏 -->
+        <include
+            android:id="@+id/rel_play_back_bar"
+            layout="@layout/play_back_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!--回放界面 控制条-->
+        <include
+            android:id="@+id/rel_play_back"
+            layout="@layout/layout_playback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+    <!--播放界面-->
+    <FrameLayout
+        android:id="@+id/video_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/re_laoding" />
+
+    <!--白板全屏右下角视频界面-->
+    <include
+        android:id="@+id/rel_fullscreen_videoitem"
+        layout="@layout/fullscreen_videoitem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:visibility="gone" />
+
+    <!--laoding界面-->
+    <include
+        android:id="@+id/re_laoding"
+        layout="@layout/layout_room_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <!--回放界面-->
+    <RelativeLayout
+        android:id="@+id/re_play_back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000"
+        android:visibility="gone">
+
+        <!--&lt;!&ndash;回放bar界面&ndash;&gt;-->
+        <!--<include-->
+            <!--android:id="@+id/rel_play_back_bar"-->
+            <!--layout="@layout/play_back_bar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"/>-->
+
+        <!--&lt;!&ndash;回放界面 控制条&ndash;&gt;-->
+        <!--<include-->
+            <!--android:id="@+id/rel_play_back"-->
+            <!--layout="@layout/layout_playback"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentBottom="true" />-->
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

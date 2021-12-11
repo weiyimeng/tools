@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/dp_2"
+    android:layout_marginRight="@dimen/dp_2">
+
+    <TextView
+        android:id="@+id/custom_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:layout_marginStart="@dimen/dp_12" />
+
+    <!--<View-->
+    <!--android:id="@+id/custom_tab_notification_mark"-->
+    <!--android:layout_width="8dp"-->
+    <!--android:layout_height="8dp"-->
+    <!--android:layout_above="@id/custom_text"-->
+    <!--android:layout_marginBottom="-10dp"-->
+    <!--android:layout_toRightOf="@id/custom_text"-->
+    <!--android:background="@drawable/shape_notification_mark"-->
+    <!--android:visibility="invisible"-->
+    <!--/>-->
+
+</RelativeLayout>

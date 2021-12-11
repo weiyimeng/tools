@@ -1,0 +1,127 @@
+[
+  {
+    "url": "tiku.aixuexi.com",
+    "host": "39.107.157.140",
+    "port": "8037"
+  },
+  {
+    "url": "www.aixuexi.com",
+    "host": "39.107.157.140",
+    "port": "8028"
+  },
+  {
+    "url": "api.aixuexi.com",
+    "host": "39.107.157.140",
+    "port": "8032"
+  },
+  {
+    "url": "api.dev.aixuexi.com",
+    "host": "39.107.157.140",
+    "port": "8032"
+  },
+  {
+    "url": "openapi.test.aixuexi.com/wjd/",
+    "host": "39.107.157.140",
+    "port": "8058"
+  },
+  {
+    "url": "openapi.aixuexi.com/wjd/",
+    "host": "39.107.157.140",
+    "port": "8058"
+  },
+  {
+    "url": "openapi.test.aixuexi.com/xsd/",
+    "host": "39.107.157.140",
+    "port": "8009"
+  },
+  {
+    "url": "openapi.aixuexi.com/xsd/",
+    "host": "39.107.157.140",
+    "port": "8009"
+  },
+  {
+    "url": "scoreenglish.aixuexi.com",
+    "host": "39.107.157.140",
+    "port": "8036"
+  },
+  {
+    "url": "passport.aixuexi.com",
+    "host": "39.107.157.140",
+    "port": "4000"
+  },
+  {
+    "url": "passport.test.aixuexi.com",
+    "host": "39.107.157.140",
+    "port": "4000"
+  },
+  {
+    "url": "c.aixuexi.com",
+    "host": "39.107.157.140",
+    "port": "8009"
+  },
+  {
+    "url": "c.dev.aixuexi.com",
+    "host": "39.107.157.140",
+    "port": "8009"
+  },
+  {
+    "url": "teacher.aixuexi.com",
+    "host": "39.107.157.140",
+    "port": "8013"
+  },
+  {
+    "url": "teacher.dev.aixuexi.com",
+    "host": "39.107.157.140",
+    "port": "8013"
+  },
+  {
+    "url": "storage.aixuexi.com",
+    "host": "192.168.0.138",
+    "port": "8036"
+  },
+  {
+    "url": "storage.test.aixuexi.com",
+    "host": "192.168.0.138",
+    "port": "8036"
+  },
+  {
+    "url": "axxol-teacher-api.aixuexi.com",
+    "host": "39.107.157.140",
+    "port": "10050"
+  },
+  {
+    "url": "axxol-admin.aixuexi.com",
+    "host": "39.107.157.140",
+    "port": "10040"
+  },
+  {
+    "url": "axxol-api.aixuexi.com",
+    "host": "39.107.157.140",
+    "port": "10010"
+  },
+  {
+    "url": "axxol-scc.aixuexi.com",
+    "host": "39.107.157.140",
+    "port": "10020"
+  },
+  {
+    "url": "axxol-im.aixuexi.com",
+    "host": "39.107.157.140",
+    "port": "10100"
+  },
+  {
+    "url": "axxol-tnew.aixuexi.com",
+    "host": "39.107.157.140",
+    "port": "10050"
+  },
+  {
+    "url": "axxol-data.aixuexi.com",
+    "host": "39.107.157.140",
+    "port": "10391"
+  },
+  {
+    "url": "ss.aixuexi.com",
+    "host": "39.107.157.140",
+    "port": "8015"
+  }
+]

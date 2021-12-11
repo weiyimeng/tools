@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.haoke91.baselibrary.views.emptyview.EmptyView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/empty_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:ev_error_text="@string/error_text"
+    app:ev_error_textColor="#111">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.haoke91.a91edu.MainActivity">
+
+
+        <com.haoke91.videolibrary.videoplayer.VideoPlayer
+            android:id="@+id/play_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:visibility="gone">
+
+        </com.haoke91.videolibrary.videoplayer.VideoPlayer>
+        <com.haoke91.videolibrary.videoplayer.LivePlayer
+            android:id="@+id/live_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:visibility="gone" />
+
+        <!--<ImageView-->
+            <!--android:id="@+id/bg_play"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/dp_200"-->
+            <!--android:scaleType="fitXY"-->
+            <!--android:visibility="gone" />-->
+
+        <com.haoke91.a91edu.widget.webview.TalkWebView
+            android:id="@+id/wb_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</com.haoke91.baselibrary.views.emptyview.EmptyView>

@@ -1,0 +1,62 @@
+apply plugin: 'checkstyle'
+
+checkstyle {
+    toolVersion = '8.31'
+    configFile = rootProject.file('checkstyle.xml')
+    ignoreFailures = false
+    showViolations = true
+}
+
+task checkStyle(type: Checkstyle) {
+    source = 'src/main/java'
+
+    if (project.hasProperty('checkCommit') && project.property("checkCommit")) {
+        def ft = filterCommitter(getChangeFiles())
+        def includeList = new ArrayList<String>()
+        for (int i = 0; i < ft.size(); i++) {
+            String spliter = ft[i]
+            String[] spliterlist = spliter.split("/")
+            String fileName = spliterlist[spliterlist.length - 1]
+            includeList.add("**/" + fileName)
+        }
+        if (includeList.size() == 0) {
+            exclude '**/*.java', '**/*.kt'
+        } else {
+            include includeList
+        }
+    } else {
+        include '**/*.java', '**/*.kt'
+    }
+    classpath = files()
+}
+
+def getChangeFiles() {
+    try {
+        String changeInfo = 'git status -s'.execute(null, project.rootDir).text.trim()
+        return changeInfo == null ? "" : changeInfo
+    } catch (Exception e) {
+        return ""
+    }
+}
+
+def filterCommitter(String gitstatusinfo) {
+    ArrayList<String> filterList = new ArrayList<String>()
+    String[] lines = gitstatusinfo.split("\\n")
+    for (String line : lines) {
+        if (line.contains(".java") || line.contains(".kt")) {
+            String[] spliters = line.trim().split(" ")
+            for (String str : spliters) {
+                if (str.contains(".java") || str.contains(".kt")) {
+                    filterList.add(str)
+                }
+            }
+        }
+    }
+    return filterList
+}
+
+afterEvaluate {
+    if (project.tasks.getByName("check")) {
+        check.dependsOn('checkStyle')
+    }
+}

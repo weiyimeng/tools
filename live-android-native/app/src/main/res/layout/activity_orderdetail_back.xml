@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/common_toolbar" />
+
+    <com.haoke91.baselibrary.views.emptyview.EmptyView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_order_bottom"
+        android:layout_below="@id/toolbar"
+        app:ev_empty_drawable="@mipmap/empty_image_nocourse"
+        app:ev_empty_text="没有相关课程"
+        app:ev_error_drawable="@mipmap/net_error"
+        app:ev_error_text="@string/net_error">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:descendantFocusability="blocksDescendants"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_60"
+                    android:background="@mipmap/pay_image_background">
+
+
+                    <TextView
+                        android:id="@+id/tv_order_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_16"
+                        android:layout_marginTop="@dimen/dp_19"
+                        android:drawableLeft="@drawable/ic_pay_image_back"
+                        android:drawablePadding="@dimen/dp_7"
+                        android:text="@string/back_order"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dp_16" />
+
+                    <TextView
+                        android:id="@+id/tv_create_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="@dimen/dp_16"
+                        android:layout_marginTop="@dimen/dp_22"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dp_12"
+                        tool:text="2018-07-23 16:41:51" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:descendantFocusability="blocksDescendants">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_order_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_4"
+                    android:layout_marginBottom="@dimen/dp_16"
+                    android:background="@color/FBFBFB" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16">
+
+                    <TextView
+                        android:id="@+id/tv_reasonTitle"
+                        style="@style/textView_order_count"
+                        android:text="@string/cancel_reason" />
+
+                    <TextView
+                        android:id="@+id/tv_cancel_reason"
+                        style="@style/textView_order_count"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_toRightOf="@+id/tv_reasonTitle"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:maxLength="20"
+                        android:singleLine="true"
+                        tool:text="课程难度不合适" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_8">
+
+                    <TextView
+                        style="@style/textView_order_count"
+                        android:text="@string/goods_count" />
+
+                    <TextView
+                        android:id="@+id/tv_cancel_num"
+                        style="@style/textView_order_count"
+                        android:layout_alignParentRight="true"
+                        tool:text="￥1" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_8">
+
+                    <TextView
+                        style="@style/textView_order_count"
+                        android:text="@string/apply_time" />
+
+                    <TextView
+                        android:id="@+id/tv_apply_time"
+                        style="@style/textView_order_count"
+                        android:layout_alignParentRight="true"
+                        tool:text="2018-04-12 16:24" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_back_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_8">
+
+                    <TextView
+                        style="@style/textView_order_count"
+                        android:text="@string/back_num" />
+
+                    <TextView
+                        android:id="@+id/tv_cancel_no"
+                        style="@style/textView_order_count"
+                        android:layout_alignParentRight="true"
+                        android:text="11111" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/line"
+                    android:layout_height="@dimen/dp_4"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:background="@color/FBFBFB" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_16">
+
+                    <TextView
+                        style="@style/textView_order_count"
+                        android:text="实付金额" />
+
+                    <TextView
+                        android:id="@+id/tv_order_money"
+                        style="@style/textView_order_count_red"
+                        android:layout_alignParentRight="true"
+                        tool:text="￥1000.00" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_back_money"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/textView_order_count"
+                        android:text="已退金额" />
+
+                    <TextView
+                        android:id="@+id/tv_back_money"
+                        style="@style/textView_order_count_red"
+                        android:layout_alignParentRight="true"
+                        tool:text="￥20.00" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_2">
+
+                    <TextView
+                        style="@style/textView_order_count"
+                        android:text="消耗金额" />
+
+                    <TextView
+                        android:id="@+id/tv_consume_money"
+                        style="@style/textView_order_count_red"
+                        android:layout_alignParentRight="true"
+                        tool:text="￥1000.00" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_8">
+
+                    <TextView
+                        style="@style/textView_order_count"
+                        android:text="资料服务费" />
+
+                    <TextView
+                        android:id="@+id/tv_note_money"
+                        style="@style/textView_order_count_red"
+                        android:layout_alignParentRight="true"
+                        tool:text="￥1000.00" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_really_back_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_2">
+
+                    <TextView
+                        android:id="@+id/tv_really_back_tittle"
+                        style="@style/textView_order_count"
+                        android:text="实际退款" />
+
+                    <TextView
+                        android:id="@+id/tv_actual_return"
+                        style="@style/textView_order_count_red"
+                        android:layout_alignParentRight="true"
+                        tool:text="￥88.00" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_balance_return"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_8">
+
+                    <TextView
+                        style="@style/textView_order_count"
+                        android:text="退回余额" />
+
+                    <TextView
+                        android:id="@+id/tv_balance_return"
+                        style="@style/textView_order_count_red"
+                        android:layout_alignParentRight="true"
+                        tool:text="712038833342" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_cash_return"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_2">
+
+                    <TextView
+                        android:id="@+id/tv_method_return"
+                        style="@style/textView_order_count"
+                        tool:text="退回微信" />
+
+                    <TextView
+                        android:id="@+id/tv_cash_return"
+                        style="@style/textView_order_count_red"
+                        android:layout_alignParentRight="true"
+                        tool:text="712038833342" />
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </com.haoke91.baselibrary.views.emptyview.EmptyView>
+
+    <RelativeLayout
+        android:id="@+id/rl_order_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_white_radius_4"
+        android:elevation="@dimen/dp_4"
+        android:visibility="gone"
+        tool:layout_editor_absoluteX="8dp"
+        tool:layout_editor_absoluteY="5dp">
+
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:background="@drawable/line_979797_radius_20"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dp_4"
+            android:paddingLeft="@dimen/dp_16"
+            android:paddingRight="@dimen/dp_16"
+            android:paddingTop="@dimen/dp_4"
+            android:text="取消退款"
+            android:textColor="@color/color_363636"
+            android:textSize="@dimen/dp_12" />
+    </RelativeLayout>
+</RelativeLayout>
